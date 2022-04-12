@@ -1,0 +1,324 @@
+// -----------------------------------------------------------------------------
+// This file contains all grid styles.
+// -----------------------------------------------------------------------------
+
+.grid_layouts {
+    display: grid;
+    align-items: center;
+
+    &.--gr-prod{
+        @include respond-max(sm-tablet) {
+            grid-template-columns: minmax(1px, .5fr) minmax(1px, .5fr);
+            grid-gap: 10px;
+        }
+        @include respond-max(lg-mobile) {
+            grid-template-columns: minmax(1px, auto);
+            grid-gap: 20px;
+        }
+    }
+
+    &.gr-btndjhsdjhsds{
+        grid-template-columns: repeat(2, minmax(1px, 1fr));
+        grid-gap: 20px;
+    }
+
+    &.gr-three{
+        grid-template-columns: repeat(3, minmax(1px, 1fr));
+        grid-gap: 30px;
+        @include respond-max(md-dekstop) {
+            grid-template-columns: repeat(2, minmax(1px, 1fr));
+        }
+        @include respond-max(lg-tablet) {
+            grid-template-columns: minmax(1px, auto);
+        }
+    }
+
+    &.gr-autoo{
+        grid-template-columns: repeat(2, minmax(1px, auto));
+        grid-gap: 10px;
+
+        .mn-right{
+            margin-left: auto;
+            text-align: right;
+            display: block;
+        }
+
+        &.mb-auto{
+            @include respond-max(sm-tablet) {
+                grid-template-columns: minmax(1px, auto);
+
+                .mn-right{
+                    margin-left: 0;
+                    text-align: left !important;
+                    margin-right: auto;
+                }
+            }
+        }
+    }
+
+    &.gr-mb-autoo{
+        grid-template-columns: repeat(2, minmax(1px, auto));
+        grid-gap: 10px;
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+        padding-bottom: 15px;
+        margin-bottom: 25px !important;
+
+        .mn-right{
+            margin-left: auto;
+            text-align: right;
+            display: block;
+        }
+
+        @include respond-max(sm-tablet) {
+            grid-template-columns: minmax(1px, auto);
+            .mn-right{
+                margin-left: 0;
+                text-align: left !important;
+            }
+        }
+    }
+
+    &.--header-gr{
+        grid-gap: 20px;
+        @include respond-min(mid-md-dekstop) {
+            grid-template-columns: minmax(1px, 180px) minmax(1px, 1fr) minmax(1px, auto);
+        }
+
+        @include respond-between(mid-lg-tablet, md-dekstop) {
+            grid-template-columns: minmax(1px, auto) minmax(1px, 1fr) minmax(1px, auto);
+        }
+
+        @include respond-max(lg-tablet) {
+            grid-template-columns: auto 185px;
+            grid-template-rows: auto;
+            grid-template-areas:
+                "logo notif"
+                "search search"
+            ;
+            grid-gap: 15px 5px !important;
+            &.--gr-icn-home{
+                grid-gap: 15px 5px !important;
+            }
+        }
+
+        @media screen and (max-width: 452px) {
+            grid-gap: 10px 5px !important;
+        }
+
+        .gr-a{
+            @include respond-max(lg-tablet) {
+                grid-area: logo;
+                display: inline-flex;
+                gap: 15px;
+                align-items: center;
+            }
+            .navbar-toggler{
+                display: none;
+                position: relative;
+                z-index: 1;
+                padding: 0;
+                border: none;
+                @include respond-max(lg-tablet) {
+                    display: block;
+                }
+            }
+        }
+        .gr-b{
+            @include respond-max(lg-tablet) {
+                grid-area: search;
+            }
+        }
+        .gr-c{
+            @include respond-max(lg-tablet) {
+                grid-area: notif;
+                margin-left: auto;
+            }
+        }
+    }
+
+    &.--header-gr-subs{
+        @include respond-max(sm-tablet) {
+            grid-template-columns: 35px auto 65px;
+            grid-template-areas:
+                "logo search notif"
+            ;
+            grid-gap: 20px;
+        }
+    }
+
+    &.--header-gr-bottom{
+        grid-template-columns: repeat(4, minmax(1px, 1fr));
+        grid-gap: 10px;
+    }
+
+    &.--header-profile{
+        @include respond-min(mid-sm-tablet) {
+            grid-template-columns: minmax(1px, .5fr) minmax(1px, .5fr);
+            grid-gap: 10px;
+        }
+    }
+
+    &.--notif-ouz{
+        grid-template-columns: minmax(1px, 50px) minmax(1px, 80px) minmax(1px, 80px);
+        grid-gap: 0;
+        align-items: center;
+        margin-left: 10px;
+        .btn-lggg{
+            padding: 6px 10px;
+        }
+        @include respond-between(mid-sm-tablet, lg-tablet) {
+            grid-template-columns: minmax(1px, 40px) minmax(1px, auto) minmax(1px, auto);
+        }
+        @include respond-max(sm-tablet) {
+            grid-template-columns: repeat(3, minmax(1px, auto));
+            .btn-lggg{
+                padding: 3px 0;
+                small{
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+
+    &.--notif-ouz-loggedin{
+        grid-template-columns: minmax(1px, 30px) minmax(1px, 30px) minmax(1px, auto);
+        grid-gap: 25px;
+        padding-left: 10px;
+        align-items: center;
+        @include respond-between(mid-sm-tablet, md-dekstop) {
+            grid-gap: 10px;
+            padding-left: 0;
+        }
+        @include respond-max(sm-tablet) {
+            grid-template-columns: repeat(3, minmax(1px, auto));
+            grid-gap: 15px;
+        }
+    }
+
+    &.ct-sort-desk{
+        grid-template-columns: repeat(2, minmax(1px, auto));
+        grid-gap: 20px;
+        align-items: flex-start;
+        @include respond-max(md-dekstop) {
+            grid-template-columns: minmax(1px, auto);
+        }
+    }
+
+    &.sort-gr{
+        grid-template-columns: minmax(1px, 70px) minmax(1px, 100px) minmax(1px, 100px) minmax(1px, 100px);
+        grid-gap: 10px;
+        @include respond-max(lg-mobile) {
+            grid-template-columns: repeat(4, minmax(1px, auto));
+            grid-gap: 0;
+        }
+
+        &.filtrfrm{
+            grid-template-columns: repeat(4, minmax(1px, auto));
+            text-align: right;
+            margin-left: auto;
+            grid-gap: 20px;
+            @include respond-max(md-dekstop) {
+                text-align: left;
+                margin-right: auto;
+                margin-left: 0;
+            }
+            .ls-filtrfrm{
+                display: inline-flex;
+            }
+        }
+
+        .btn-vegan{
+            &.active &:focus{
+                color: $fourth-pink;
+            }
+        }
+    }
+
+    &.sort-prdct{
+        grid-template-columns: repeat(2, minmax(1px, auto));
+        grid-gap: 16px;
+        margin-left: auto;
+        @include respond-max(md-dekstop) {
+            margin-left: 0;
+            margin-right: auto;
+            display: block;
+
+            .list-srt{
+                display: inline-flex;
+                margin-right: 8px;
+                a{
+                    height: auto;
+                }
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    &.prdct-sec{
+        grid-template-columns: minmax(1px, 237px) minmax(1px, auto);
+        grid-gap: 20px;
+        align-items: unset;
+        @include respond-max(md-dekstop) {
+            grid-template-columns: minmax(1px, auto);
+            grid-gap: 0;
+            border-bottom: none;
+        }
+    }
+
+    &.prdct-gr{
+        grid-template-columns: repeat(4, minmax(1px, 1fr));
+        grid-gap: 24px 16px;
+        @include respond-max(lg-dekstop) {
+            grid-template-columns: repeat(3, minmax(1px, 1fr));
+        }
+        @include respond-max(md-dekstop) {
+            grid-template-columns: repeat(3, minmax(1px, 1fr));
+        }
+        @include respond-max(lg-tablet) {
+            grid-template-columns: repeat(2, minmax(1px, 1fr));
+        }
+        @include respond-max(sm-tablet) {
+            grid-template-columns: repeat(2, minmax(1px, 1fr));
+        }
+        @include respond-max(lg-mobile) {
+            grid-gap: 10px;
+        }
+    }
+
+    &.hd-frm{
+        grid-template-columns: minmax(1px, auto) minmax(1px, 141px);
+        grid-gap: 20px;
+        @include respond-max(md-dekstop) {
+            display: grid !important;
+        }
+        @include respond-max(lg-tablet) {
+            grid-template-columns: minmax(1px, auto) minmax(1px, 131px);
+        }
+        @include respond-max(sm-tablet) {
+            grid-template-columns: minmax(1px, auto);
+        }
+    }
+
+    &.--heads{
+        grid-template-columns: minmax(1px, auto) minmax(1px, 120px);
+        grid-gap: 50px;
+        align-items: self-start;
+    }
+
+    &.--head-reply {
+        grid-template-columns: minmax(1px, auto) minmax(1px, 110px);
+        grid-gap: 20px;
+        align-items: self-start;
+    }
+
+    &.gr-fr-auto{
+        grid-template-columns: repeat(2, minmax(1px, 1fr));
+        grid-gap: 30px;
+        align-items: flex-start;
+        @include respond-max(lg-tablet) {
+            grid-template-columns: minmax(1px, auto);
+        }
+    }
+}

@@ -1,0 +1,149 @@
+// -----------------------------------------------------------------------------
+// This file contains all share styles.
+// -----------------------------------------------------------------------------
+
+.share-btn{
+    &.clps-btn-shr{
+        position: absolute;
+        background-color: $white;
+        padding: 10px;
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 3px;
+        border: 0.5px solid rgba(0, 0, 0, 0.1);
+        top: 50px;
+        width: 150px;
+        text-align: center !important;
+        left: 0;
+        z-index: 1;
+    }
+
+    a{
+        text-align: center !important;
+        i{
+            color: $white;
+            width: 30px;
+            height: 30px;
+            margin: 3px;
+            border-radius: 100px;
+            font-size: 14px;
+            line-height: 2.15;
+            @include respond-max(sm-tablet) {
+                font-size: 11px;
+                width: 25px;
+                height: 25px;
+            }
+
+            &.fa-facebook-f{
+                background-color: #3B5998
+            }
+
+            &.fa-twitter{
+                background-color: #00ACED;
+            }
+
+            &.fa-whatsapp{
+                background-color: #25D366;
+            }
+
+            &.fa-link{
+                background-color: rgba(249, 151, 2, 0.921569);
+            }
+        }
+        &.btn-telegram{
+            background-image: url('../../fe/icons/telegram.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            width: 30px;
+            height: 30px;
+            display: block;
+        }
+    }
+
+    &.box-share-prdct{
+        width: 300px !important;
+        padding: 20px 10px;
+        .copy-clipboard-section{
+            .gr-cpy-clbrd{
+                grid-template-columns: minmax(1px, auto) minmax(1px, 65px);
+                grid-gap: 0;
+            }
+
+            .btn-shrajhd{
+                border-radius: 3px;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                padding: 7.5px 10px;
+                border-left-width: 0 !important;
+            }
+
+            .inpts-shrajhd{
+                border-radius: 3px;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+        }
+
+        .gr-shramdjakd{
+            grid-template-columns: repeat(4, minmax(1px, 36px));
+            grid-gap: 5px;
+            margin: auto;
+            width: 160px;
+        }
+    }
+}
+
+.ct-tggle{
+    position: absolute;
+    top: 42px;
+    z-index: 1;
+    right: 0;
+    background: rgb(225, 227, 227);
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    padding: 3px 10px;
+
+    small{
+        color: $gray;
+    }
+
+    &.ct-tggletp{
+        top: 30px;
+    }
+
+    &.tggl-lgrhfsbfjs{
+        top: 65px;
+        left: unset;
+        right: 20px;
+    }
+
+    .mn-arrw{
+        position: absolute;
+        display: block;
+        width: 1rem;
+        height: .4rem;
+        margin: 0 0.3rem;
+        top: -9px;
+        right: 0;
+        transform: rotate(180deg);
+        &::before, &::after{
+            position: absolute;
+            display: block;
+            content: "";
+            border-color: transparent;
+            border-style: solid;
+            border-width: .4rem .4rem 0;
+            border-top-color: rgb(225, 227, 227);
+        }
+        &::before{
+            bottom: 0;
+        }
+        &::after{
+            bottom: 1px;
+        }
+    }
+
+    &.--pymn{
+        top: 30px;
+    }
+}

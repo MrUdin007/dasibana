@@ -1,0 +1,13 @@
+// -----------------------------------------------------------------------------
+// This file contains all Slick Slider styles.
+// -----------------------------------------------------------------------------
+
+@import '~slick-slider/slick/slick';
+@import '~slick-slider/slick/slick-theme';
+
+@font-face {
+    font-family: slick;
+    src: url('../../../../../node_modules/slick-slider/slick/fonts/slick.ttf'),
+        url('../../../../../node_modules/slick-slider/slick/fonts/slick.woff');
+    font-display: swap;
+}

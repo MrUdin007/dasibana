@@ -1,0 +1,153 @@
+// -----------------------------------------------------------------------------
+// This file contains all content styles.
+// -----------------------------------------------------------------------------
+
+
+
+.body-content-vegan{
+    position: relative;
+    padding-bottom: 20px;
+    padding-top: 30px;
+
+    .content-oz-sec--{
+        @include respond-max(sm-tablet) {
+            padding-top: 25px;
+        }
+    }
+
+    .bt-profil{
+        @include respond-min(sm-tablet){
+            display: none;
+        }
+        box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
+        background-color: $white;
+        padding: 10px 40px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+
+        a{
+            small{
+                font-size: 12px;
+                color: $black;
+            }
+        }
+
+        .logo-vegan{
+            img{
+                width: 25px;
+                margin-left: 5px;
+            }
+        }
+
+        .profil-ig{
+            text-align: right;
+            i{
+                font-size: 22px;
+                margin-right: 5px;
+                color: $black;
+                @include on-event{
+                    color: $fourth-pink;
+                }
+            }
+        }
+    }
+}
+
+.seo-content-vegan{
+    margin: 20px auto;
+    section{
+        article{
+            h5{
+                color: $black;
+                font-family: "Asap_medium", sans-serif !important;
+            }
+            p{
+                font-size: 12px;
+                color: rgba(0, 0, 0, 0.4);
+                line-height: 14px;
+            }
+        }
+    }
+}
+
+section{
+    margin-bottom: 40px;
+}
+
+.mobile-top-menu{
+    @include respond-max(md-dekstop){
+        display: grid;
+        grid-template-columns: minmax(1px, auto) minmax(1px, 100px);
+        grid-gap: 20px;
+        align-items: center;
+    }
+    @include respond-max(lg-tablet){
+        grid-template-columns: minmax(1px, auto);
+        grid-gap: 0;
+    }
+}
+
+.backdrop-blur-vegan{
+    @include respond-max(md-dekstop){
+        background: rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 99999;
+        top: 2px;
+    }
+}
+
+.showsidebar{
+    @include respond-max(md-dekstop) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 99999;
+        overflow: hidden;
+        background-color: $white;
+        height: 100%;
+        width: 500px;
+        display: block;
+    }
+    @include respond-max(sm-tablet) {
+        width: 350px;
+    }
+    @include respond-max(lg-mobile) {
+        width: 280px;
+    }
+}
+
+.popover{
+    display: none !important;
+}
+
+.no-post-list {
+    padding: 20px;
+    text-align: center;
+    img{
+        width: 300px;
+        margin: auto;
+        display: block;
+        @include respond-max(sm-tablet) {
+            width: 250px;
+        }
+    }
+
+    .img-no-post{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 300px;
+        height: 220px;
+        margin: auto;
+        display: block;
+        margin-bottom: 20px;
+        @include respond-max(sm-tablet) {
+            width: 250px;
+            height: 190px;
+        }
+    }
+}

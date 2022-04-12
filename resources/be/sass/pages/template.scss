@@ -1,0 +1,267 @@
+// -----------------------------------------------------------------------------
+// This file contains all auth styles.
+// -----------------------------------------------------------------------------
+
+@import './public';
+
+// Sweetalert2
+@import '~sweetalert2/dist/sweetalert2.min.css';
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.auth-reg-vegan{
+    position: relative;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    @media (max-height: 684px) and (max-width:767px) {
+        background-color: #f3f6f6;
+    }
+    .gr-vegan{
+        position: relative;
+        @include respond-min(mid-lg-tablet) {
+            display: grid;
+            align-items: center;
+            grid-template-columns: minmax(1px, .6fr) minmax(1px, .4fr);
+            grid-gap: 0;
+        }
+        @include respond-between(mid-lg-tablet, md-dekstop){
+            grid-template-columns: minmax(1px, .5fr) minmax(1px, .5fr);
+        }
+        .cover-vegan{
+            @include respond-min(mid-lg-tablet){
+                position: relative;
+                height: 100vh
+            }
+            @include respond-max(lg-tablet) {
+                display: none;
+            }
+            @media (max-height: 600px) and (min-width:1500px) {
+                height: 100%;
+            }
+            @media (max-height: 500px) and (min-width:768px) {
+                height: 100%;
+            }
+            .logo-vegan{
+                @include respond-min(mid-lg-tablet) {
+                    background-image: url('../../be/icons/logo-vegan.png');
+                    background-position: left;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    height: 70px;
+                    position: absolute;
+                    left: 20px;
+                    top: 20px;
+                    width: 100%;
+                }
+                @include respond-max(lg-dekstop) {
+                    height: 55px;
+                }
+            }
+            .cvr-ct{
+                @include respond-min(mid-lg-tablet) {
+                    position: absolute;
+                    transform: translate(-50%, -50%);
+                    top: 50%;
+                    left: 50%;
+                    width: calc(100% - 40px);
+                    text-align: center;
+                }
+                @media (max-height: 600px) and (min-width:768px) {
+                    position: unset;
+                    transform: unset;
+                    margin: auto;
+                    margin-top: 130px;
+                    margin-bottom: 50px;
+                }
+                .sec-cover-vegan{
+                    @include respond-min(mid-lg-tablet) {
+                        background-image: url('../../be/icons/bg-1.png');
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        padding-top: 35%;
+                        width: 100%;
+                    }
+                    @include respond-between(mid-md-dekstop, lg-dekstop) {
+                        padding-top: 45%;
+                    }
+                    @include respond-between(mid-lg-tablet, md-dekstop) {
+                        padding-top: 60%;
+                    }
+                }
+                .descs{
+                    margin: 30px auto 0;
+                    font-size: 18px !important;
+                    width: 400px;
+                    color: #72777a !important;
+                    line-height: 28px !important;
+                    @include respond-max(lg-dekstop) {
+                        font-size: 16px !important;
+                        line-height: 26px !important;
+                    }
+                    @include respond-max(md-dekstop) {
+                        width: calc(100% - 40px);
+                        margin: 15px auto 0;
+                    }
+                    @include respond-max(lg-tablet) {
+                        font-size: 15px !important;
+                        margin: auto;
+                        line-height: 24px !important;
+                    }
+                }
+            }
+        }
+        .forms-vegan{
+            width: 100%;
+            @include respond-min(mid-lg-tablet){
+                position: relative;
+                height: 100vh;
+                background: $green-vegan;
+                .cover-vegan{
+                    display: none;
+                }
+            }
+            @include respond-max(lg-tablet){
+                position: relative;
+                height: 100vh;
+                .cover-vegan{
+                    display: block;
+                    height: auto;
+                    position: absolute;
+                    transform: translateX(-50%);
+                    left: 50%;
+                    top: 30px;
+                    width: calc(100% - 40px);
+                    text-align: center;
+                    .logo-vegan{
+                        background-image: url('../../be/icons/logo-vegan.png');
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        height: 55px;
+                        width: 100%;
+                        margin-bottom: 15px;
+                    }
+                    .cvr-ct{
+                        .descs{
+                            width: 300px;
+                        }
+                    }
+                }
+            }
+            @media (max-height: 600px) and (min-width:768px) {
+                height: 100%;
+            }
+            @include respond-max(lg-mobile){
+                .cover-vegan{
+                    .cvr-ct{
+                        .descs{
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            .sec-forms-vegan{
+                width: 60%;
+                position: absolute;
+                transform: translate(-50%, -50%);
+                left: 50%;
+                top: 50%;
+                @include respond-max(lg-tablet){
+                    background-image: url('../../be/icons/bg-1.png');
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    width: calc(100% - 40px);
+                    position: absolute;
+                    transform: translateX(-50%);
+                    left: 50%;
+                    top: 175px;
+                    padding-bottom: 50px;
+
+                    .form-section-vegan{
+                        padding: 50px 40px;
+                        width: calc(100% - 150px);
+                        margin: auto;
+                        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+                        background: $green-vegan;
+                    }
+                }
+                @include respond-between(mid-lg-tablet, lg-dekstop){
+                    width: 75%;
+                }
+                @include respond-max(sm-tablet){
+                    width: 100%;
+                    padding-bottom: 0;
+                }
+                @media (max-height: 600px) and (min-width:768px) {
+                    position: unset;
+                    transform: unset;
+                    margin: auto;
+                    margin-top: 130px;
+                    margin-bottom: 50px;
+                }
+                @media (max-height: 684px) and (max-width:767px) {
+                    position: unset;
+                    transform: unset;
+                    margin: auto;
+                    padding-top: 170px;
+                    padding-bottom: 50px;
+                }
+                .form-section-vegan{
+                    @include respond-max(sm-tablet){
+                        width: calc(100% - 100px);
+                        padding: 30px 20px;
+                    }
+                   .card-login{
+                        .title{
+                            color: $white;
+                            font-size: 38px !important;
+                            text-transform: uppercase;
+                            text-align: center;
+                            margin-bottom: 50px;
+                            font-family: "asap_bold", sans-serif !important;
+                            @include respond-max(md-dekstop){
+                                font-size: 32px !important;
+                            }
+                            @include respond-max(lg-tablet){
+                                font-size: 28px !important;
+                            }
+                            @include respond-max(sm-tablet){
+                                font-size: 24px !important;
+                            }
+                        }
+                        .submit-btn{
+                            width: 100%;
+                            background-color: $white;
+                            border: unset;
+                            padding: 10px 20px;
+                            text-transform: uppercase;
+                            color: #0b6f5b;
+                            border-radius: 5px;
+                            font-size: 16px;
+                            font-family: "asap_med", sans-serif !important;
+                            @include on-event{
+                                opacity: .85;
+                            }
+                        }
+                        .bottom-logg{
+                            margin: 20px auto 0;
+                            display: block;
+                            text-align: center;
+                            .txt-link{
+                                font-family: "asap_med", sans-serif !important;
+                                @include respond-min(mid-md-dekstop){
+                                    font-size: 16px !important;
+                                }
+                            }
+                        }
+                   } 
+                }
+            }
+        }
+    }
+}

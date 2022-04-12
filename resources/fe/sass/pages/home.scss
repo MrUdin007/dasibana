@@ -1,0 +1,577 @@
+// -----------------------------------------------------------------------------
+// This file contains all home styles.
+// -----------------------------------------------------------------------------
+
+@import '../public';
+
+.home-section {
+    section {
+        &.sec-banner{
+            grid-template-columns: minmax(1px, 1fr) minmax(1px, 396px);
+            grid-gap: 16px;
+            min-height: 300px;
+            @include respond-max(lg-dekstop) {
+                grid-template-columns: minmax(1px, 1fr) minmax(1px, 300px);
+                min-height: 270px;
+                margin-bottom: 30px;
+            }
+            @include respond-max(md-dekstop) {
+                grid-template-columns: minmax(1px, 1fr) minmax(1px, 230px);
+                min-height: 220px;
+            }
+            @include respond-max(lg-tablet) {
+                grid-template-columns: minmax(1px, 1fr);
+                min-height: 230px;
+            }
+            .sec-slider-banner{
+                position: relative;
+                border-radius: 15px;
+                .slider-banner{
+                    .slick-list{
+                        border-radius: 15px;
+                        height: 300px;
+                        margin-top: -5px;
+                        @include respond-max(lg-dekstop) {
+                            height: 270px;
+                        }
+                        @include respond-max(md-dekstop) {
+                            height: 220px;
+                        }
+                        .slick-track{
+                            .slick-slide{
+                                .pd-sldr{
+                                    .images-slider{
+                                        width: 100%;
+                                        border-radius: 15px;
+                                        background-position: top;
+                                        background-repeat: no-repeat;
+                                        background-size: cover;
+                                        height: 300px;
+                                        position: relative;
+                                        @include respond-max(lg-dekstop) {
+                                            height: 270px;
+                                        }
+                                        @include respond-max(md-dekstop) {
+                                            height: 220px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .slick-dots{
+                        bottom: 20px;
+                    }
+                }
+                div {
+                    transition: padding .3s ease-in;
+                }
+            }
+            .banner-nonslider{
+                @include respond-max(lg-tablet) {
+                    display: none;
+                }
+                .cover-banner-nonslider{
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: top;
+                    height: 300px;
+                    border-radius: 15px;
+                    @include respond-max(lg-dekstop) {
+                        height: 270px;
+                    }
+                    @include respond-max(md-dekstop) {
+                        height: 220px;
+                    }
+                }
+            }
+        }
+
+        &.new-slider-product {
+            background-color: #F3F3F3;
+            margin-top: 70px;
+            .bg-slider-prdct{
+                padding: 70px 0 20px;
+                position: relative;
+                .bg-title-newPrdct{
+                    position: absolute;
+                    transform: translateX(-50%);
+                    left: 50%;
+                    top: -25px;
+                    width: 100%;
+                    @include respond-max(md-dekstop) {
+                        top: -22px;
+                    }
+                    @include respond-max(lg-mobile) {
+                        top: -18px;
+                    }
+                    .title-newPrdct{
+                        background-image: url('../../icons/bg-label.png');
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: contain;
+                        width: 100%;
+                        position: relative;
+                        height: 80px;
+                        @include respond-max(md-dekstop) {
+                            height: 70px;
+                        }
+                        @include respond-max(lg-mobile) {
+                            height: 60px;
+                        }
+                        .djagae{
+                            position: absolute;
+                            transform: translate(-50%, -50%);
+                            left: 50%;
+                            top: 50%;
+                            font-size: 20px;
+                            text-transform: uppercase;
+                            letter-spacing: 0.04em;
+                            color: $white;
+                            @include respond-max(md-dekstop) {
+                                font-size: 17px;
+                            }
+                            @include respond-max(lg-mobile) {
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                }
+                .slider-prdct {
+                    margin: 0 -10px;
+                    @include respond-max(sm-tablet) {
+                        margin: 0 10px;
+                        padding: 0 10px;
+                    }
+                }
+            }
+        }
+
+        &.weekly-slider-product{
+            background: radial-gradient(79.35% 167.98% at 35.61% 10.83%, #D3B200 0%, #C5A601 100%);
+            border-radius: 30px;
+            padding: 15px 20px;
+            .bg-title{
+                .title-sales{
+                    display: block;
+                    color: $white;
+                    text-transform: uppercase;
+                    text-align: center;
+                    font-size: 30px;
+                    line-height: 41px;
+                    margin-bottom: 10px;
+                    letter-spacing: 0.08em;
+                    @include respond-max(sm-tablet) {
+                        font-size: 26px;
+                    }
+                    @include respond-max(lg-mobile) {
+                        font-size: 20px;
+                    }
+                }
+            }
+            .bg-white-slider{
+                background-color: $white;
+                border-radius: 16px;
+                padding-top: 20px;
+                .slider-prdct {
+                    max-height: 440px;
+                    overflow: hidden;
+                    @include respond-max(lg-tablet) {
+                        max-height: 480px;
+                    }
+                    @include respond-max(sm-tablet) {
+                        .slick-list{
+                            .slick-track{
+                                .slick-slide{
+                                    .box-sldr{
+                                        padding: 5px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    @include respond-max(lg-mobile) {
+                        max-height: 700px;
+                    }
+                }
+            }
+        }
+
+        &.vegan-news{
+            margin-top: 50px;
+            .pts-bg-title{
+                width: 320px;
+                display: block;
+                margin: auto;
+                height: 100px;
+                @include respond-max(md-dekstop) {
+                    width: 250px;
+                    height: 75px;
+                }
+                @include respond-max(lg-tablet) {
+                    width: 200px;
+                    height: 50px;
+                }
+                @include respond-max(lg-mobile) {
+                    width: 180px;
+                }
+                .bg-title{
+                    background-image: url('../../icons/vegan-news.png');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+                    width: 100%;
+                    height: 100%;
+                    margin: 80px auto 40px;
+                    @include respond-max(md-dekstop) {
+                        margin-bottom: 30px;
+                        margin-top: 50px;
+                    }
+                    @include respond-max(lg-tablet) {
+                        margin-bottom: 0;
+                        margin-top: 20px;
+                    }
+                }
+            }
+            .vegan-news-sec{
+                .nav{
+                    margin: 30px auto;
+                    li{
+                        a{
+                            background-color: transparent;
+                            color: $grey-txt;
+                            font-size: 18px;
+                            line-height: 21px;
+                            padding: 0 24px;
+                            @include respond-max(lg-tablet) {
+                                font-size: 16px;
+                                padding: 0 10px;
+                            }
+
+                            &.active{
+                                color: $green-vegan;
+                                font-family: "Asap_medium", sans-serif !important;
+                            }
+                        }
+                    }
+                }
+                .tab-content{
+                    .webversions{
+                        @include respond-max(lg-tablet){
+                            display: none;
+                        }
+                    }
+                    .tab-pane{
+                        .slider-artikel {
+                            .main-news-slider{
+                                .news-slider{
+                                    .slick-list{
+                                        border-radius: 15px;
+                                        height: 233px;
+                                        margin: 0 -5px;
+                                        .slick-track{
+                                            .slick-slide{
+                                                .gr-artkl{
+                                                    padding: 0 5px;
+                                                    .card-artikel {
+                                                        .cover-sldr{
+                                                            position: relative;
+                                                            background-position: top;
+                                                            background-size: cover;
+                                                            background-repeat: no-repeat;
+                                                            height: 233px;
+                                                            border-radius: 15px;
+                                                            .bg-overlay{
+                                                                position: absolute;
+                                                                top: 0;
+                                                                left: 0;
+                                                                height: 100%;
+                                                                width: 100%;
+                                                                border-radius: 15px;
+                                                                z-index: 0;
+                                                                background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #282828 140%);
+                                                            }
+                                                            .kategories{
+                                                                position: absolute;
+                                                                top: 15px;
+                                                                left: 15px;
+                                                                z-index: 1;
+                                                                .catg-ttl{
+                                                                    color: $white;
+                                                                    background: rgba(0, 0, 0, 0.5);;
+                                                                    border-radius: 50px;
+                                                                    backdrop-filter: blur(4px);
+                                                                    padding: 5px 15px;
+                                                                     
+                                                                    @include on-event{
+                                                                        color: $white !important;
+                                                                        opacity: .8;
+                                                                    }
+                                                                }
+                                                            }
+                                                            .contents{
+                                                                position: absolute;
+                                                                bottom: 20px;
+                                                                left: 20px;
+                                                                width: calc(100% - 40px);
+                                                                z-index: 1;
+                                                                .ttle-blg {
+                                                                    color: $white;
+                                                                    font-size: 18px;
+                                                                    margin-bottom: 5px;
+                                                                    text-transform: capitalize;
+                                                                    @include respond-max(lg-tablet) {
+                                                                        font-size: 16px;
+                                                                    }
+                                                                    @include on-event{
+                                                                        color: $white !important;
+                                                                        opacity: .8;
+                                                                    }
+                                                                }
+                                                                .small-txt{
+                                                                    .sml-tct{
+                                                                        font-size: 12px;
+                                                                        color: $white;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .sldr-gr-artkles{
+                                .main-vegan-news-slider{
+                                    #mobileversions{
+                                        display: none;
+                                        @include respond-max(lg-tablet){
+                                            display: block;
+                                            margin-top: 0;
+                                        }
+                                    }
+                                    .vegan-news-slider{
+                                        margin-top: 30px;
+                                        .slick-list {
+                                            padding-right: 25%;
+                                            @include respond-max(lg-dekstop){
+                                                padding-right: 40%;
+                                            }
+                                            @include respond-max(md-dekstop){
+                                                padding-right: 0;
+                                            }
+                                            @include respond-max(lg-tablet){
+                                                padding-right: 10%;
+                                            }
+                                            .slick-track {
+                                                .slick-slide {
+                                                    .gr-artkl{
+                                                        margin-bottom: 8px;
+                                                        padding-right: 20px;
+                                                        .card-artikel {
+                                                            display: grid;
+                                                            grid-template-columns: minmax(1px, 90px) minmax(1px, 1fr);
+                                                            grid-gap: 16px;
+
+                                                            @include respond-max(lg-tablet){
+                                                                grid-template-columns: minmax(1px, 200px) minmax(1px, 1fr);
+                                                            }
+
+                                                            @include respond-max(sm-tablet) {
+                                                                grid-template-columns: minmax(1px, 150px) minmax(1px, 1fr);
+                                                            }
+
+                                                            @include respond-max(lg-mobile) {
+                                                                grid-template-columns: minmax(1px, auto);
+                                                                margin-bottom: 20px;
+                                                                &:last-child{
+                                                                    margin-bottom: 0;
+                                                                }
+                                                            }
+                                    
+                                                            .ctg-sec{
+                                                                padding-bottom: 10px;
+                                                            }
+                                    
+                                                            .imgs-artikel {
+                                                                .image-cvr {
+                                                                    width: 90px;
+                                                                    height: 90px;
+                                                                    border-radius: 8px;
+                                                                    background-position: top;
+                                                                    background-size: cover;
+                                                                    background-repeat: no-repeat;
+                                                                    @include respond-max(lg-tablet){
+                                                                        width: 200px;
+                                                                        height: 120px;
+                                                                    }
+                                                                    @include respond-max(sm-tablet) {
+                                                                        width: 150px;
+                                                                        height: 95px;
+                                                                    }
+                                                                    @include respond-max(lg-mobile) {
+                                                                        width: 100%;
+                                                                        height: 100%;
+                                                                        padding-top: 50%;
+                                                                    }
+                                                                }
+                                                            }
+                                    
+                                                            .desc-artikel {
+                                                                position: relative;
+                                    
+                                                                .frs-desc{
+                                                                    display: none;
+                                                                }
+                                                                
+                                                                .sml-tct{
+                                                                    @include on-event{
+                                                                        color: $primary-pink !important;
+                                                                        opacity: .8;
+                                                                    }
+                                                                }
+                                                                
+                                                                .--date {
+                                                                    position: absolute;
+                                                                    bottom: 0;
+                                                                    width: 100%;
+                                    
+                                                                    @media screen and (max-width: 480px) {
+                                                                        position: unset;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .slick-arrow{
+                                            top: 46%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    } 
+                }
+            }
+        }
+
+        &.sec-slider-prodct {
+            .scroll-menu-tab{
+                position: relative;
+                background-color: rgba(242, 242, 242, 0.8);
+                border-radius: 50px;
+                .dv-scrbamn {
+                    margin-bottom: 20px;
+                    overflow-x: auto;
+                    overflow-y: hidden;
+                    flex-wrap: unset;
+                    white-space: nowrap;
+                    border-bottom: unset;
+                    padding: 8px 10px;
+                    scrollbar-color: transparent transparent !important;
+            
+                    .nav-item {
+                        display: inline-block;
+                        text-align: center;
+                        width: auto;
+                        margin: 0 10px 0;
+                        position: relative;
+            
+                        &:nth-child(1){
+                            margin-left: 0;
+                        }
+            
+                        a{
+                            text-transform: capitalize;
+                            color: $grey-txt;
+                            line-height: 22px;
+                            letter-spacing: 0.02em;
+                            padding: 3px 10px;
+                            background-color: transparent;
+                            font-size: 16px;
+                            border: unset;
+                            @include respond-max(lg-mobile) {
+                                font-size: 15px;
+                            }
+            
+                            @include on-event {
+                                opacity: .8;
+                            }
+                        }
+                
+                        .nav-link{
+                            &.active {
+                                color: $green-vegan !important;
+                                background-color: $white;
+                                box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+                                border-radius: 50px;
+                                padding: 3px 20px;
+                            }
+                        }
+                    }
+                }
+            
+                .arrow-scrl {
+                    position: absolute;
+                    transform: translateY(-50%);
+                    top: 50%;
+                    z-index: 1;
+                    visibility: hidden;
+            
+                    &.prev-scr {
+                        left: 10px;
+                        button{
+                            &:before {
+                                content: "\f104";
+                            }
+                        }
+                    }
+            
+                    &.next-scr {
+                        right: 10px;
+                        button{
+                            &:before {
+                                content: "\f105";
+                            }
+                        }
+                    }
+            
+                    button {
+                        border: unset;
+                        padding: 0;
+                        border-radius: 50px;
+                        width: 30px;
+                        height: 30px;
+                        background: rgba(0, 0, 0, 0.1);
+                        color: white;
+                        backdrop-filter: blur(5px);
+            
+                        &:before{
+                            font-size: 20px;
+                            font-family: "Font Awesome 5 Free";
+                        }
+                    }
+                }
+            }
+            .prdct-gr-shop{
+                grid-template-columns: repeat(5, minmax(1px, 1fr));
+                grid-gap: 16px;
+                padding: 5px 10px;
+                @include respond-max(lg-dekstop) {
+                    grid-template-columns: repeat(4, minmax(1px, 1fr));
+                }
+                @include respond-max(md-dekstop) {
+                    grid-template-columns: repeat(3, minmax(1px, 1fr));
+                }
+                @include respond-max(lg-tablet) {
+                    grid-template-columns: repeat(2, minmax(1px, 1fr));
+                }
+            }
+        }
+    }
+}

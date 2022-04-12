@@ -1,0 +1,60 @@
+// -----------------------------------------------------------------------------
+// This file contains all breadcrumb styles.
+// -----------------------------------------------------------------------------
+
+.br-prdct-detail{
+    grid-template-columns: minmax(1px, auto) minmax(1px, 110px);
+    grid-gap: 20px;
+    display: grid;
+    align-items: center;
+    @include respond-max(sm-tablet) {
+        grid-template-columns: minmax(1px, auto);
+        grid-gap: 10px;
+    }
+}
+
+.sec-breadcrumb{
+    margin-bottom: 15px;
+    @include respond-max(md-dekstop){
+        margin-bottom: 10px;
+    }
+    nav{
+        .breadcrumb{
+            background-color: transparent;
+            padding: 0;
+            border-radius: 0;
+            @include respond-max(md-dekstop){
+                margin-bottom: 0;
+            }
+
+            .breadcrumb-item{
+                text-transform: capitalize;
+                font-size: 14px !important;
+                &:nth-child(1){
+                    a{
+                        padding-left: 0;
+                    }
+                }
+                &::before{
+                    padding-right: 0;
+                }
+                a{
+                    color: rgba(51, 51, 51, 0.6);
+                    line-height: 1.4;
+                    text-transform: capitalize;
+                    font-size: 14px !important;
+                    padding-left: 5px;
+                }
+                &.active{
+                    padding-bottom: 5px;
+                    color: $black;
+                    padding-left: 5px;
+                    font-family: "Asap_reg", sans-serif !important;
+                    &::before{
+                        padding-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+// -----------------------------------------------------------------------------
+// This file contains all header styles.
+// -----------------------------------------------------------------------------
+
+.header {
+    &.navbar{
+        background: linear-gradient(90deg, #16A387 26.11%, #1FBC9D 74.13%);
+
+        .header-container{
+            position: relative;
+
+            .nav-left{
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+
+                li{
+                    a{
+                        min-height: auto;
+                        color: $white;
+                    }
+                }
+            }
+
+            .nav-right {
+                .dropdown-menu{
+                    transform: unset;
+                }
+            }
+        }
+    }
+}

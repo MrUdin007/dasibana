@@ -1,0 +1,66 @@
+// -----------------------------------------------------------------------------
+// This file contains all pagination style.
+// -----------------------------------------------------------------------------
+
+.pagination-ouz{
+    margin: 50px auto;
+    nav{
+        .pagination{
+            .page-item{
+                &.active{
+                    .page-link{
+                        color: $white !important;
+                        background-color: $green-vegan !important;
+                        border-color: $green-vegan !important;
+                    }
+                }
+                &.disabled{
+                    .page-link{
+                        i{
+                            color: $grey-txt !important;
+                        }
+                    }
+                }
+                .page-link{
+                    padding: 13px 22px;
+                    color: $black;
+                    border-color: $light-grey-bg !important;
+                    border-right-color: transparent !important;
+                    border-left-color: transparent !important;
+                    @include respond-max(sm-tablet) {
+                        padding: 10px 15px;
+                    }
+                    @include on-event{
+                        color: $white !important;
+                        background-color: $green-vegan !important;
+                        border-color: $green-vegan !important;
+                        i{
+                            color: $white;
+                        }
+                    }
+                    &:focus {
+                        outline: none !important;
+                        box-shadow: unset !important;
+                    }
+                    i{
+                        color: $black;
+                    }
+                }
+                &:first-child{
+                    .page-link{
+                        border-top-left-radius: 8px;
+                        border-bottom-left-radius: 8px;
+                        border-left-color: $light-grey-bg !important;
+                    }
+                }
+                &:last-child{
+                    .page-link{
+                        border-top-right-radius: 8px;
+                        border-bottom-right-radius: 8px;
+                        border-right-color: $light-grey-bg !important;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,153 @@
+// -----------------------------------------------------------------------------
+// This file contains all base styles.
+// -----------------------------------------------------------------------------
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    position: relative;
+    overflow-x: hidden;
+    background: #225e500d !important;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, a, b, div, .form-control, small{
+    font-family: "asap_reg", sans-serif !important;
+    font-size: 14px !important;
+    word-wrap: break-word;
+    white-space: inherit !important;
+    letter-spacing: 0.02em;
+}
+
+h1, h2, h3, h4, h5, h6, p, a{
+    line-height: 26px !important;
+}
+
+ul{
+    list-style: none;
+}
+
+a, button {
+    cursor: pointer !important;
+    line-height: 1.5em;
+    text-decoration: none !important;
+    transition: all .4s ease-in-out !important;
+
+    @include on-event {
+        text-decoration: none !important;
+        color: $black !important;
+    }
+
+    i {
+        transition: all .4s ease-in-out !important;
+    }
+}
+
+div, button, a {
+    &:focus {
+        outline: none !important;
+        box-shadow: unset !important;
+    }
+}
+
+img {
+    width: 100%;
+    object-fit: cover !important;
+    object-position: center !important;
+}
+
+.row{
+    margin: 0;
+}
+
+b, strong{
+    // font-family: "poppins_med", sans-serif !important;
+}
+
+article{
+    h1, h2, h3 ,strong, p, b, div{
+        color: rgba(0, 0, 0, 0.8);
+        line-height: 25px;
+        text-align: justify;
+        // font-family: "poppins_reg", sans-serif !important;
+        @include respond-max(lg-mobile) {
+            text-align: left !important;
+        }
+    }
+    h1, h2, h3{
+        margin-bottom: 10px;
+    }
+    h1{
+        font-size: 24px;
+        @include respond-max(sm-tablet) {
+            font-size: 22px;
+        }
+        strong{
+            font-size: 24px;
+            @include respond-max(sm-tablet) {
+                font-size: 22px;
+            }
+        }
+    }
+    h2 {
+        font-size: 20px;
+        @include respond-max(sm-tablet) {
+            font-size: 18px;
+        }
+        strong{
+            font-size: 20px;
+            @include respond-max(sm-tablet) {
+                font-size: 18px;
+            }
+        }
+    }
+    h3 {
+        font-size: 18px;
+        @include respond-max(sm-tablet) {
+            font-size: 16px;
+        }
+        strong{
+            font-size: 18px;
+            @include respond-max(sm-tablet) {
+                font-size: 16px;
+            }
+        }
+    }
+    p,a,b,strong,div{
+        margin-bottom: 20px;
+        font-size: 16px;
+        @include respond-max(sm-tablet) {
+            font-size: 14px;
+        }
+    }
+    a{
+        text-decoration: none !important;
+        @include on-event{
+            opacity: .8;
+        }
+    }
+    b, strong{
+        a{
+            // font-family: "poppins_med", sans-serif !important;
+        }
+    }
+
+    ul{
+        @include respond-max(lg-tablet) {
+            padding-inline-start: 0;
+        }
+    }
+
+    img{
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+
+.required_label{
+    color: red;
+    font-family: "asap_med", sans-serif !important;
+}

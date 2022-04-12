@@ -1,0 +1,119 @@
+// -----------------------------------------------------------------------------
+// This file contains all footer styles.
+// -----------------------------------------------------------------------------
+
+footer {
+    &.footer-ouz{
+        .top-footer{
+            background: #F3F3F3;
+            padding: 50px 0 30px;
+
+            .container{
+                .gr-footer-top{
+                    align-items: flex-start;
+                    grid-template-columns: repeat(4, minmax(1px, auto));
+                    grid-gap: 20px;
+                    @include respond-max(md-dekstop) {
+                        grid-template-columns: repeat(3, minmax(1px, auto));
+                    }
+                    @include respond-max(lg-tablet) {
+                        grid-template-columns: repeat(2, minmax(1px, auto));
+                    }
+                    @media screen and (max-width: 625px) {
+                        grid-template-columns: minmax(1px, auto);
+                    }
+                }
+            }
+
+            .main-title-ft{
+                font-size: 16px;
+                letter-spacing: 0.02em;
+                font-family: "Asap_medium", sans-serif !important;
+                color: $lght-gsh;
+                @include respond-max(lg-tablet) {
+                    font-size: 16px;
+                }
+            }
+
+            .menu-list-ft{
+                padding-inline-start: 0;
+                margin-top: 17px;
+                margin-bottom: 25px;
+                li{
+                    margin-bottom: 15px;
+                    a{
+                        font-size: 14px;
+                        color: $primary-grey;
+                        font-family: "Asap_medium", sans-serif !important;
+                        @include on-event{
+                            opacity: .8;
+                        }
+
+                        i{
+                            color: $black;
+                            font-size: 18px;
+                            text-align: center;
+                            width: 30px;
+                        }
+
+                        &.icn-ecm{
+                            display: grid;
+                            grid-template-columns: minmax(1px, 35px) minmax(1px, auto);
+                            grid-gap: 5px;
+                            align-items: center;
+                            .icons{
+                                background-position: left;
+                                background-repeat: no-repeat;
+                                background-size: contain;
+                                padding-top: 90%;
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .menu-list-ft-pays{
+                display: grid;
+                grid-template-columns: repeat(3, minmax(1px, 1fr));
+                grid-gap: 20px;
+                margin-top: 15px;
+                padding-inline-start: 0;
+                align-items: flex-end;
+                width: 380px;
+                @include respond-max(sm-tablet) {
+                    display: block;
+                }
+                .ls-pay-menus{
+                    width: 100%;
+                    margin-right: 20px;
+                    @include respond-max(sm-tablet) {
+                        margin-bottom: 20px;
+                    }
+                    img{
+                        align-items: flex-end;
+                        display: flex;
+                    }
+                }
+            }
+        }
+        .bottom-footer{
+            background: linear-gradient(90deg, #16A387 26.11%, #1FBC9D 74.13%);
+            padding: 10px 0;
+            .gr-autoo{
+                @include respond-max(lg-mobile) {
+                    grid-template-columns: minmax(1px, auto);
+                    grid-gap: 0;
+
+                    small{
+                        text-align: center !important;
+                        display: block;
+                    }
+                }
+            }
+            .devl{
+                text-align: right;
+            }
+        }
+    }
+}

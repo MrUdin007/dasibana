@@ -1,0 +1,165 @@
+// -----------------------------------------------------------------------------
+// This file contains all filter & sort styles.
+// -----------------------------------------------------------------------------
+
+.sort-pt{
+    .list-srt{
+        // &.sort-brands{
+        //     display: grid;
+        //     grid-template-columns: minmax(1px, 70px) minmax(1px, auto);
+        //     grid-gap: 10px;
+        //     align-items: center;
+        //     @include respond-max(md-dekstop) {
+        //         grid-template-columns: minmax(1px, 70px) minmax(1px, 200px);
+        //     }
+        //     .input-sorts{
+        //         .--custom-select{
+        //             border: 1.5px solid rgba(0, 0, 0, 0.2) !important;
+        //             border-radius: 5px;
+        //             select{
+        //                 padding: 8px 10px !important;
+        //                 padding-right: 20px !important;
+        //             }
+        //             &::after{
+        //                 top: 5px;
+        //                 right: 10px;
+        //             }
+        //         }
+        //     }
+        // }
+        .input-sorts{
+            margin-bottom: 0 !important;
+            .--custom-select{
+                select{
+                    height: auto !important;
+                    border-radius: 8px;
+                    padding: 8px 15px;
+                    padding-right: 35px;
+                    &.active{
+                        color: $green-vegan !important;
+                        font-family: "Asap_reg", sans-serif !important;
+                    }
+                }
+                &::after{
+                    top: 10px;
+                    right: 10px;
+                }
+            }
+        }
+        // .srt-listhd{
+        //     color: $grey-txt !important;
+        //     height: auto !important;
+        //     display: block;
+        //     @include on-event{
+        //         color: $primary-pink !important;
+        //         background-color: $white !important;
+        //     }
+        //     &.active{
+        //         color: $primary-pink !important;
+        //         background-color: $white !important;
+        //         font-family: "Asap_reg", sans-serif !important;
+        //     }
+        // }
+    }
+}
+
+.sorts-list{
+    display: block;
+    text-align: left;
+    .custom-checkbox{
+        margin: 5px 10px;
+        margin-left: 0;
+        input {
+            &[type="checkbox"]{
+                &:checked,
+                &:not(:checked){
+                    position: absolute;
+                    left: -9999px;
+                    + label {
+                        position: relative;
+                        padding: 5px 15px;
+                        cursor: pointer;
+                        line-height: 20px;
+                        text-transform: capitalize;
+                        display: inline-block;
+                        color: #666;
+                        transition: all .5s ease-in-out;
+                        background: $white;
+                        border-radius: 5px;
+                        transition: all .5s ease-in-out;
+                        border-radius: 50px;
+
+                        &::before{
+                            content: '';
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            width: 0;
+                            height: 0;
+                            border: none;
+                            border-radius: 0;
+                            background: #fff;
+                        }
+
+                        &::after{
+                            content: '';
+                            width: 0;
+                            height: 0;
+                            background: transparent;
+                            position: absolute;
+                            top: 1px;
+                            border: none;
+                            left: 1px;
+                            transition: all .5s ease-in-out;
+                        }
+                    }
+                }
+                &:checked{
+                    + label{
+                        border: 1px solid $green-vegan;
+                        background-color: $green-vegan;
+                        font-family: "Asap_medium", sans-serif !important;
+                        color: $white;
+                        &::after{
+                            opacity: 1;
+                            transform: scale(1);
+                        }
+                    }
+                }
+                &:not(:checked) {
+                    + label {
+                        border: 1px solid rgba(0, 0, 0, 0.1);;
+                        &::after{
+                            opacity: 0;
+                            transform: scale(0);
+                        }
+                    }
+                }
+            }
+        }
+        label{
+            @include respond-max(sm-tablet) {
+                font-size: 14px !important;
+            }
+        }
+    }
+}
+
+// .sort-dropdown-menu{
+//     padding: 0;
+//     border: unset;
+//     border-radius: 3px;
+//     background-color: $white;
+//     min-width: auto;
+//     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+//     top: 10px !important;
+//     .dropdown-item{
+//         padding: 10px 20px;
+//         font-size: 14px;
+//         border-top: 0.5px solid $light-grey-bg;
+//         font-family: "Asap_reg", sans-serif !important;
+//         &:first-child{
+//             border-top: unset;
+//         }
+//     }
+// }

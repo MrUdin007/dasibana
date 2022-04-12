@@ -1,0 +1,282 @@
+// -----------------------------------------------------------------------------
+// This file contains all component styles.
+// -----------------------------------------------------------------------------
+
+.dsc-prc {
+    display: inline-flex;
+    gap: 5px;
+    align-items: center;
+
+    .ls-dsc-prc{
+        display: inline-flex;
+        align-items: center;
+    }
+
+    small {
+        text-decoration: line-through;
+        font-size: 13px;
+        color: rgba(0, 0, 0, 0.4);
+    }
+
+    .disc-lbl{
+        color: $primary-pink;
+        background-color: rgba(226, 70, 103, 0.1);
+        border: 1px solid $primary-pink;
+        border-radius: 50px;
+        width: auto;
+        padding: 2px 8px;
+        font-size: 12px;
+        display: inline-block;
+    }
+}
+
+.rhegr{
+    align-items: center;
+    display: flex;
+    margin-top: 10px;
+    .viewers-pts{
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding-left: 15px;
+        .viewers-icn{
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 15px;
+            width: 20px;
+            &.--whts{
+                background-image: url('../icons/viewers.png');
+            }
+            &.--blck{
+                background-image: url('../icons/viewers-black.png');
+            }
+        }
+    }
+}
+
+section{
+    &.hd-bc-pg{
+        position: fixed;
+        top: 0;
+        z-index: 10;
+        background-color: $white;
+        display: grid;
+        grid-template-columns: minmax(1px, 50px) minmax(1px, auto) minmax(1px, 50px);
+        grid-gap: 10px;
+        margin-top: -15px;
+        padding-bottom: 0;
+        padding-top: 30px;
+
+        .back-pg{
+            img{
+                width: 25px;
+                object-fit: contain !important;
+            }
+        }
+    }
+}
+
+.sale-time{
+    .syotimer-oz{
+        .syotimer__body{
+            .syotimer-cell{
+                .syotimer-cell__value{
+                    background-color: rgba(249, 151, 2, 0.921569);
+                    color: $white;
+                    padding: 0;
+                    width: 30px;
+                    height: 30px;
+                    text-align: center;
+                    line-height: 30px;
+                    border-radius: 3px;
+                    margin: 0 3px;
+                }
+                &::after{
+                    line-height: 20px;
+                    color: rgba(249, 151, 2, 0.921569);
+                }
+            }
+        }
+    }
+}
+
+.pil-stts{
+    padding: 3px 10px;
+    border-radius: 20px;
+    width: auto;
+    transition: all .3s ease-in-out;
+    background-color: rgba(31, 188, 157, 0.05);
+    border: 1px solid $green-vegan;
+    @include on-event{
+        border-color: $green-vegan;
+        background-color: $green-vegan;
+        color: $white !important;
+        .lnk-pnt{
+            color: $white !important;
+        }
+    }
+    .lnk-pnt{
+        font-size: 12px;
+        color: $green-vegan !important;
+        @include on-event{
+            color: $white !important;
+        }
+    }
+}
+
+.icons-oz{
+    small{
+        color: #757575 !important;
+
+        i{
+            color: #888888 !important;
+            margin-right: 5px;
+        }
+    }
+}
+
+.tb-headd{
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    @include respond-max(lg-tablet){
+        margin-bottom: 10px;
+    }
+
+    .gr-tab-head{
+        display: flex;
+        align-items: center;
+
+        .lsd{
+            margin-left: 30px;
+            @include respond-max(lg-tablet){
+                width: 100%;
+            }
+            @include respond-max(md-dekstop){
+                margin-left: 15px;
+            }
+        }
+    }
+}
+
+.jhdsds{
+    margin: 0 30px;
+    border-bottom: 0.5px solid $light-grey-bg;
+    @include respond-max(sm-tablet) {
+        margin: 0 20px;
+    }
+}
+
+.comment {
+    img {
+        width: 15px;
+        margin-right: 8px;
+    }
+}
+
+.align-start{
+    align-items: flex-start !important;
+}
+
+.align-end{
+    align-items: flex-end !important;
+}
+
+.align-center {
+    align-items: center !important;
+}
+
+.crd-nopost {
+    width: 300px;
+    margin: 50px auto;
+    @include respond-max(lg-mobile) {
+        width: 100% !important;
+    }
+
+    img {
+        width: 200px;
+        margin: auto;
+        margin-bottom: 30px;
+        display: block;
+        @include respond-max(sm-tablet) {
+            width: 150px;
+        }
+    }
+}
+
+.brand-fav {
+    .img-brand {
+        border-radius: 5px;
+        border: 1px solid $light-grey-bg;
+        padding: 10px;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.border-card-oz{
+    border: 0.5px solid rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    background-color: $white;
+    margin-bottom: 30px;
+
+    &.--order{
+        padding: 25px 30px;
+        @include respond-max(lg-mobile) {
+            padding: 15px 20px;
+        }
+    }
+}
+
+fieldset, label {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset{
+    padding-right: 10px;
+}
+
+.pills-pink{
+    font-size: 11px;
+    text-transform: capitalize;
+    color: #E24667;
+    border-radius: 5px;
+    padding: 3px 8px;
+    background: rgba(226, 70, 103, 0.1);
+    margin-left: 15px;
+}
+
+.cover-empty-stock{
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding-top: 65%;
+    width: calc(100% - 100px);
+    margin: auto;
+    @include respond-max(lg-mobile) {
+        padding-top: 85%;
+    }
+}
+
+.msgsfs{
+    width: calc(100% - 80px);
+    margin: 30px auto;
+}
+
+.jsakhds{
+    width: calc(100% - 100px);
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.is_new_prdct{
+    background: #F99702;
+    border-radius: 50px;
+    color: $white;
+    font-size: 10px;
+    padding: 4px 8px;
+    margin-left: 5px;
+}

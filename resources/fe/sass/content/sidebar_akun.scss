@@ -1,0 +1,105 @@
+// -----------------------------------------------------------------------------
+// This file contains all sidebar setting style.
+// -----------------------------------------------------------------------------
+
+@import '../public';
+
+.sidebar-set-vegan{
+    background: transparent;
+    border-radius: 8px;
+    border: 0.5px solid rgba(0, 0, 0, 0.2);
+    @include respond-max(md-dekstop) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border-left: unset;
+        border-right: unset;
+        overflow-y: auto;
+        border-radius: 0;
+        border: unset;
+    }
+    .head-sdr{
+        .close-menu{
+            display: none;
+            @include respond-max(md-dekstop) {
+                display: block;
+                position: absolute;
+                top: 30px;
+                right: 20px;
+
+                .close-mn{
+                    i{
+                        color: $green-vegan;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+        .profile-sc{
+            grid-template-columns: minmax(1px, 58px) minmax(1px, auto);
+            grid-gap: 15px;
+            padding: 20px 15px;
+            padding-bottom: 0;
+            .user-avatar-container{
+                width: 100%;
+                margin: 0 auto;
+
+                .rounded-circle{
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    width: 100%;
+                    padding-top: 100%;
+                }
+            }
+        }
+    }
+
+    .list-menu-sd{
+        padding: 15px;
+        ul{
+            padding-inline-start: 0;
+            margin-bottom: 0;
+            li{
+                padding: 10px 0;
+                &.active{
+                    a{
+                        color: $green-vegan !important;
+                        font-family: "Asap_medium", sans-serif !important;
+                    }
+                }
+                a{
+                    text-transform: capitalize;
+                    color: #333333 !important;
+
+                    @include on-event{
+                        color: $green-vegan !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .bttm-sdr{
+        padding: 15px;
+        border-top: .5px solid $light-grey-bg;
+        a{
+            text-transform: capitalize;
+            font-size: 15.5px;
+            color: rgba(0, 0, 0, 0.4) !important;
+            @include on-event{
+                color: $green-vegan !important;
+            }
+        }
+    }
+}
+
+.gr-akun{
+    align-items: flex-start;
+    grid-template-columns: minmax(1px, 240px) minmax(1px, auto);
+    grid-gap: 20px;
+    @include respond-max(md-dekstop) {
+        display: block;
+    }
+}

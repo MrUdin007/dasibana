@@ -1,0 +1,526 @@
+// -----------------------------------------------------------------------------
+// This file contains all forms styles.
+// -----------------------------------------------------------------------------
+
+@mixin inputan {
+    padding: 10px 15px;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    background-color: $white;
+    transition: all .3s ease-in-out !important;
+    font-size: 14px !important;
+    letter-spacing: .02em !important;
+    @include respond-max(sm-tablet) {
+        padding: 5px 10px;
+        font-size: 14px !important;
+    }
+
+    @include on-event{
+        border: .5px solid $green-vegan !important;
+        box-shadow: unset !important;
+        outline: none !important;
+        background-color: $white !important;
+    }
+
+    &::placeholder{
+        color: $grey-txt !important;
+        opacity: 1 !important;
+        font-size: 14px !important;
+        letter-spacing: .02em !important;
+    }
+}
+
+.form-vegan{
+    .radio-custom-image{
+        display: inline-flex;
+        gap: 20px;
+        .chs-ls-byt{
+            input {
+                &[type="radio"]{
+                    &:checked,
+                    &:not(:checked){
+                        position: absolute;
+                        left: -9999px;
+                        + .img-byts{
+                            label {
+                                position: relative;
+                                padding: 10px 0;
+                                width: 65px;
+                                height: 65px;
+                                cursor: pointer;
+                                line-height: 20px;
+                                display: block;
+                                background: transparent;
+                                transition: all .5s ease-in-out;
+                                margin: auto;
+
+                                &::after{
+                                    content: '';
+                                    position: absolute;
+                                    top: 0;
+                                    transform: translateX(-50%);
+                                    left: 50%;
+                                    z-index: 1;
+                                    background-image: var(--bg-profiles);
+                                    background-position: center;
+                                    background-repeat: no-repeat;
+                                    background-size: contain;
+                                    height: 65px;
+                                    width: 65px;
+                                }
+                            }
+                        }
+                    }
+                    &:checked{
+                        + .img-byts{
+                            label{
+                                &::before{
+                                    content: '';
+                                    position: absolute;
+                                    top: 0;
+                                    right: 0;
+                                    z-index: 2;
+                                    background-image: url('../../assets/icons/checks.png');
+                                    background-position: center;
+                                    background-repeat: no-repeat;
+                                    background-size: contain;
+                                    padding-top: 18%;
+                                    height: 20px;
+                                    width: 20px;
+                                }
+                            }
+                            .label-gender{
+                                opacity: 1;
+                            }
+                        }
+                    }
+                    &:not(:checked) {
+                        + .img-byts{
+                            .label-gender{
+                                opacity: .5;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .search-inputs{
+        .input-group-text{
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+            background-color: #E7E7E7;
+            border: 1px solid #E7E7E7;
+            border-left: unset;
+            &.--nobg{
+                background-color: transparent;
+            }
+        }
+        input{
+            &.--search{
+                font-size: 14px;
+                padding: 8px 16px;
+                height: 40px;
+                border-radius: 30px;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-right: unset;
+                background-color: transparent;
+                color: $black;
+                @include on-event{
+                    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+                    border-right: none !important;
+                }
+                &:focus{
+                    z-index: 0 !important;
+                }
+                &::placeholder{
+                    color: rgba(0, 0, 0, 0.6);
+                }
+                @media screen and (max-width: 452px) {
+                    font-size: 13px;
+                    padding: 5px 16px;
+                    height: 35px;
+                    &::placeholder{
+                        font-size: 13px;
+                    }
+                }
+            }
+            &:focus{
+                box-shadow: unset !important;
+            }
+        }
+    }
+
+    .main-form-vg{
+        padding: 0;
+        margin-bottom: 25px;
+        position: relative;
+        @include respond-max(sm-tablet) {
+            margin-bottom: 15px;
+        }
+        &.input-group{
+            .input-group-prepend{
+                .input-group-text{
+                    background-color: transparent;
+                    border: 1px solid rgba(0, 0, 0, 0.1);
+                    border-right-color: transparent;
+                    border-radius: 0;
+                    .--calendar{
+                        background-image: url('../../../dist/fe/icons/calendar.png');
+                        background-position: center;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        height: 20px;
+                        width: 20px;
+                    }
+                }
+            }
+            .datepicker-vegan{
+                width: auto;
+                border-left-color: transparent
+            }
+        }
+        
+        input, select, textarea, span.select2{
+            @include inputan;
+        }
+        input, select{
+            height: 42px;
+            &.cttn{
+                color: $black !important;
+                font-family: "Asap_reg", sans-serif !important;
+                @include on-event{
+                    background-color: transparent !important;
+                }
+                &::placeholder{
+                    color: $black !important;
+                    font-family: "Asap_reg", sans-serif !important;
+                }
+            }
+        }
+        input{
+            &:active, &:focus{
+                box-shadow: unset !important;
+                border: .5px solid $green-vegan !important;
+                outline: none !important;
+                
+                ~ label{
+                    &::before{
+                        box-shadow: unset !important;
+                        outline: none !important;
+                    }
+                }
+            }
+            &[type="checkbox"]{
+                height: inherit;
+                cursor: pointer;
+                opacity: 0;
+                z-index: 1;
+                outline: 0 !important;
+                position: absolute;
+                margin: 4px 0 0;
+                margin-left: -20px;
+                line-height: normal;
+                padding: 0;
+                &:checked {
+                    ~ .custom-control-label {
+                        &::before {
+                            background-color: $green-vegan !important;
+                            border-color: $green-vegan !important;
+                        }
+                    }
+                }
+            }
+            &[type="radio"]{
+                &:checked{
+                    + label{
+                        &::after{
+                            opacity: 1;
+                            transform: scale(1);
+                        }
+
+                        &::before{
+                            border-color: transparent;
+                            background: $green-vegan;
+                        }
+                    }
+                }
+                &:not(:checked) {
+                    + label {
+                        &::before{
+                            background-color: $white;
+                            border: 1px solid rgba(0, 0, 0, 0.1);
+                        }
+                        &::after{
+                            opacity: 0;
+                            transform: scale(0);
+                        }
+                    }
+                }
+                &:checked, &:not(:checked){
+                    position: absolute;
+                    padding-left: 30px;
+                    + label {
+                        position: relative;
+                        padding-left: 28px;
+                        cursor: pointer;
+                        line-height: 20px;
+                        display: inline-block;
+
+                        &::before, &::after{
+                            content: '';
+                            position: absolute;
+                            border-radius: 100%;
+                            transition: all 0.2s ease;
+                        }
+
+                        &::before{
+                            left: 0;
+                            top: 0;
+                            width: 20px;
+                            height: 20px;
+                        }
+
+                        &::after{
+                            width: 8px;
+                            height: 8px;
+                            background: $white;
+                            top: 6px;
+                            left: 6px;
+                        }
+                    }
+                }
+            }
+        }
+        &.--topik-sc{
+            margin-bottom: 0 !important;
+            .--custom-select{
+                select{
+                    border-radius: 0;
+                    border: unset;
+                    color: $black;
+                    cursor: pointer;
+                    padding: 0;
+                    height: auto;
+                    @include on-event{
+                        border: unset !important;
+                    }
+                    &:focus{
+                        border: unset !important;
+                        box-shadow: unset !important;
+                    }
+                }
+            }
+        }
+        .--custom-select{
+            position: relative;
+            &::after{
+                font-family: "Font Awesome 5 Free";
+                position: absolute;
+                pointer-events: none;
+            }
+
+            // &.sort-pink{
+            //     &::after{
+            //         content: '\f107';
+            //         color: $green-vegan;
+            //         right: 15px;
+            //         top: 10px;
+            //         font-size: 20px;
+            //     }
+            // }
+
+            &.sort-black{
+                &::after{
+                    content: '\f0d7';
+                    color: $black;
+                    right: 10px;
+                    top: 5px;
+                    font-size: 18px;
+                }
+            }
+
+            select{
+                appearance: none;
+                display: block;
+                background-image: none;
+                word-break: normal;
+                cursor: pointer;
+                color: $black !important;
+
+                &::-ms-expand {
+                    display: none;
+                }
+
+                option {
+                    font-size: 16px;
+                    @include respond-max(sm-tablet) {
+                        font-size: 14px;
+                    }
+                    color: $black;
+                    letter-spacing: .02em !important;
+
+                    &.selected{
+                        color: $grey-txt !important;
+                        opacity: 1 !important;
+                        font-size: 16px !important;
+                        letter-spacing: .02em !important;
+                    }
+                }
+            }
+
+            span{
+                &.select2{
+                    width: 100% !important;
+                    .selection{
+                        .select2-selection{
+                            border: unset;
+                            outline: unset;
+                            border-radius: 0;
+                            height: auto;
+                            padding: 0;
+
+                            .select2-selection__rendered{
+                                padding: 0;
+                            }
+
+                            .select2-selection__arrow{
+                                height: 0;
+                                width: 0;
+                                b{
+                                    position: relative;
+                                    border: unset;
+                                    left: unset;
+                                    margin: 0;
+
+                                    &:after{
+                                        font-family: "Font Awesome 5 Free" !important;
+                                        position: absolute;
+                                        pointer-events: none;
+                                        content: "\f107";
+                                        color: $green-vegan;
+                                        right: 13px;
+
+                                        top: 6px;
+                                        font-size: 20px;
+                                        transform: translateX(-50%);
+
+                                        @-moz-document url-prefix() {
+                                            top: 25px;
+                                            font-size: 20px;
+                                        }
+                                    }
+                                }
+                            }
+
+                            &[aria-expanded="true"]{
+                                .select2-selection__arrow{
+                                    b{
+                                        &:after{
+                                            content: "\f106";
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        label{
+            color: $grey-txt;
+            font-size: 14px;
+            padding-bottom: 10px;
+
+            &.custom-control-label{
+                color: $grey-txt;
+                cursor: pointer;
+                padding-left: 10px;
+                &::before{
+                    background-color: transparent;
+                    top: 5px;
+                    border-color: $light-grey-bg;
+                    border-radius: 3px;
+                }
+                &::after{
+                    top: 5px;
+                }
+            }
+        }
+        &.custom-checkbox {
+            padding-left: 23px;
+            input{
+                &[type="checkbox"]{
+                    + label{
+                        min-height: 20px;
+                        line-height: 1.42857143;
+                        &::before, &::after{
+                            border-radius: 3px;
+                        }
+                        &::before{
+                            top: 1px;
+                            width: 18px;
+                            height: 18px;
+                        }
+                        &::after{
+                            top: 3px;
+                            font-size: 10px;
+                            left: -20px;
+                            width: auto;
+                            height: auto;
+                        }
+                    }
+                    &:checked{
+                        + label{
+                            &::before{
+                                background-color: $green-vegan;
+                                border-color: $green-vegan;
+                            }
+                            &::after{
+                                content: "\f00c";
+                                font-family: "FontAwesome";
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.custom-radio{
+            .ct-inpts{
+                padding: 15px 0 0 30px;
+            }
+        }
+    }
+}
+
+.datepicker-dropdown{
+    z-index: 1 !important;
+}
+
+input{
+    &:focus{
+        outline: unset !important;
+        border: unset !important;
+    }
+}
+
+.select2-container{
+    &.select2-container--open{
+        .select2-dropdown{
+            border-top: unset !important;
+            border-top-right-radius: 0 !important;
+            border-top-left-radius: 0 !important;
+            .select2-search{
+                input{
+                    &:focus{
+                        border: 1px solid rgba(0, 0, 0, 0.1) !important;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,80 @@
+// -----------------------------------------------------------------------------
+// This file contains all sidebar styles.
+// -----------------------------------------------------------------------------
+
+.sidebar{
+    .sidebar-inner{
+        .sidebar-logo{
+            .peer{
+                .mobile-toggle{
+                    a{
+                        .ti-arrow-circle-left{
+                            &::before{
+                                color: $green-vegan !important;
+                            }
+                        }
+                    }
+                }
+            }
+            a{
+                .logo{
+                    min-height: 100% !important;
+                    @include respond-max(md-dekstop) {
+                        width: 60px;
+                    }
+                    .logo-vgn{
+                        width: 50px;
+                        margin: auto;
+                        display: block;
+                        padding-top: 7px;
+                        @include respond-max(md-dekstop) {
+                            width: 40px;
+                        }
+                    }
+                }
+                .logo-text-vegan{
+                    color: $green-vegan !important;
+                    font-size: 30px !important;
+                    padding-left: 5px;
+                    @include respond-max(md-dekstop) {
+                        font-size: 24px !important;
+                        padding-left: 0;
+                    }
+                }
+            }
+        }
+        .sidebar-menu{
+            .nav-item{
+                margin: 5px 0;
+                &.open{
+                    .dropdown-toggle{
+                        color: $green-vegan !important;
+                        font-family: "asap_med", sans-serif !important;
+                        .icon-holder{
+                            i{
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+                .actives{
+                    color: $green-vegan !important;
+                    font-family: "asap_med", sans-serif !important;
+                    .icon-holder{
+                        i{
+                            font-weight: bold;
+                        }
+                    }
+                }
+                a{
+                    letter-spacing: 0.04em;
+                    .icon-holder{
+                        i{
+                            color: $green-vegan !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

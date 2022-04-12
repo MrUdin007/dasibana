@@ -1,0 +1,205 @@
+// -----------------------------------------------------------------------------
+// This file contains all popover styles.
+// -----------------------------------------------------------------------------
+
+.contactus {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1049;
+
+    .--cht-btn{
+        width: 100px;
+        position: relative;
+        background: $white;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+        border-radius: 50px;
+        padding: 10px;
+        padding-left: 35px;
+        border: none;
+        font-size: 16px;
+        text-transform: capitalize;
+        color: #333333;
+        &::before{
+            position: absolute;
+            top: 15px;
+            left: 25px;
+            content: '';
+            background-image: url('../../assets/icons/chat.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 15px;
+            height: 15px;
+            display: block;
+        }
+        &:focus{
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15) !important;
+        }
+    }
+}
+
+.popover {
+    padding: 0;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    border: unset !important;
+    border-radius: 0 !important;
+    background-color: $white !important;
+    z-index: 1049;
+    max-width: 100% !important;
+    position: fixed !important;
+    left: unset !important;
+    right: -235px !important;
+    top: unset !important;
+    bottom: -193px !important;
+    transform: translate(-50%,-50%) translate3d(0,0,0) !important;
+    margin: 0 !important;
+
+    @include respond-max(sm-tablet) {
+        width: 380px !important;
+        right: -170px !important;
+    }
+    @include respond-max(lg-mobile) {
+        width: 280px !important;
+        right: -120px !important;
+    }
+
+    .arrow {
+        display: none;
+    }
+
+    .popover-body {
+        padding: 0 !important;
+        .head-pop {
+            padding: 15px 20px;
+            grid-template-columns: minmax(1px, 40px) minmax(1px, auto) minmax(1px, 15px);
+            grid-gap: 15px;
+
+            .logo-oz{
+                width: 40px;
+                height: 40px;
+                background-color: $white;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 50%;
+                padding: 10px;
+                img{
+                    width: 100%;
+                    margin: auto;
+                    display: block;
+                }
+            }
+
+            .close-pop{
+                i{
+                    font-size: 22px;
+                }
+            }
+        }
+
+        .body-pop {
+            border-top: .5px solid #E7E7E7;
+            padding: 15px 20px;
+            max-height: 300px;
+            overflow-y: auto;
+            .prod-selected{
+                background: rgba(45, 176, 2, 0.05);
+                border-radius: 3px;
+                padding: 8px;
+
+                .img-prods{
+                    width: 90px;
+                    height: 90px;
+                }
+            }
+            .chat-section{
+                margin: 10px 0;
+                .pilss-cht{
+                    padding: 10px 0;
+                    small{
+                        padding: 10px 15px;
+                        margin-bottom: 0;
+                        line-height: 28px;
+                        font-size: 14px;
+                    }
+                }
+                .ct-usr{
+                    margin-left: auto;
+                    small{
+                        background: rgba(226, 70, 103, 0.08);
+                        border-radius: 10px 0px 0px 10px;
+                    }
+                }
+                .ct-admn{
+                    margin-right: auto;
+                    small{
+                        background: rgba(0, 0, 0, 0.03);
+                        border-radius: 0px 10px 10px 0px;
+                    }
+                }
+            }
+        }
+
+        .footer-pop{
+            background: $white;
+            box-shadow: 0px -2px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 3px;
+            padding: 15px 20px;
+
+            .sec-reply-columnss{
+                .reply-columns{
+                    display: grid;
+                    grid-gap: 15px;
+                    align-items: center;
+                    grid-template-columns: minmax(1px, 40px) minmax(1px, auto) minmax(1px, 25px);
+                    
+                    .bx-rply{
+                        .koment-sct{
+                            padding: 5px 10px;
+                            border-radius: 5px;
+                            display: grid;
+                            grid-template-columns: minmax(1px, auto) minmax(1px, 35px);
+                            grid-gap: 10px;
+                            border: 0.5px solid $light-grey-bg;
+                            align-items: center;
+                            input{
+                                font-size: 16px;
+                                width: 100%;
+                                border: unset;
+                                &::placeholder {
+                                    color: $gray;
+                                    letter-spacing: .08em;
+                                }
+                            }
+                            .emoticon-sc{
+                                button{
+                                    background-color: transparent;
+                                    border: unset;
+                                    svg{
+                                        width: 26px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .btn-send{
+                        background-color: transparent;
+                        box-shadow: none;
+                        border: none;
+                        padding: 0;
+                        margin-top: 5px;
+                        &::before{
+                            content: '';
+                            background-image: url('../../assets/icons/send.png');
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                            width: 25px;
+                            height: 25px;
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

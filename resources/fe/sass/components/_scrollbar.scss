@@ -1,0 +1,24 @@
+// -----------------------------------------------------------------------------
+// This file contains all scrollbar styles.
+// -----------------------------------------------------------------------------
+
+.--scrlbrr{
+    scrollbar-color: rgba(0, 0, 0, 0.1) $white !important;
+    scrollbar-width: thin !important;
+    scroll-behavior: smooth !important;
+    position: relative;
+    z-index: 0;
+    &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+        
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 6px 6px 6px 6px $white;
+    }
+        
+    &::-webkit-scrollbar-thumb {
+        -webkit-box-shadow: inset 6px 6px 6px 6px rgba(0, 0, 0, 0.1); 
+        border-radius: 10px;
+    }
+}

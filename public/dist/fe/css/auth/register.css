@@ -1,0 +1,122 @@
+.register-page .logo-oz {
+  width: 275px;
+  margin: 50px auto 30px;
+  padding-top: 20px;
+}
+@media screen and (max-height: 850px) {
+  .register-page .logo-oz {
+    margin: 30px auto;
+  }
+}
+.register-page .logo-oz .logo-vegan-text {
+  width: 85%;
+}
+@media (max-width: 767px) {
+  .register-page .logo-oz .logo-vegan-text {
+    width: 70%;
+    margin: auto;
+    display: block;
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 575px) {
+  .register-page .logo-oz .logo-vegan-text {
+    width: 60%;
+  }
+}
+.register-page .sec-register {
+  grid-template-columns: repeat(2, minmax(1px, 1fr));
+  grid-gap: 70px;
+  margin-top: 70px;
+}
+@media (max-width: 767px) {
+  .register-page .sec-register {
+    grid-template-columns: minmax(1px, auto);
+    grid-gap: 30px;
+    margin-top: 0;
+  }
+}
+
+.mdl-btn {
+  width: 120px;
+  margin: auto;
+  line-height: 28px;
+}
+
+.bg-register {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-top: 80%;
+}
+@media (max-width: 767px) {
+  .bg-register {
+    background-size: 50%;
+    padding-top: 32%;
+    background-position: top;
+    margin-bottom: 20px;
+  }
+}
+.bg-register.mdl-bg {
+  padding-top: 30%;
+}
+
+@media (max-width: 575px) {
+  .modal-vegan .modal .modal-dialog {
+    margin-top: 30px;
+  }
+}
+.modal-vegan .modal .modal-dialog .modal-content {
+  background-color: transparent;
+  border-radius: 0;
+  border: unset;
+}
+.modal-vegan .modal .modal-dialog .modal-content .modal-header {
+  padding: 0;
+  border-bottom: unset;
+}
+.modal-vegan .modal .modal-dialog .modal-content .modal-header .close {
+  margin: 0;
+  margin-bottom: 5px;
+  padding: 0;
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.54);
+  text-shadow: unset;
+  font-size: 38px;
+  margin-left: auto;
+  opacity: 1;
+}
+.modal-vegan .modal .modal-dialog .modal-content .modal-header .close:hover, .modal-vegan .modal .modal-dialog .modal-content .modal-header .close:active, .modal-vegan .modal .modal-dialog .modal-content .modal-header .close:focus {
+  opacity: 0.8;
+  color: rgba(0, 0, 0, 0.54);
+}
+.modal-vegan .modal .modal-dialog .modal-content .modal-body {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 30px;
+}
+.modal-vegan .modal .modal-dialog .modal-content .modal-body .modal-title {
+  font-size: 22px;
+  padding: 20px 40px;
+}
+@media (max-width: 575px) {
+  .modal-vegan .modal .modal-dialog .modal-content .modal-body .modal-title {
+    padding: 20px;
+    font-size: 18px;
+  }
+}
+.modal-vegan .modal .modal-dialog .modal-content .modal-body .ct-modal-body {
+  padding: 50px 40px;
+}
+@media (max-width: 575px) {
+  .modal-vegan .modal .modal-dialog .modal-content .modal-body .ct-modal-body {
+    padding: 20px;
+  }
+}
+.modal-vegan.mdl-login-reg .modal .modal-dialog {
+  margin-top: 30px !important;
+}
+
+.float-inpt-fld label {
+  background: #fafafa;
+}

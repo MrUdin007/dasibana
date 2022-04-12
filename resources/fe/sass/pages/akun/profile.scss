@@ -1,0 +1,173 @@
+// -----------------------------------------------------------------------------
+// This file contains all profile styles.
+// -----------------------------------------------------------------------------
+
+@import '../../public';
+
+.akun-profile{
+    section{
+        &.akun-profile-sec{
+            .profile-content{
+                .menu-tab-notf{
+                    .nav-tabs{
+                        background-color: $white;
+                        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+                        border-top-left-radius: 8px;
+                        border-top-right-radius: 8px;
+                        border-bottom-left-radius: 0;
+                        border-bottom-right-radius: 0;
+                        margin-bottom: 10px;
+                        padding: 10px;
+                        &.--setting{
+                            flex-wrap: unset;
+                            white-space: nowrap;
+                            max-width: 100%;
+                            overflow-x: auto;
+                            overflow-y: hidden;
+                            position: relative;
+                            z-index: 0;
+                        }
+                        .nav-item{
+                            .nav-link{
+                                border: unset;
+                                border-radius: unset;
+                                margin-bottom: 0;
+                                color: $black;
+
+                                &.active{
+                                    color: $green-vegan !important;
+                                }
+
+                                @include on-event{
+                                    color: $green-vegan !important;
+                                }
+                            }
+                        }
+                    }
+                    .tab-content{
+                        min-height: 420px;
+                        background-color: $white;
+                        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+                        border-top-left-radius: 0;
+                        border-top-right-radius: 0;
+                        border-bottom-left-radius: 8px;
+                        border-bottom-right-radius: 8px;
+                        padding: 30px;
+                        .tab-pane{
+                            .gr-sec-profile-tab{
+                                align-items: flex-start;
+                                grid-template-columns: minmax(1px, 100px) minmax(1px, 1fr) minmax(1px, 140px);
+                                grid-gap: 30px;
+                                &.--addrs{
+                                    grid-template-columns: minmax(1px, 1fr) minmax(1px, 140px);
+                                }
+                                .user-rvw{
+                                    width: 100px;
+                                    height: 100px;
+                                    background-size: cover;
+                                    background-position: center;
+                                }
+                                .ct-prf{
+                                    .titls{
+                                        color: rgba(0, 0, 0, 0.2);
+                                    }
+                                    .form-ct-prf{
+                                        .group-profile{
+                                            grid-template-columns: minmax(1px, 85px) minmax(1px, auto);
+                                            grid-gap: 20px;
+                                        }
+                                    }
+                                }
+                                .edit-btn{
+                                    border: 1px solid rgba(0, 0, 0, 0.2);
+                                    display: inline-flex;
+                                    .icn-pencil{
+                                        width: 15px;
+                                        display: block;
+                                        margin-right: 10px;
+                                    }
+                                }
+                            }
+
+                            @include respond-max(lg-tablet){
+                                .gr-sec-profile-tab-first{
+                                    grid-template-columns: minmax(1px, auto);
+                                    .items_a1{
+                                        margin: auto;
+                                    }
+                                }
+                            }
+
+                            .--change-pws {
+                                width: 550px;
+                                grid-gap: 10px;
+                                grid-template-columns: minmax(1px, 160px) minmax(1px, auto);
+                                @include respond-max(lg-tablet) {
+                                    grid-template-columns: minmax(1px, auto);
+                                    width: 100%;
+                                }
+
+                                .float-inpt-fld{
+                                    margin-bottom: 0 !important;
+                                }
+
+                                &:last-child{
+                                    margin-top: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .mdl-Profile{
+        .chng-img-usr {
+            .avatar-upload {
+                .avatar-edit {
+                    position: relative;
+                    z-index: 1;
+
+                    input {
+                        display: none;
+                    }
+                }
+
+                .avatar-preview {
+                    width: 100px;
+                    height: 100px;
+                    margin: auto;
+                    position: relative;
+
+                    #imagePreview {
+                        width: 100px;
+                        height: 100px;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        border-radius: 100%;
+                    }
+                }
+            }
+
+            #changeimgs{
+                cursor: pointer;
+                text-align: center;
+                display: block;
+                @include on-event{
+                    opacity: .8;
+                }
+            }
+        }
+        .gender-mdl{
+            display: inline-flex;
+
+            .gender-mdl-sec{
+                display: inline-flex;
+                margin-left: 30px;
+                gap: 20px;
+            }
+        }
+    }
+}

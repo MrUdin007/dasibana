@@ -1,0 +1,128 @@
+// -----------------------------------------------------------------------------
+// This file contains all register styles.
+// -----------------------------------------------------------------------------
+
+@import './public';
+
+.register-page{
+    .logo-oz{
+        width: 275px;
+        margin: 50px auto 30px;
+        padding-top: 20px;
+        @media screen and (max-height: 850px) {
+            margin: 30px auto;
+        }
+        .logo-vegan-text{
+            width: 85%;
+            @include respond-max(lg-tablet) {
+                width: 70%;
+                margin: auto;
+                display: block;
+                margin-bottom: 30px;
+            }
+            @include respond-max(sm-tablet) {
+                width: 60%;
+            }
+        }
+    }
+    .sec-register{
+        grid-template-columns: repeat(2, minmax(1px, 1fr));
+        grid-gap: 70px;
+        margin-top: 70px;
+        @include respond-max(lg-tablet) {
+            grid-template-columns: minmax(1px, auto);
+            grid-gap: 30px;
+            margin-top: 0;
+        }
+    }
+}
+
+.mdl-btn{
+    width: 120px;
+    margin: auto;
+    line-height: 28px;
+}
+
+.bg-register{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-top: 80%;
+    @include respond-max(lg-tablet) {
+        background-size: 50%;
+        padding-top: 32%;
+        background-position: top;
+        margin-bottom: 20px;
+    }
+
+    &.mdl-bg{
+        padding-top: 30%;
+    }
+}
+
+.modal-vegan{
+    .modal{
+        .modal-dialog{
+            @include respond-max(sm-tablet) {
+                margin-top: 30px;
+            }
+            .modal-content{
+                background-color: transparent;
+                border-radius: 0;
+                border: unset;
+                .modal-header{
+                    padding: 0;
+                    border-bottom: unset;
+                    .close {
+                        margin: 0;
+                        margin-bottom: 5px;
+                        padding: 0;
+                        font-weight: normal;
+                        color: rgba(0, 0, 0, 0.54);
+                        text-shadow: unset;
+                        font-size: 38px;
+                        margin-left: auto;
+                        opacity: 1;
+                        @include on-event{
+                            opacity: .8;
+                            color: rgba(0, 0, 0, 0.54);
+                        }
+                    }
+                }
+                .modal-body{
+                    background-color: $white;
+                    border-radius: 10px;
+                    padding: 30px;
+                    .modal-title{
+                        font-size: 22px;
+                        padding: 20px 40px;
+                        @include respond-max(sm-tablet) {
+                            padding: 20px;
+                            font-size: 18px;
+                        }
+                    }
+                    .ct-modal-body{
+                        padding: 50px 40px;
+                        @include respond-max(sm-tablet) {
+                            padding: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.mdl-login-reg{
+        .modal{
+            .modal-dialog{
+                margin-top: 30px !important;
+            }
+        }
+    }
+}
+
+.float-inpt-fld {
+    label{
+        background: #fafafa;
+    }
+}

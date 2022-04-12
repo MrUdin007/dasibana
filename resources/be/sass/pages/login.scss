@@ -1,0 +1,55 @@
+// -----------------------------------------------------------------------------
+// This file contains all login styles.
+// -----------------------------------------------------------------------------
+
+@import './public';
+
+.login-sec{
+    #formLogin{
+        .form-group{
+            margin-bottom: 20px;
+            .form-control{
+                display: block;
+                width: auto;
+                padding: 15px 0;
+                margin-bottom: 0;
+                margin-top: 5px;
+            }
+            input, select, .select2-container, .select2-multiplect[multiple="multiple"]{
+                height: auto;
+            }
+            .invalid-feedback{
+                strong{
+                    text-transform: capitalize;
+                    color: #d84949;
+                }
+            }
+            .bottom-logg{
+                margin-top: 40px;
+            }
+        }
+        .float-inpt-fld{
+            .floatfield{
+                &:active, &:focus{
+                    border: .5px solid $white !important;
+                }
+                @include on-event{
+                    border: .5px solid $white !important;
+                }
+            }
+            .field-icon {
+                bottom: 15px;
+                color: $white;
+            }
+        }
+        input{
+            &.form-control{
+                border: 1px solid $white;
+                color: $white;
+            }
+        }
+        label{
+            font-size: 15px;
+        }
+    }
+}

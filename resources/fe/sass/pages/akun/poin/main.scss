@@ -1,0 +1,192 @@
+// -----------------------------------------------------------------------------
+// This file contains all akun-poin styles.
+// -----------------------------------------------------------------------------
+
+@import '../../../public';
+
+.akun-poin {
+    section {
+        &.sec-akun-poin {
+            .box-akun-poin{
+                background: $white;
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+                .border-bottom-large{
+                    border-bottom: 8px solid #FAFAFA;
+                }
+                .howtogetpoint{
+                    margin-left: auto;
+                    text-align: right;
+                    @include respond-max(lg-mobile) {
+                        margin-left: 0;
+                        text-align: left;
+                    }
+                    .arrow-icns{
+                        transform: rotate(90deg);
+                    }
+                }
+                .menu-poin{
+                    padding: 15px 20px;
+                    .gr-topmnhds{
+                        grid-template-columns: repeat(2, minmax(1px, auto));
+                        grid-gap: 10px;
+                        @include respond-max(lg-mobile) {
+                            grid-template-columns: minmax(1px, auto);
+                        }
+                    }
+                    .ksjak{
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+                    .arrow-icns{
+                        background-image: url('../../../../icons/arrow-grey.png');
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        width: 15px;
+                        height: 15px;
+                        display: block;
+                    }
+                    .cover-poin-main{
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        width: 400px;
+                        height: 220px;
+                        display: block;
+                        margin: 20px auto;
+                        position: relative;
+                        border-radius: 15px;
+                        @include respond-max(sm-tablet) {
+                            width: unset;
+                            height: unset;
+                            padding-top: 57%;
+                            margin: 10px auto;
+                        }
+                        .pointexts{
+                            position: absolute;
+                            transform: translate(-50%, -50%);
+                            left: 50%;
+                            top: 56%;
+                        }
+                    }
+                    .pt-poin-menu{
+                        .--ls-ct-poin{
+                            grid-template-columns: repeat(2, minmax(1px, 381px));
+                            grid-gap: 30px;
+                            padding: 5px;
+                            margin-top: 25px;
+                            @include respond-max(lg-tablet) {
+                                grid-template-columns: minmax(1px, auto);
+                            }
+
+                            .crd-ct-poin{
+                                border-radius: 10px;
+                                box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);   
+                                
+                                .img-crd-point{
+                                    background-position: center;
+                                    background-repeat: no-repeat;
+                                    background-size: cover;
+                                    padding-top: 55%;
+                                    width: 100%;
+                                    position: relative;
+                                    border-top-left-radius: 10px;
+                                    border-top-right-radius: 10px;
+                                }
+
+                                .bttm-ct-pon-crd {
+                                    .pad-hgh{
+                                        padding: 10px 20px;
+                                    }
+                                    .gr-twolhsa{
+                                        grid-template-columns: repeat(2, minmax(1px, auto));
+                                        grid-gap: 10px;
+                                        align-items: flex-start;
+
+                                        @include respond-between(mid-md-dekstop, lg-dekstop) {
+                                            grid-template-columns: minmax(1px, auto);
+                                        }
+
+                                        @include respond-max(lg-mobile) {
+                                            grid-template-columns: minmax(1px, auto);
+                                        }
+                                    }
+                                    .masaberlaku{
+                                        border-top: 1px solid #E6E6E6;
+                                        text-align: center;
+                                        border-bottom: 2.5px dashed #E0E0E0;
+                                        position: relative;
+                                        padding: 20px;
+
+                                        .rightkshaha{
+                                            padding-left: 10px;
+                                            border-left: 0.5px solid #C4C4C4;
+                                            @include respond-between(mid-md-dekstop, lg-dekstop) {
+                                                padding-left: 0;
+                                                border-left: unset;
+                                            }
+
+                                            @include respond-max(lg-mobile) {
+                                                padding-left: 0;
+                                                border-left: unset;
+                                            }
+                                        }
+
+                                        .circle-trnsp{
+                                            height: 30px;
+                                            width: 20px;
+                                            background-color: $white;
+                                            position: absolute;
+                                            bottom: -15px;
+                                            border-bottom: 0;
+                                            &.--tr-left{
+                                                left: -5px;
+                                                border-radius: 0 90px 90px 0;
+                                                box-shadow: 6px 0px 10px -5px rgba(0, 0, 0, 0.15);
+                                            }
+                                            &.--tr-right{
+                                                right: -5px;
+                                                border-radius: 90px 0 0 90px;
+                                                box-shadow: -5px 0px 10px -6px rgba(0, 0, 0, 0.15);
+                                            }
+                                        }
+                                    }
+                                    .desc-point {
+                                        grid-template-columns: minmax(1px, auto) minmax(1px, 30px);
+                                    }
+                                }
+                                    
+                                .btn-swtch{
+                                    padding: 20px;
+                                    padding-top: 10px;
+
+                                    button{
+                                        border-radius: 5px;
+                                        padding: 13px 20px;
+                                        @include respond-max(lg-mobile) {
+                                            padding: 10px 20px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .modalpoints{
+                .modal-body{
+                    .cover-point-mdl{
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: cover;
+                        padding-top: 100%;
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

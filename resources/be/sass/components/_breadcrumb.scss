@@ -1,0 +1,56 @@
+// -----------------------------------------------------------------------------
+// This file contains all breadcrumb style.
+// -----------------------------------------------------------------------------
+
+.breadcrumb{
+    background-color: transparent !important;
+    border-radius: 0 !important;
+    padding: 10px 20px !important;
+    padding-right: 5px !important;
+    margin-bottom: 0 !important;
+    li{
+        font-size: 15px !important;
+        padding-left: 5px;
+        margin-left: 10px;
+        font-size: 15px !important;
+        a{
+            color: $black !important;
+            font-size: 15px !important;
+            line-height: 1px !important;
+        }
+        
+        &.active{
+            color: $green-vegan !important;
+            font-family: "asap_med", sans-serif !important;
+            a{
+                color: $green-vegan !important;
+                font-family: "asap_med", sans-serif !important;
+            }
+            &::marker{
+                color: $green-vegan !important;
+            }
+        }
+
+        &:first-child{
+            padding-left: 0;
+            margin-left: 0;
+            &::marker{
+                content: '';
+                color: $black !important;
+            }
+        }
+        
+        &::marker{
+            content: '/';
+            color: $black !important;
+        }
+
+        &::before{
+            padding: 0 3px !important;
+        }
+    }
+}
+
+.container-fluid{
+    padding: 0 !important;
+}

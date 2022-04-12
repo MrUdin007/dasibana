@@ -1,0 +1,171 @@
+// -----------------------------------------------------------------------------
+// This file contains all datatables style.
+// -----------------------------------------------------------------------------
+
+.table-responsive{
+    z-index: 0;
+    position: relative;
+}
+
+table{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    thead{
+        tr{
+            th{
+                color: $green-vegan;
+                font-weight: normal;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-top: none !important;
+                border-bottom: none !important;
+                text-align: center !important;
+                font-family: "poppins_med", sans-serif !important;
+                text-transform: capitalize !important;
+                vertical-align: middle;
+
+                &.sorting{
+                    &::after{
+                        color: $green-vegan;
+                    }
+                }
+            }
+            td{
+                text-align: center;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-bottom: 2px solid rgba(0, 0, 0, 0.1) !important;
+            }
+        }
+    }
+    tbody{
+        tr{
+            &:nth-of-type(2n+1){
+                background-color: #e7eeed !important;
+            }
+            td{
+                vertical-align: middle;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-top: none !important;
+                border-bottom: none !important;
+                text-align: center !important;
+
+                .form-group{
+                    margin-bottom: 0;
+
+                    label{
+                        min-height: 15px;
+                    }
+                }
+            }
+        }
+    }
+    &.dataTable{
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+}
+
+.dataTables_scroll{
+    margin-bottom: 20px;
+}
+
+.dataTables_paginate{
+    span{
+        margin: 0 20px;
+        .paginate_button {
+            margin: 0 !important;
+            border: 1px solid rgba(0, 0, 0, 0.2) !important;
+            border-radius: 0 !important;
+            border-left-width: 0 !important;
+            border-right-width: .5px !important;
+            line-height: initial !important;
+            padding: 10px 15px !important;
+            transition: all .3s ease-in-out !important;
+            &:first-child{
+                border-top-left-radius: 5px !important;
+                border-bottom-left-radius: 5px !important;
+                border-left-width: 1px !important;
+            }
+            &:last-child{
+                border-top-right-radius: 5px !important;
+                border-bottom-right-radius: 5px !important;
+                border-right-width: 1px !important;
+            }
+            @include on-event{
+                background-color: $green-vegan !important;
+                border-color: $green-vegan !important;
+            }
+            &.current{
+                border-color: $green-vegan !important;
+                background-color: $green-vegan !important;
+            }
+        }
+    }
+    .paginate_button {
+        background: $white !important;
+        border: 1px solid rgba(0, 0, 0, 0.2) !important;
+        border-radius: 5px !important;
+        color: $drk-lght !important;
+        line-height: initial !important;
+        padding: 10px 15px !important;
+        transition: all .3s ease-in-out !important;
+        @include on-event{
+            background-color: $green-vegan !important;
+            border-color: $green-vegan !important;
+        }
+
+        &.disabled{
+            background: $white !important;
+            border: 1px solid rgba(0, 0, 0, 0.2) !important;
+            border-radius: 5px !important;
+            color: $drk-lght !important;
+            @include on-event{
+                color: $white !important;
+            }
+        }
+    }
+}
+
+.dataTables_filter{
+    label{
+        position: relative;
+        i{
+            position: absolute;
+            right: 15px;
+            top: 15px;
+        }
+        input{
+            height: auto !important;
+            font-size: 15px !important;
+            margin: 0 !important;
+            padding: 10px 30px 10px 15px !important;
+            border: 1px solid rgba(0, 0, 0, 0.2) !important;
+            border-radius: 0 !important;
+            &::placeholder{
+                color: $drk-lght;
+            }
+            @include on-event{
+                border: 1px solid $green-vegan !important;
+            }
+        }
+    }
+}
+
+.dataTables_length{
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 10px 15px;
+
+    label{
+        margin-bottom: 0;
+        color: $drk-lght;
+        select{
+            border: none !important;
+            color: rgba(0, 0, 0, 0.8) !important;
+            margin-right: 10px !important;
+            padding: 0 !important;
+            margin-bottom: 0 !important;
+            height: auto !important;
+            border-radius: 0 !important;
+        }
+    }
+}

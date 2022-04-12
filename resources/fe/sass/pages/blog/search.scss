@@ -1,0 +1,110 @@
+// -----------------------------------------------------------------------------
+// This file contains all blog search styles.
+// -----------------------------------------------------------------------------
+
+@import '../../public';
+
+.blogdetail-section {
+    section {
+        .gr-blog-detail{
+            grid-template-columns: minmax(1px, auto) minmax(1px, 324px);
+            grid-gap: 50px;
+            @include respond-max(lg-dekstop) {
+                grid-template-columns: minmax(1px, auto) minmax(1px, 230px);
+                grid-gap: 30px;
+            }
+            @include respond-max(lg-tablet) {
+                grid-template-columns: minmax(1px, auto);
+                grid-gap: 15px;
+            }
+        }
+
+        &.ct-blog-header{
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            .ls-menucategory{
+                ul{
+                    display: block;
+                    padding-inline-start: 0;
+                    margin-bottom: -10px;
+                    li{
+                        display: inline-block;
+                        margin: 0 10px 10px 0;
+                        @include respond-max(lg-tablet) {
+                            margin: 0 5px 5px 0;
+                        }
+                        a{
+                            color: $lght-gsh !important;
+                            text-transform: capitalize;
+
+                            @include on-event{
+                                color: $lght-gsh !important;
+                                opacity: .8;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.ct-blog-detail{
+            @include respond-max(md-dekstop) {
+                margin: 0;
+            }
+
+            .gr-blog-detail{
+                align-items: flex-start;
+            }
+
+            .no-grids{
+                width: 698px;
+                margin: auto;
+                @include respond-max(lg-dekstop) {
+                    width: 100%;
+                }
+            }
+            
+            .detail-ct-sec{
+                .gr-search-dt{
+                    grid-template-columns: minmax(1px, 324px) minmax(1px, auto);
+                    grid-gap: 16px;
+                    margin: 20px auto;
+                    @include respond-max(lg-tablet) {
+                        grid-template-columns: minmax(1px, auto);
+                    }
+                    .cover-sc{
+                        background-position: top;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        padding-top: 183px;
+                        width: 100%;
+                        border-radius: 8px;
+                        @include respond-max(lg-tablet) {
+                            padding-top: 220px;
+                        }
+                        @include respond-max(lg-mobile) {
+                            padding-top: 150px;
+                        }
+                    }
+                    .desc-artikel {
+                        .frs-desc{
+                            display: block;
+                            margin-top: 12px;
+                        }
+                        .ctg-sec{
+                            padding-bottom: 8px !important;
+                        }
+                        .--date {
+                            position: unset;
+                        }
+                    }
+                }
+            }
+
+            .sidebar-blog {
+                margin-top: 10px;
+            }
+        }
+    }
+}

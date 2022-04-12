@@ -1,0 +1,15 @@
+// -----------------------------------------------------------------------------
+// This file contains all tab styles.
+// -----------------------------------------------------------------------------
+
+.tab-content {
+    .tab-pane {
+        display: block;
+        height: 0px;
+        overflow: hidden;
+
+        &.active {
+            height: auto;
+        }
+    }
+}

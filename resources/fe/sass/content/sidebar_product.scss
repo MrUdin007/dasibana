@@ -1,0 +1,140 @@
+// -----------------------------------------------------------------------------
+// This file contains all sidebar product style.
+// -----------------------------------------------------------------------------
+
+@import '../public';
+
+@mixin sidebars {
+    text-align: left;
+    border-bottom: .5px solid rgba(0, 0, 0, 0.08);
+}
+
+.sidebar-prdct-vegan{
+    background: $white;
+    @include respond-min(mid-md-dekstop) {
+        border: .5px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+    @include respond-max(md-dekstop) {
+        position: absolute;
+        top: 2px;
+        left: 10px;
+        width: calc(100% - 50px);
+        border-left: unset;
+        border-right: unset;
+    }
+
+    .head-sdr{
+        padding: 15px;
+        position: relative;
+        @include respond-max(md-dekstop) {
+            padding-bottom: 0;
+        }
+
+        .close-menu{
+            display: none;
+            @include respond-max(md-dekstop) {
+                display: block;
+                position: absolute;
+                top: 25px;
+                right: -15px;
+    
+                .close-mn{
+                    i{
+                        color: $green-vegan;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+
+    .list-menu-sdr{
+        .list-menu-filter{
+            @include sidebars;
+            padding: 10px 20px;
+            &:last-child{
+                border-bottom: unset;
+            }
+            .title-menu-sdr{
+                padding: 5px 0;
+                @include respond-max(md-dekstop) {
+                    padding: 0;
+                }
+            }
+            .list-category{
+                padding-inline-start: 0;
+                @include respond-max(md-dekstop) {
+                    overflow-y: auto;
+                }
+                li{
+                    padding: 5px 0;
+                    a{
+                        color: $grey-txt;
+                        padding-left: 0;
+                        &:hover,
+                        &:focus{
+                            color: $green-vegan !important;
+                        }
+                        &.active{
+                            color: $green-vegan !important;
+                            font-family: "Asap_medium", sans-serif !important;
+                        }
+                    }
+                    .arrow-sidebar-products{
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        color: $black;
+                        width: auto;
+                        text-align: right;
+                        line-height: 0;
+                        padding: 0;
+
+                        &.collapsed{
+                            i{
+                                &::before{
+                                    content: '\f107';
+                                }
+                            }
+                        }
+                    }
+                    .multiple-menus{
+                        padding-inline-start: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.weeklypromosection{
+    border-bottom: 1px solid #E7E7E7;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    h6{
+        letter-spacing: 0.08em;
+        background: radial-gradient(79.35% 167.98% at 35.61% 10.83%, #D3B200 0%, #C5A601 100%);
+        border-radius: 8px;
+        color: $white;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 12px;
+    }
+}
+
+.is_newsection{
+    border-bottom: 1px solid #E7E7E7;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    h6{
+        letter-spacing: 0.08em;
+        background: #d32424;
+        border-radius: 8px;
+        color: $white;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 12px;
+    }
+}

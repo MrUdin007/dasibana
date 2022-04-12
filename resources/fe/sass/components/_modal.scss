@@ -1,0 +1,84 @@
+// -----------------------------------------------------------------------------
+// This file contains all modal styles.
+// -----------------------------------------------------------------------------
+
+.modal-vegan{
+    .modal{
+        .custom-header-modal{
+            border-bottom: unset !important;
+            padding: 0 !important;
+            margin-top: 15px;
+            margin-bottom: -20px;
+            margin-right: 16px;
+            z-index: 1;
+            position: relative;
+        }
+        .modal-dialog{
+            @include respond-max(sm-tablet) {
+                margin-top: 30px;
+            }
+            .modal-content{
+                background-color: $white;
+                border-radius: 8px;
+                border: unset;
+                &.mdl-login-head{
+                    .modal-header{
+                        border-bottom: unset;
+                        padding-bottom: 0;
+                    }
+                    .modal-body{
+                        .login-section{
+                            .ct-modal-body{
+                                padding: 10px 40px 30px;
+                            }
+                        }
+                    }
+                }
+                .modal-header{
+                    padding: 20px;
+                    border-bottom: 4px solid rgba(0, 0, 0, 0.05);
+                    .close {
+                        margin: 0;
+                        margin-top: -5px;
+                        padding: 0;
+                        font-weight: normal;
+                        color: rgba(0, 0, 0, 0.54);
+                        text-shadow: unset;
+                        font-size: 30px;
+                        margin-left: auto;
+                        opacity: 1;
+                        @include on-event{
+                            opacity: .8;
+                            color: rgba(0, 0, 0, 0.54);
+                        }
+                    }
+                }
+                .modal-body{
+                    padding: 20px;
+                    .modal-title{
+                        font-size: 22px;
+                        padding: 20px 40px;
+                        @include respond-max(sm-tablet) {
+                            padding: 20px;
+                            font-size: 18px;
+                        }
+                    }
+                    .ct-modal-body{
+                        padding: 50px 40px;
+                        @include respond-max(sm-tablet) {
+                            padding: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.mdl-login-reg{
+        .modal{
+            .modal-dialog{
+                margin-top: 30px !important;
+            }
+        }
+    }
+}

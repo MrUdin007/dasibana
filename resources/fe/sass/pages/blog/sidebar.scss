@@ -1,0 +1,58 @@
+// -----------------------------------------------------------------------------
+// This file contains all sidebar blog style.
+// -----------------------------------------------------------------------------
+
+@import '../../public';
+
+.sidebar-blog{
+    background: $white;
+    padding: 30px 51px 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    @include respond-max(lg-dekstop) {
+        padding: 30px 20px 20px;
+    }
+    .top-menu{
+        display: block;
+        text-align: center;
+        margin-bottom: 30px;
+        h6{
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            font-family: "Asap_medium", sans-serif !important;
+            color: rgba(51, 51, 51, 0.8);
+            font-size: 20px;
+            line-height: 15px;
+        }
+    }
+    .bottom-menu{
+        .box-sldr{
+            margin-bottom: 20px;
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+        .gr-prdetails{
+            margin-bottom: 20px;
+            @include respond-max(lg-tablet) {
+                grid-template-columns: repeat(2, minmax(1px, 1fr));
+                align-items: flex-start;
+                grid-gap: 16px;
+            }
+        }
+        .view-details{
+            display: block;
+            text-align: center;
+            a{
+                color: $green-vegan !important;
+                font-size: 16px;
+                line-height: 15px;
+                font-family: "Asap_medium", sans-serif !important;
+                text-transform: lowercase;
+                @include on-event{
+                    opacity: .8;
+                }
+            }
+        }
+    }
+}

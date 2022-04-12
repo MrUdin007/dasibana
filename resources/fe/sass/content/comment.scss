@@ -1,0 +1,248 @@
+// -----------------------------------------------------------------------------
+// This file contains all sidebar style.
+// -----------------------------------------------------------------------------
+
+@import '../public';
+
+.content-forum {
+    .--head{
+        .shr{
+            position: relative;
+            text-align: right;
+            .--rprt-btn {
+                background-color: transparent;
+                box-shadow: unset;
+                border: unset;
+                img{
+                    width: 25px;
+                    margin-left: auto;
+                    margin-right: -8px;
+                    display: block;
+
+                    &.--edt{
+                        transform: rotate(90deg);
+                        margin-right: -35px;
+                    }
+                }
+            }
+        }
+    }
+    .--body{
+        .sub-ct--body{
+            width: calc(100% - 150px);
+            @include respond-max(lg-tablet){
+                width: 100%;
+                margin-top: 20px;
+            }
+        
+            .--revs{
+                margin-left: auto;
+                align-items: center;
+                @include respond-max(lg-tablet){
+                    margin-top: 15px;
+                }
+                @include respond-max(lg-mobile){
+                    display: block !important;
+
+                    div, button{
+                        text-align: left;
+                        margin: 0 !important;
+                        margin-top: 10px !important;
+                    }
+                }
+            }
+
+            @include respond-max(lg-tablet){
+                display: block !important;
+            }
+        }
+    }
+    &.--sub-replys{
+        padding: 10px 0 !important;
+        .--ct---sub-replys{
+            padding-top: 10px !important;
+        }
+        .view-reply{
+            margin-left: 55px !important;
+            @include respond-max(sm-tablet) {
+                margin-left: 0 !important;
+            }
+        }
+    }
+}
+
+.sec-reply-columns {
+    margin-bottom: 30px;
+    .reply-column {
+        display: grid;
+        grid-template-columns: minmax(1px, 50px) minmax(1px, auto);
+        grid-gap: 25px;
+        align-items: center;
+        margin-bottom: 20px;
+        @include respond-max(sm-tablet) {
+            grid-gap: 15px;
+        }
+
+        .bx-rply {
+            .koment-sct {
+                display: grid;
+                grid-template-columns: minmax(1px, auto) minmax(1px, 35px);
+                grid-gap: 10px;
+                border: 0.5px solid $light-grey-bg;
+                border-radius: 3px;
+                padding: 12px 20px;
+                align-items: center;
+
+                &.brd-actv {
+                    border-color: #3548F8;
+                }
+
+                input {
+                    width: 100%;
+                    border: unset;
+                    font-size: 18px;
+
+                    &::placeholder {
+                        color: $gray;
+                        letter-spacing: .08em;
+                    }
+                }
+
+                .emoticon-sc {
+                    button {
+                        background-color: transparent;
+                        border: unset;
+                    }
+                }
+            }
+        }
+    }
+    .bx-btn-komen{
+        width: 230px;
+        margin-left: auto;
+        grid-gap: 15px;
+        button{
+            padding: 8px 13px;
+        }
+    }
+}
+
+.reply-sub-forum-sc{
+    .content-forum{
+        &.--sub-ct-rm{
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .--head{
+            padding-top: 10px;
+            .prf-cst{
+                grid-gap: 20px;
+                align-items: flex-start;
+                grid-template-columns: minmax(1px, 50px) minmax(1px, auto);
+                @include respond-max(sm-tablet) {
+                    grid-template-columns: minmax(1px, auto);
+                   
+                    .img-author-cmnt{
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
+
+                &.--sub-prft{
+                    grid-template-columns: minmax(1px, 40px) minmax(1px, auto);
+                    @include respond-max(sm-tablet) {
+                        grid-template-columns: minmax(1px, auto);
+
+                        .img-author-cmnt{
+                            width: 40px;
+                            height: 40px;
+                        }
+                    }
+                }
+            }
+            .shr{
+                height: 100%;
+                display: grid;
+                a{
+                    align-items: start;
+                }
+                .rply{
+                    align-items: end;
+                    margin-top: auto;
+                    width: 110px;
+                    margin-left: auto;
+                    display: grid;
+
+                    button{
+                        .reply-icons{
+                            padding-right: 10px;
+                            img{
+                                width: 20px;
+                                padding-bottom: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .view-reply{
+            margin-left: 65px;
+            margin-top: 15px;
+            @include respond-max(sm-tablet) {
+                margin-left: 0 !important;
+            }
+            .btn-view-rply{
+                text-align: left;
+                padding: 0;
+                width: 100%;
+                font-size: 14px;
+                color: $lght-gsh;
+                border: unset;
+                border-bottom: 1px solid transparent;
+                line-height: 0.1em;
+
+                .--replys {
+                    background:#fff;
+                    padding-right: 10px;
+
+                    &.hide-reply{
+                        display: none;
+                    }
+                }
+
+                &[aria-expanded="true"]{
+                    border-color: $light-grey-bg;
+
+                    .--replys{
+                        &.total-reply{
+                            display: none;
+                        }
+                        &.hide-reply{
+                            display: initial;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .sec-sub-rply-cmnt{
+        padding: 20px;
+        margin: 0 -20px;
+        border-top: 0.5px solid rgba(0, 0, 0, 0.1);
+
+        .koment-sct {
+            padding: 8px 15px !important;
+
+            input{
+                font-size: 16px !important;
+            }
+        }
+    }
+}
+
+.--category-fld{
+    .prf-cst{
+        grid-gap: 20px;
+        grid-template-columns: minmax(1px, 70px) minmax(1px, auto);
+    }
+}

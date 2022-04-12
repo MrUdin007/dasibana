@@ -1,0 +1,57 @@
+// -----------------------------------------------------------------------------
+// This file contains all colors styles.
+// -----------------------------------------------------------------------------
+
+///start : main brand color
+
+//main colors
+$black: #000000;
+$white: #ffffff;
+$primary-pink: #E24667;
+$secondary-pink: #EC305F;
+$third-pink: #EC305F;
+$fourth-pink: #FA005A;
+$silver: #DADADA;
+$baby-pink: #F083A6;
+$light-dark: #C0C0C0;
+$gold: #F99702;
+$yellow: #F7B539;
+$gray: #757575;
+$blue: #035FDC;
+$blue-2: #2D9CDB;
+
+//main background
+$bg-grey: #F4F4F4;
+$light-grey: rgba(0, 0, 0, 0.4);
+$grey: #C4C4C4;
+$grey-txt: rgba(0, 0, 0, 0.6);
+$light-grey-bg: rgba(0, 0, 0, 0.1);
+$lght-gsh: rgba(0, 0, 0, 0.8);
+$grey-lhg: rgba(0, 0, 0, 0.05);
+
+
+//text color
+$txt-grey: rgba(0, 0, 0, 0.3);
+
+//new color
+$primary-grey: rgba(0, 0, 0, 0.5);
+$green-vegan: #1FBC9D;
+$text-orange: #EE4D2D;
+
+
+// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+    'lg-laptop': 1400px,
+    'mid-lg-dekstop': 1200px,
+    'lg-dekstop': 1199px,
+    'mid-md-dekstop': 992px,
+    'md-dekstop': 991px,
+    'mid-lg-tablet': 768px,
+    'lg-tablet': 767px,
+    'mid-sm-tablet': 576px,
+    'sm-tablet': 575px,
+    'mid-lg-mobile': 425px,
+    'lg-mobile': 424px
+) !default;

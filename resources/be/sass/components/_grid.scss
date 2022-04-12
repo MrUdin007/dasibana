@@ -1,0 +1,25 @@
+// -----------------------------------------------------------------------------
+// This file contains all grid style.
+// -----------------------------------------------------------------------------
+
+.grid_layouts{
+    display: grid;
+
+    &.--two-auto {
+        grid-template-columns: repeat(2, minmax(1px, auto));
+        grid-gap: 20px;
+        align-items: center;
+        margin-bottom: 10px;
+        @include respond-max(lg-tablet) {
+            grid-template-columns: minmax(1px, auto);
+            grid-gap: 5px;
+        }
+
+        .mn-rght{
+            margin-left: auto;
+            @include respond-max(lg-tablet) {
+                margin-left: 0;
+            }
+        }
+    }
+}
