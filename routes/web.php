@@ -13,10 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//contoh static route -->data bukan dari database (hardcode)
 Route::get('/', function () {
     return view('manage.product');
+});
+Route::get('admin', function () {
+    return view('manage.admin.index');
 });
 
 Auth::routes();
 
+//contoh dynamic route -->data dari database
 Route::get('/home', 'HomeController@index')->name('home');

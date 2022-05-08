@@ -29,7 +29,7 @@
         <!-- ### $Sidebar Menu ### -->
         <ul class="sidebar-menu scrollable pos-r">
             <li class="nav-item">
-                <a class="sidebar-link" href="">
+                <a class="sidebar-link text-capitalize" href="">
                     <span class="icon-holder">
                         <i class="c-blue-500 ti-home"></i>
                     </span>
@@ -37,37 +37,48 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="sidebar-link" href="">
+                <a class="sidebar-link text-capitalize" href="{{ url('admin')}}">
                     <span class="icon-holder">
                         <i class="c-blue-500 ti-user"></i>
                     </span>
-                    <span class="title">Edit Profile</span>
+                    <span class="title">admin</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="sidebar-link text-capitalize" href="">
+                    <span class="icon-holder">
+                        <i class="c-blue-500 ti-user"></i>
+                    </span>
+                    <span class="title">sosmed</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="sidebar-link text-capitalize" href="">
+                    <span class="icon-holder">
+                        <i class="c-blue-500 ti-user"></i>
+                    </span>
+                    <span class="title">kontak</span>
                 </a>
             </li>
             <li class="nav-item dropdown">
-                <a class="dropdown-toggle" href="javascript:void(0);">
+                <a class="dropdown-toggle text-capitalize" href="javascript:void(0);">
                     <span class="icon-holder">
                         <i class="c-teal-500 ti-bell"></i>
                     </span>
-                    <span class="title">Notifications</span>
+                    <span class="title">produk</span>
                     <span class="arrow">
                         <i class="ti-angle-right"></i>
                     </span>
                 </a>
                 <ul class="dropdown-menu">
                     <li class="nav-item dropdown">
-                        <a href="" class="">
-                            <span>New Orders</span>
+                        <a href="" class="text-capitalize">
+                            <span>produk kategori</span>
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="">
-                            <span>New Payment Proof</span>
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="" class="">
-                            <span>Stock Habis</span>
+                        <a href="" class="text-capitalize">
+                            <span>data produk</span>
                         </a>
                     </li>
                 </ul>
