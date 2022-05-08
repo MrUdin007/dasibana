@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Admin extends Migration
+class Sosmed extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class Admin extends Migration
      */
     public function up()
     {
-        Schema::create('admin', function (Blueprint $table) {
+        Schema::create('sosmed', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('username')->unique();
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->string('foto');
+            $table->string('Nama_Sosmed');
             $table->string('slug')->unique();
             $table->rememberToken();
             $table->timestamps();
@@ -33,6 +29,6 @@ class Admin extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admin');
+        Schema::dropIfExists('sosmed');
     }
 }
