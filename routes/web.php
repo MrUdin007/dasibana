@@ -20,6 +20,15 @@ Route::get('/', function () {
 Route::get('admin', function () {
     return view('manage.admin.index');
 });
+Route::get('sosmed', function () {
+    return view('manage.sosmed.index');
+});
+Route::get('kontak', function () {
+    return view('manage.kontak.index');
+});
+Route::get('produkkategori', function () {
+    return view('manage.produkkategori.index');
+});
 Route::get('produk', function () {
     return view('manage.produk.index');
 });

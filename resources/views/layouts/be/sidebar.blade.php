@@ -45,7 +45,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="sidebar-link text-capitalize" href="">
+                <a class="sidebar-link text-capitalize" href="{{ url('sosmed')}}">
                     <span class="icon-holder">
                         <i class="c-blue-500 ti-user"></i>
                     </span>
@@ -53,7 +53,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="sidebar-link text-capitalize" href="">
+                <a class="sidebar-link text-capitalize" href="{{ url('kontak')}}">
                     <span class="icon-holder">
                         <i class="c-blue-500 ti-user"></i>
                     </span>
@@ -72,7 +72,7 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li class="nav-item dropdown">
-                        <a href="" class="text-capitalize">
+                        <a href="{{ url('produkkategori')}}" class="text-capitalize">
                             <span>produk kategori</span>
                         </a>
                     </li>
