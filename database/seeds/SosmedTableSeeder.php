@@ -13,16 +13,16 @@ class SosmedTableSeeder extends Seeder
     {
         DB::table('sosmed')->insert([
             [
-                'Nama_Sosmed'    =>  'dasibanaIG',
-                'slug'           =>  'admin1'
+                'name'    =>  'dasibanaIG',
+                'slug'    =>  'admin1'
             ],
             [
-                'Nama_Sosmed'    =>  'dasibanaTwitter',
-                'slug'           =>  'admin2'
+                'name'    =>  'dasibanaTwitter',
+                'slug'    =>  'admin2'
             ],
             [
-                'Nama_Sosmed'    =>  'dasibanaFB',
-                'slug'           =>  'admin3'
+                'name'    =>  'dasibanaFB',
+                'slug'    =>  'admin3'
             ],
         ]);
     }

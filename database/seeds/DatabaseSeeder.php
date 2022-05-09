@@ -14,9 +14,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             AdminTableSeeder::class,
             SosmedTableSeeder::class,
-            ProdukTableSeeder::class,
-            KontakTableSeeder::class,
-            ProdukKategoriTableSeeder::class
+            ProductTableSeeder::class,
+            ProfileTableSeeder::class,
+            CategoryProductTableSeeder::class
         ]);
     }
 }

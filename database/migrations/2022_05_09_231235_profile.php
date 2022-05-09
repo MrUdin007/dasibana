@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Kontak extends Migration
+class Profile extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class Kontak extends Migration
      */
     public function up()
     {
-        Schema::create('kontak', function (Blueprint $table) {
+        Schema::create('profile', function (Blueprint $table) {
             $table->id();
-            $table->longText('profile');
-            $table->longText('alamat');
-            $table->integer('tahun_berdiri');
-            $table->string('bidang_bisnis');
-            $table->string('nama_pemilik');
+            $table->longText('address');
+            $table->integer('year');
+            $table->string('business');
+            $table->string('owner');
+            $table->longText('description');
             $table->string('slug')->unique();
             $table->rememberToken();
             $table->timestamps();
@@ -33,6 +33,6 @@ class Kontak extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kontak');
+        Schema::dropIfExists('profile');
     }
 }

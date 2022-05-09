@@ -15,7 +15,7 @@ class Sosmed extends Migration
     {
         Schema::create('sosmed', function (Blueprint $table) {
             $table->id();
-            $table->string('Nama_Sosmed');
+            $table->string('name');
             $table->string('slug')->unique();
             $table->rememberToken();
             $table->timestamps();

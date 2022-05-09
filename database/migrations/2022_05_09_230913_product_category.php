@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ProdukKategori extends Migration
+class ProductCategory extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class ProdukKategori extends Migration
      */
     public function up()
     {
-        Schema::create('ProdukKategori', function (Blueprint $table) {
+        Schema::create('product_category', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_kategori');
+            $table->string('category_name');
             $table->boolean('status');
             $table->string('slug')->unique();
             $table->rememberToken();
@@ -30,6 +30,6 @@ class ProdukKategori extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ProdukKategori');
+        Schema::dropIfExists('product_category');
     }
 }
