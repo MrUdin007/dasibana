@@ -17,7 +17,7 @@ class Profile extends Migration
             $table->id();
             $table->longText('address');
             $table->integer('year');
-            $table->string('business');
+            $table->string('business_name');
             $table->string('owner');
             $table->longText('description');
             $table->string('slug')->unique();

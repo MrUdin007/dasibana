@@ -15,7 +15,7 @@ class ProductCategory extends Migration
     {
         Schema::create('product_category', function (Blueprint $table) {
             $table->id();
-            $table->string('category_name');
+            $table->string('name');
             $table->boolean('status');
             $table->string('slug')->unique();
             $table->rememberToken();
