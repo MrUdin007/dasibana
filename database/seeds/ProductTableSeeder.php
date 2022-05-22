@@ -15,21 +15,21 @@ class ProductTableSeeder extends Seeder
             [
                 'name'          =>  'dasi',
                 'category_id'   =>  '001',
-                'status'        =>  '',
+                'status'        =>  true,
                 'foto'          =>  '',
                 'slug'          =>  'admin1'
             ],
             [
                 'name'          =>  'celana',
                 'category_id'   =>  '002',
-                'status'        =>  '',
+                'status'        =>  true,
                 'foto'          =>  '',
                 'slug'          =>  'admin2'
             ],
             [
                 'name'          =>  'sarung',
                 'category_id'   =>  '003',
-                'status'        =>  '',
+                'status'        =>  false,
                 'foto'          =>  '',
                 'slug'          =>  'admin3'
             ]

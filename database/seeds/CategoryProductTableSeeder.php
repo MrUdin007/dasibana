@@ -13,18 +13,18 @@ class CategoryProductTableSeeder extends Seeder
     {
         DB::table('product_category')->insert([
             [
-                'category_name'     =>  'Perlengkapan sholat',
-                'status'            =>  '',
+                'name'              =>  'Perlengkapan sholat',
+                'status'            =>  true,
                 'slug'              =>  'ProdukKategori1'
             ],
             [
-                'category_name'     =>  'Perlengkapan kantor',
-                'status'            =>  '',
+                'name'              =>  'Perlengkapan kantor',
+                'status'            =>  true,
                 'slug'              =>  'ProdukKategori2'
             ],
             [
-                'category_name'     =>  'Perlengkapan kuliah',
-                'status'            =>  '',
+                'name'              =>  'Perlengkapan kuliah',
+                'status'            =>  true,
                 'slug'              =>  'ProdukKategori3'
             ]
         ]);

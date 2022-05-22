@@ -13,11 +13,11 @@ class ProfileTableSeeder extends Seeder
     {
         DB::table('profile')->insert([
             [
-                'description'       =>  'bla bla bla',
                 'address'           =>  'jl.kaliurang',
                 'year'              =>  '2018',
-                'business'          =>  'konveksi',
+                'business_name'     =>  'konveksi',
                 'owner'             =>  'Farhan Albana',
+                'description'       =>  'bla bla bla',
                 'slug'              =>  'kontak'
             ]
         ]);
