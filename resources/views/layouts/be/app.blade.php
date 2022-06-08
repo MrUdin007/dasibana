@@ -4,9 +4,10 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <!-- Tell the browser to be responsive to screen width -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <!-- CSRF Token -->
         @stack('title')
 
@@ -30,15 +31,32 @@
         <meta name="theme-color" content="#ffffff">
         <!-- ****** faviconit.com favicons ****** -->
 
+        @stack('css')
         <link href="{{ asset('dist/be/css/main.css') }}" rel="stylesheet">
         <link href="{{ asset('dist/be/vendor/css/style.css') }}" rel="stylesheet">
-        <link href="{{ asset('dist/be/vendor/datatables/rowReorder.dataTables.min.css') }}" rel="stylesheet">
-        <link href="{{ asset('dist/vendors/css/bootstrap.css') }}" rel="stylesheet">
-        <link href="{{ asset('dist/be/vendor/css/sweetalert.css') }}" rel="stylesheet">
-        <link href="{{ asset('dist/vendors/select2/dist/css/select2.min.css') }}" rel="stylesheet">
-        <link href="{{ asset('dist/be/vendor/datatables/jquery.dataTables.min.css') }}" rel="stylesheet">
-        <link href="{{ asset('dist/fe/css/content/floating_input.css') }}" rel="stylesheet">
-        @stack('css')
+        <!-- <link href="{{ asset('dist/vendors/css/bootstrap.css') }}" rel="stylesheet"> -->
+        <style>
+            table .tt-status{
+                position: relative;
+            }
+
+            table .tt-status::after{
+                right: 0.5em;
+                content: "\2193";
+            }
+
+            table .tt-status::before{
+                right: 1em;
+                content: "\2191";
+            }
+
+            table .tt-status::after, table .tt-status::before{
+                position: absolute;
+                bottom: 0.9em;
+                display: block;
+                opacity: 0.3;
+            }
+        </style>
     </head>
     <body class="app">
         <div id='loader'>
@@ -79,17 +97,10 @@
         <!-- All Jquery -->
         <!-- ============================================================== -->
         <!-- <script type="text/javascript" src="{{ asset('dist/be/js/app.js') }}"></script> -->
-        <script type="text/javascript" src="{{ asset('dist/be/vendor/jquery/dist/jquery.min.js') }}"></script>
-        <!-- <script type="text/javascript" src="{{ asset('dist/be/vendor/js/moment.min.js') }}"></script> -->
-        <script type="text/javascript" src="{{ asset('dist/vendors/js/bootstrap.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('dist/vendors/js/hide_input.js') }}"></script>
+        <!-- <script type="text/javascript" src="{{ asset('dist/be/vendor/jquery/dist/jquery.min.js') }}"></script> -->
         <script type="text/javascript" src="{{ asset('dist/be/vendor/js/vendor.js') }}"></script>
         <script type="text/javascript" src="{{ asset('dist/be/vendor/js/bundle.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('dist/be/vendor/js/sweetalert.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('dist/be/vendor/datatables/dataTables.rowReorder.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('dist/be/vendor/datatables/jquery.dataTables.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('dist/vendors/select2/dist/js/select2.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('dist/be/vendor/ckeditor4/ckeditor.js') }}"></script>
+
         <script type="text/javascript">
             window.addEventListener('load', function load() {
                 const loader = document.getElementById('loader');
@@ -102,23 +113,9 @@
                     $('#menudropdownheader').toggle();
                 });
 
-                /*start: Select2 */
-                $(".select2").select2({
-                    placeholder: function(){
-                        $(this).data('placeholder');
-                    }
-                });
-                /*End:/ Select2 */
-
                 $("#tesmodal").click(function(){
                     $("#exampleModal").modal('show');
                 });
-
-                /*start: CkEditor Example */
-                CKEDITOR.replace('tesCkeditor', {
-                    filebrowserUploadUrl: '/uploader/upload.php?type=Files'
-                });
-                /*end:/ CkEditor Example */
 
                 $('.logout-veg').click(function () {
                     $('#formLogout').submit();

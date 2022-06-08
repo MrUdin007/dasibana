@@ -24,5 +24,5 @@ use Illuminate\Support\Facades\Route;
 /////////////// MANAGE - ADMIN ACCESS ///////////////////
 Route::namespace('Manage')->group(function () {
     Auth::routes();
-    Route::get('manage/product', 'ProductController@product')->name('product');
+    Route::get('manage/product', 'ProductController@index')->name('product');
 });
