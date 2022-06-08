@@ -25,4 +25,8 @@ use Illuminate\Support\Facades\Route;
 Route::namespace('Manage')->group(function () {
     Auth::routes();
     Route::get('manage/product', 'ProductController@index')->name('product');
+    Route::get('manage/admin', 'AdminController@index')->name('admin');
+    Route::get('manage/produkkategori', 'ProductCategoryController@index')->name('produkkategori');
+    Route::get('manage/kontak', 'KontakController@index')->name('kontak');
+    Route::get('manage/sosmed', 'SosmedController@index')->name('sosmed');
 });
