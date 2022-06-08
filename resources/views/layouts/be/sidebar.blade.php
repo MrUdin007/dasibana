@@ -77,7 +77,7 @@
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="{{ url('produk')}}" class="text-capitalize">
+                        <a href="{{ route('product')}}" class="text-capitalize">
                             <span>data produk</span>
                         </a>
                     </li>
