@@ -35,11 +35,11 @@
                 <table id="usersTable" class="table table-bordered data-table">
                     <thead>
                         <tr>
-                            <th width="5">no</th>
-                            <th>name</th>
-                            <th width="20"><span class="badge badge-pill badge-success">Active</span></th>
-                            <th width="50px">foto</th>
-                            <th width="30px">action</th>
+                            <th width="5">No</th>
+                            <th>Name</th>
+                            <th width="20">Status</th>
+                            <th width="50px">Image</th>
+                            <th width="30px">Action</th>
                         </tr>
                     </thead>
                     <tbody>
