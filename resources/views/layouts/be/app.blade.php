@@ -8,7 +8,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <!-- CSRF Token -->
-        <title>Dasibana - Admin</title>
+        @stack('title')
 
         <!-- ****** faviconit.com favicons ****** -->
         <link rel="apple-touch-icon" sizes="57x57" href="{{asset('favicon/apple-icon-57x57.png')}}">

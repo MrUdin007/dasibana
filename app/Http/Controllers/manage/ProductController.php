@@ -15,16 +15,11 @@ use Illuminate\Validation\Rule;
 
 class ProductController extends Controller
 {
-    public function getData(Request $req, DataTables $dt)
+    public function product(Request $request)
     {
-        $data = Product::query();
+        $products = Product::all();
 
-        return $dt->eloquent($data)
-            ->editColumn('description', function ($data) {
-                return strip_tags($data->description);
-            })
-            ->addIndexColumn()
-            ->toJson();
+        return view('manage.produk.index', compact('products'));
     }
 }
 

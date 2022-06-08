@@ -13,27 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/////////////// PUBLIC ///////////////////
 //contoh static route -->data bukan dari database (hardcode)
-Route::get('/', function () {
-    return view('manage.product');
-});
-Route::get('admin', function () {
-    return view('manage.admin.index');
-});
-Route::get('sosmed', function () {
-    return view('manage.sosmed.index');
-});
-Route::get('kontak', function () {
-    return view('manage.kontak.index');
-});
-Route::get('produkkategori', function () {
-    return view('manage.produkkategori.index');
-});
-Route::get('produk', function () {
-    return view('manage.produk.index');
-});
+// Route::get('/', function () {
+//     return view('public.home');
+// });
 
-Auth::routes();
 
-//contoh dynamic route -->data dari database
-Route::get('/home', 'HomeController@index')->name('home');
+
+/////////////// MANAGE - ADMIN ACCESS ///////////////////
+Route::namespace('Manage')->group(function () {
+    Auth::routes();
+    Route::get('manage/product', 'ProductController@product')->name('product');
+});

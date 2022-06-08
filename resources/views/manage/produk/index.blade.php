@@ -1,5 +1,9 @@
 @extends('layouts.be.app')
 
+@push('title')
+    <title>Dasibana - Produk</title>
+@endpush
+
 @section('content')
 <div class="row gap-20 pos-r">
     <div class="masonry-item col-md-12">
@@ -16,6 +20,13 @@
                     </button>
                 </div>
             </div>
+
+
+            @foreach ($products as $product_item)
+            <div>{{$product_item}}</div>
+            @endforeach
+
+
             <table id="dasibanaTable" class="table table-striped table-bordered" cellspacing="0" width="auto">
                 <thead>
                     <tr>
