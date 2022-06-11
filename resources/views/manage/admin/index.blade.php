@@ -21,7 +21,7 @@
             <div class="bgc-white bd bdrs-3 p-20 mB-20">
                 <div class="grid_layouts --two-auto">
                     <div class="head-lst">
-                        <h3 class="page-title text-uppercase">data Admin/h3>
+                        <h3 class="page-title text-uppercase">data Admin</h3>
                     </div>
                     <div class="mn-rght">
                         <button class="addbsnt --pluses">
