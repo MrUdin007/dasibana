@@ -12,7 +12,7 @@ class ProductCategoryController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $ProdukKategori = DB::select('select * from produkkategori');
+            $ProdukKategori = DB::select('select * from product_category');
             return Datatables::of($ProdukKategori)
                     ->addIndexColumn()
                     ->addColumn('status', function($status){

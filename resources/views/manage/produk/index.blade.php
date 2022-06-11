@@ -4,7 +4,7 @@
     <title>Dasibana - Produk</title>
 @endpush
 
-@push('css')<meta name="csrf-token" content="{{ csrf_token() }}">
+@push('css')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"/>
     <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet">
@@ -32,7 +32,7 @@
                     </div>
                 </div>
 
-                <table id="usersTable" class="table table-bordered data-table">
+                <table id="produkTable" class="table table-bordered data-table">
                     <thead>
                         <tr>
                             <th width="5">No</th>
@@ -54,7 +54,7 @@
 @push('scripts')
     <script type="text/javascript">
         $(document).ready(function(){
-            var table = $('#usersTable').DataTable({
+            var table = $('#produkTable').DataTable({
                 processing: true,
                 serverSide: true,
                 ajax: "{{ route('product') }}",

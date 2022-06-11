@@ -12,8 +12,8 @@ class KontakController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $Kontak = DB::select('select * from kontak');
-            return Datatables::of($Kontak)
+            $Profile = DB::select("select * from profile");
+            return Datatables::of($Profile)
                     ->addIndexColumn()
                     ->addColumn('action', function($url){
                         $slug= asset($url->slug);

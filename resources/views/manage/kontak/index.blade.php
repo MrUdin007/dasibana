@@ -4,7 +4,7 @@
     <title>Dasibana - Kontak</title>
 @endpush
 
-@push('css')<meta name="csrf-token" content="{{ csrf_token() }}">
+@push('css')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"/>
     <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet">
@@ -32,11 +32,12 @@
                     </div>
                 </div>
 
-                <table id="profileTable" class="table table-bordered data-table">
+                <table id="kontakTable" class="table table-bordered data-table">
                     <thead>
                         <tr>
                             <th width="5">No</th>
                             <th>Address</th>
+                            <th>Year</th>
                             <th>Business Name</th>
                             <th>Owner</th>
                             <th>Description</th>
@@ -55,14 +56,15 @@
 @push('scripts')
     <script type="text/javascript">
         $(document).ready(function(){
-            var table = $('#profileTable').DataTable({
+            var table = $('#kontakTable').DataTable({
                 processing: true,
                 serverSide: true,
                 ajax: "{{ route('kontak') }}",
                 columns: [
                     {data: 'DT_RowIndex', name: 'DT_RowIndex'},
                     {data: 'address', name: 'address'},
-                    {data: 'business name', name: 'business name'},
+                    {data: 'year', name: 'year'},
+                    {data: 'business_name', name: 'business_name'},
                     {data: 'owner', name: 'owner'},
                     {data: 'description', name: 'description'},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
