@@ -37,6 +37,7 @@
                         <tr>
                             <th width="5">No</th>
                             <th>Name</th>
+                            <th width="50">icon</th>
                             <th width="30px">Action</th>
                         </tr>
                     </thead>
@@ -59,6 +60,7 @@
                 columns: [
                     {data: 'DT_RowIndex', name: 'DT_RowIndex'},
                     {data: 'name', name: 'name'},
+                    {data: 'icon', name: 'icon'},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
             });

@@ -15,11 +15,15 @@ class SosmedController extends Controller
             $Sosmed = DB::select('select * from sosmed');
             return Datatables::of($Sosmed)
                     ->addIndexColumn()
+                    ->addColumn('icon', function($pic){
+                        $url= asset($pic->icon);
+                        return '<img src="'.$url.'" alt="'.$url.'">';
+                    })
                     ->addColumn('action', function($url){
                         $slug= asset($url->slug);
                         return '<a href="'.$slug.'" class="edit btn btn-primary btn-sm">View</a>';
                     })
-                    ->rawColumns(['action'])->make(true);
+                    ->rawColumns(['action','icon'])->make(true);
         }
         return view('manage.sosmed.index');
     }
