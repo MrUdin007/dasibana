@@ -1,0 +1,25 @@
+// -----------------------------------------------------------------------------
+// This file contains all grid styles.
+// -----------------------------------------------------------------------------
+
+.gr_display{
+    display: grid;
+
+    &.gr-prodc{
+        grid-template-columns: repeat(4, minmax(10px, 1fr));
+        grid-gap: 20px;
+        align-items: center;
+        padding: 50px 0;
+        .produk-item{
+            .pic-produk{
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 205px;
+                width: 100%;
+                display: block;
+                margin: auto;
+            }
+        }
+    }
+}

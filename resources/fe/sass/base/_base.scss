@@ -120,7 +120,6 @@ article{
         font-size: 14px;
     }
     a{
-        color: $primary-pink;
         text-decoration: none !important;
         @include on-event{
             opacity: .8;
