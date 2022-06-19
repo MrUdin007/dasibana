@@ -10,5 +10,15 @@
                 width: 120px;
             }
         }
+
+        .menu-header{
+            ul{
+                li{
+                    a{
+                        text-transform: capitalize;
+                    }
+                }
+            }
+        }
     }
 }

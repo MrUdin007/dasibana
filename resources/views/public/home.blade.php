@@ -11,12 +11,21 @@
 @section('content')
     <section class="home-dasibana">
         <div class="banner-dasibana" style="background-image: url('{{asset('images/banner.jpg')}}')">
-            <div class="container">
+            <div class="bg-overlay-banner"></div>
+            <div class="container content-banner-top">
                 <div class="dasibana-icon-name">
                     <h1>
                         dasibana
                     </h1>
                 </div>
+            </div>
+        </div>
+
+        <div class="desc-singkat-dasibana section-ct">
+            <div class="container">
+                <p class="text-center mb-0">
+                    Kami produsen Dasi menyediakan berbagai macam dasi untuk kebutuhan kantor, wedding, sekolah, dll. Seperti Dasi Panjang dan Dasi Kupu-kupu, serta aksesoris lainnya seperti Penjepit Dasi dan Suspender. Menerima pesanan dalam jumlah banyak atau partai besar, bisa juga tambah sablon atau bordir sesuai keinginan anda dengan harga yang sangat terjangkau. Tidak hanya itu saja kami juga menyediakan grosir Oleh-oleh Haji berupa Sarung Tenun, Sajadah, Peci, Tasbih dan Sorban..
+                </p>
             </div>
         </div>
 

@@ -1,3 +1,68 @@
 // -----------------------------------------------------------------------------
 // This file contains all footer styles.
 // -----------------------------------------------------------------------------
+
+
+.footer-dasibana{
+    .top-footer{
+        .gr-footer{
+            grid-template-columns: 1fr 1fr 130px;
+            grid-gap: 100px;
+
+            .menu-footer{
+                ul{
+                    padding-inline-start: 0;
+                    li{
+                        margin: 10px 0;
+                        a{
+                            text-transform: capitalize;
+                        }
+                    }
+                }
+            }
+
+            .ft-sosmed{
+                .menu-sosmed{
+                    grid-template-columns: repeat(4, minmax(1px, 60px));
+                    grid-gap: 20px;
+                    margin-left: -10px;
+
+                    .footer-icn-smd{
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: 100%;
+                        margin: auto;
+                        height: 50px;
+                        width: 50px;
+
+                        &.--tokped{
+                            height: 60px;
+                            width: 60px;
+                        }
+                    }
+                }
+
+            }
+
+            .logo-footer{
+                .footer-icn-smd-lg{
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    height: 130px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .bottom-footer{
+        margin: auto;
+        padding: 10px;
+        background-color: $black;
+        p{
+            text-align: center;
+            color: $white;
+        }
+    }
+}
