@@ -6,6 +6,8 @@
 
 @push('css')
     <link rel="stylesheet" href="{{asset('dist/fe/css/home.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{asset('dist/vendors/slick-slider/slick/slick.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{asset('dist/vendors/slick-slider/slick/slick-theme.css')}}"/>
 @endpush
 
 @section('content')
@@ -146,14 +148,41 @@
                 </div>
             </div>
         </div>
+
+        <div class="kategori-produk-dasibana section-ct parallax-bg" style="background-image: url('{{asset('images/parallax.jpg')}}')">
+            <div class="overlay-bg-parallax"></div>
+            <div class="container ct-parallax">
+                <h1 class="main-title" style="color: #ffffff;">kategori produk</h1>
+                <div class="sec-kategori-home">
+                    <div class="kategori-dsb-slick">
+                        <div>kategori 1</div>
+                        <div>kategori 2</div>
+                        <div>kategori 3</div>
+                        <div>kategori 4</div>
+                        <div>kategori 5</div>
+                        <div>kategori 6</div>
+                        <div>kategori 7</div>
+                        <div>kategori 8</div>
+                        <div>kategori 9</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 @endsection
 
 
 @push('scripts')
+    <script type="text/javascript" src="{{asset('dist/fe/js/jquery-migrate-1.2.1.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('dist/vendors/slick-slider/slick/slick.min.js')}}"></script>
     <script type="text/javascript">
         $(document).ready(function(){
-
+            $('.kategori-dsb-slick').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 3000,
+            });
         });
     </script>
 @endpush
