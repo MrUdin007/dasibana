@@ -32,6 +32,7 @@
         <!-- ****** faviconit.com favicons ****** -->
 
         <link href="{{asset('dist/fe/css/bootstrap.min.css')}}" rel="stylesheet" crossorigin="anonymous">
+        <link href="{{asset('dist/fe/css/main.css')}}" rel="stylesheet" crossorigin="anonymous">
         @stack('css')
     </head>
     <body>
