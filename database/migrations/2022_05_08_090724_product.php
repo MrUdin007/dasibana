@@ -19,7 +19,8 @@ class Product extends Migration
             $table->integer('category_id');
             $table->boolean('status');
             $table->string('foto');
-            $table->string('slug')->unique();
+            $table->string('shopee_link');
+            $table->string('tokopedia_link');
             $table->rememberToken();
             $table->timestamps();
         });
