@@ -233,10 +233,10 @@ label.error {
           animation-name: slideIn;
 }
 
-.header-dasibana {
+.header-dasibana .navbar {
   background-color: #b7bbc6;
 }
-.header-dasibana .container .navbar .navbar-brand img {
+.header-dasibana .navbar .navbar-brand img {
   width: 120px;
 }
 

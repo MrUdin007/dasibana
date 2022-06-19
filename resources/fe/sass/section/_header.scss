@@ -3,13 +3,11 @@
 // -----------------------------------------------------------------------------
 
 .header-dasibana{
-    background-color: $main-bg;
-    .container{
-        .navbar{
-            .navbar-brand{
-                img{
-                    width: 120px;
-                }
+    .navbar{
+        background-color: $main-bg;
+        .navbar-brand{
+            img{
+                width: 120px;
             }
         }
     }

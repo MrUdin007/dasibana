@@ -27,7 +27,7 @@
         <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/favicons/favicon-16x16.png')}}">
         <link rel="manifest" href="{{asset('images/favicons/manifest.json')}}">
         <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="msapplication-TileImage" content="{{asset('images/favicons/ms-icon-144x144.png')}}">    
+        <meta name="msapplication-TileImage" content="{{asset('images/favicons/ms-icon-144x144.png')}}">
         <meta name="theme-color" content="#ffffff">
         <!-- ****** faviconit.com favicons ****** -->
 
@@ -65,8 +65,6 @@
         <!-- ============================================================== -->
         <!-- JavaScript Bundle with Popper -->
         <script src="{{asset('dist/fe/js/bootstrap.bundle.min.js')}}" crossorigin="anonymous"></script>
-        <script src="{{asset('dist/fe/js/popper.min.js')}}" crossorigin="anonymous"></script>
-        <script src="{{asset('dist/fe/js/bootstrap.min.js')}}"crossorigin="anonymous"></script>
         <script src="{{asset('dist/fe/js/jquery.min.js')}}" crossorigin="anonymous"></script>
         @stack('scripts')
     </body>
