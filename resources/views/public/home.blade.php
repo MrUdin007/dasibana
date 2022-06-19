@@ -10,7 +10,7 @@
 
 @section('content')
     <section class="home-dasibana">
-        <div class="banner-dasibana">
+        <div class="banner-dasibana" style="background-image: url('{{asset('images/banner.jpg')}}')">
             <div class="container">
                 <div class="dasibana-icon-name">
                     <h1>
