@@ -30,3 +30,9 @@ Route::namespace('Manage')->group(function () {
     Route::get('manage/kontak', 'KontakController@index')->name('kontak');
     Route::get('manage/sosmed', 'SosmedController@index')->name('sosmed');
 });
+
+
+/////////////// PUBLIC - COMMON USER ///////////////////
+Route::get('/', function () {
+    return view('public.home');
+});
