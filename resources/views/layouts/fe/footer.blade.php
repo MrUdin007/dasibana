@@ -16,10 +16,18 @@
                 <div class="ft-sosmed">
                     <h4 class="title-footer">ikuti kami</h4>
                     <div class="menu-sosmed gr_display">
-                        <div class="footer-icn-smd" style="background-image: url('{{asset('images/icons/shopee.png')}}')"></div>
-                        <div class="footer-icn-smd --tokped" style="background-image: url('{{asset('images/icons/tokopedia.png')}}')"></div>
-                        <div class="footer-icn-smd" style="background-image: url('{{asset('images/icons/facebook.png')}}')"></div>
-                        <div class="footer-icn-smd" style="background-image: url('{{asset('images/icons/instagram.png')}}')"></div>
+                        <a href="" target="_blank">
+                            <div class="footer-icn-smd" style="background-image: url('{{asset('images/icons/shopee.png')}}')"></div>
+                        </a>
+                        <a href="" target="_blank">
+                            <div class="footer-icn-smd --tokped" style="background-image: url('{{asset('images/icons/tokopedia.png')}}')"></div>
+                        </a>
+                        <a href="" target="_blank">
+                            <div class="footer-icn-smd" style="background-image: url('{{asset('images/icons/facebook.png')}}')"></div>
+                        </a>
+                        <a href="" target="_blank">
+                            <div class="footer-icn-smd" style="background-image: url('{{asset('images/icons/instagram.png')}}')"></div>
+                        </a>
                     </div>
                 </div>
                 <div class="logo-footer">

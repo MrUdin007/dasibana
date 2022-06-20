@@ -262,6 +262,7 @@ label.error {
   grid-template-columns: repeat(4, minmax(1px, 60px));
   grid-gap: 20px;
   margin-left: -10px;
+  align-items: center;
 }
 .footer-dasibana .top-footer .gr-footer .ft-sosmed .menu-sosmed .footer-icn-smd {
   background-position: center;

@@ -15,22 +15,22 @@ class SosmedTableSeeder extends Seeder
             [
                 'name'    =>  'dasibanaShopee',
                 'icon'    =>  'images/icons/shopee.png',
-                'slug'    =>  'shopee'
+                'slug'    =>  'https://shopee.co.id/albana16'
             ],
             [
                 'name'    =>  'dasibanaFacebook',
                 'icon'    =>  'images/icons/facebook.png',
-                'slug'    =>  'facebook'
+                'slug'    =>  'https://web.facebook.com/grosirsarungdansajadah'
             ],
             [
                 'name'    =>  'dasibanaInstagram',
                 'icon'    =>  'images/icons/instagram.png',
-                'slug'    =>  'instagram'
+                'slug'    =>  'https://www.instagram.com/jogjadasibana/'
             ],
             [
                 'name'    =>  'dasibanaTokopedia',
                 'icon'    =>  'images/icons/tokopedia.png',
-                'slug'    =>  'tokopedia'
+                'slug'    =>  'https://www.tokopedia.com/konveksibana'
             ],
         ]);
     }
