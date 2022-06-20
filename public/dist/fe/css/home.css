@@ -177,7 +177,7 @@ label.error {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: calc(100vh - 85px) !important;
+  height: 100vh !important;
   position: relative;
 }
 .home-dasibana .banner-dasibana .bg-overlay-banner {
@@ -203,7 +203,7 @@ label.error {
 .home-dasibana .banner-dasibana .dasibana-icon-name {
   display: grid;
   align-items: center;
-  height: calc(100vh - 85px);
+  height: 100vh;
 }
 .home-dasibana .banner-dasibana .dasibana-icon-name h1 {
   text-transform: uppercase;

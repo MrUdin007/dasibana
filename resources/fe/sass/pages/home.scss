@@ -17,7 +17,7 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        height: calc(100vh - 85px) !important;
+        height: 100vh !important;
         position: relative;
 
         .bg-overlay-banner{
@@ -48,7 +48,7 @@
         .dasibana-icon-name{
             display: grid;
             align-items: center;
-            height: calc(100vh - 85px);
+            height: 100vh;
             h1{
                 text-transform: uppercase;
                 padding: 20px;
@@ -68,10 +68,6 @@
             margin: auto;
             width: 65%;
             padding: 50px 0;
-
-            p{
-
-            }
         }
     }
 
