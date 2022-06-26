@@ -13,7 +13,7 @@ class ProductCategory extends Migration
      */
     public function up()
     {
-        Schema::create('kategori_product', function (Blueprint $table) {
+        Schema::create('kategori_produk', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->boolean('status');
