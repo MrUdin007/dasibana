@@ -13,13 +13,13 @@ class Profile extends Migration
      */
     public function up()
     {
-        Schema::create('profile', function (Blueprint $table) {
+        Schema::create('profil', function (Blueprint $table) {
             $table->id();
-            $table->longText('address');
-            $table->integer('year');
-            $table->string('business_name');
-            $table->string('owner');
-            $table->longText('description');
+            $table->longText('alamat');
+            $table->integer('tahun');
+            $table->string('nama_bisnis');
+            $table->string('pemilik');
+            $table->longText('deskripsi');
             $table->string('slug')->unique();
             $table->rememberToken();
             $table->timestamps();

@@ -14,22 +14,22 @@ class SosmedTableSeeder extends Seeder
         DB::table('sosmed')->insert([
             [
                 'name'    =>  'dasibanaShopee',
-                'icon'    =>  'images/icons/shopee.png',
+                'ikon'    =>  'images/icons/shopee.png',
                 'slug'    =>  'https://shopee.co.id/albana16'
             ],
             [
                 'name'    =>  'dasibanaFacebook',
-                'icon'    =>  'images/icons/facebook.png',
+                'ikon'    =>  'images/icons/facebook.png',
                 'slug'    =>  'https://web.facebook.com/grosirsarungdansajadah'
             ],
             [
                 'name'    =>  'dasibanaInstagram',
-                'icon'    =>  'images/icons/instagram.png',
+                'ikon'    =>  'images/icons/instagram.png',
                 'slug'    =>  'https://www.instagram.com/jogjadasibana/'
             ],
             [
                 'name'    =>  'dasibanaTokopedia',
-                'icon'    =>  'images/icons/tokopedia.png',
+                'ikon'    =>  'images/icons/tokopedia.png',
                 'slug'    =>  'https://www.tokopedia.com/konveksibana'
             ],
         ]);

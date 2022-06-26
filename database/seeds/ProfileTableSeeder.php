@@ -11,45 +11,45 @@ class ProfileTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('profile')->insert([
+        DB::table('profil')->insert([
             [
-                'address'           =>  'jl.kaliurang',
-                'year'              =>  '2018',
-                'business_name'     =>  'konveksi',
-                'owner'             =>  'Farhan Albana',
-                'description'       =>  'bla bla bla',
+                'alamat'           =>  'jl.kaliurang',
+                'tahun'              =>  '2018',
+                'nama_bisnis'     =>  'konveksi',
+                'pemilik'             =>  'Farhan Albana',
+                'deskripsi'       =>  'bla bla bla',
                 'slug'              =>  'konveksi'
             ],
             [
-                'address'           =>  'jl.kaliurang',
-                'year'              =>  '2018',
-                'business_name'     =>  'konveksi1',
-                'owner'             =>  'Farhan Albana1',
-                'description'       =>  'bla bla bla1',
+                'alamat'           =>  'jl.kaliurang',
+                'tahun'              =>  '2018',
+                'nama_bisnis'     =>  'konveksi1',
+                'pemilik'             =>  'Farhan Albana1',
+                'deskripsi'       =>  'bla bla bla1',
                 'slug'              =>  'konveksi1'
             ],
             [
-                'address'           =>  'jl.kaliurang',
-                'year'              =>  '2018',
-                'business_name'     =>  'konveksi2',
-                'owner'             =>  'Farhan Albana',
-                'description'       =>  'bla bla bla',
+                'alamat'           =>  'jl.kaliurang',
+                'tahun'              =>  '2018',
+                'nama_bisnis'     =>  'konveksi2',
+                'pemilik'             =>  'Farhan Albana',
+                'deskripsi'       =>  'bla bla bla',
                 'slug'              =>  'konveksi2'
             ],
             [
-                'address'           =>  'jl.kaliurang',
-                'year'              =>  '2018',
-                'business_name'     =>  'konveksi3',
-                'owner'             =>  'Farhan Albana',
-                'description'       =>  'bla bla bla',
+                'alamat'           =>  'jl.kaliurang',
+                'tahun'              =>  '2018',
+                'nama_bisnis'     =>  'konveksi3',
+                'pemilik'             =>  'Farhan Albana',
+                'deskripsi'       =>  'bla bla bla',
                 'slug'              =>  'konveksi3'
             ],
             [
-                'address'           =>  'jl.kaliurang',
-                'year'              =>  '2018',
-                'business_name'     =>  'konveksi4',
-                'owner'             =>  'Farhan Albana',
-                'description'       =>  'bla bla bla',
+                'alamat'           =>  'jl.kaliurang',
+                'tahun'              =>  '2018',
+                'nama_bisnis'     =>  'konveksi4',
+                'pemilik'             =>  'Farhan Albana',
+                'deskripsi'       =>  'bla bla bla',
                 'slug'              =>  'konveksi4'
             ]
         ]);

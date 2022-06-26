@@ -11,7 +11,7 @@ class CategoryProductTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('product_category')->insert([
+        DB::table('kategori_product')->insert([
             [
                 'name'              =>  'Perlengkapan sholat',
                 'status'            =>  true,

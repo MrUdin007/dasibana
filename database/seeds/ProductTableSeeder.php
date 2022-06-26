@@ -11,54 +11,54 @@ class ProductTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('product')->insert([
+        DB::table('produk')->insert([
             [
                 'name'                 =>  'product1',
-                'category_id'          =>  '1',
+                'id_kategori'          =>  '1',
                 'status'               =>  true,
                 'foto'                 =>  'images/product1.jpg',
-                'shopee_link'          =>  '',
-                'tokopedia_link'       =>  ''
+                'link_shopee'          =>  '',
+                'link_tokopedia'       =>  ''
             ],
             [
                 'name'                 =>  'product2',
-                'category_id'          =>  '2',
+                'id_kategori'          =>  '2',
                 'status'               =>  true,
                 'foto'                 =>  'images/product2.jpg',
-                'shopee_link'          =>  '',
-                'tokopedia_link'       =>  ''
+                'link_shopee'          =>  '',
+                'link_tokopedia'       =>  ''
             ],
             [
                 'name'                 =>  'product3',
-                'category_id'          =>  '3',
+                'id_kategori'          =>  '3',
                 'status'               =>  true,
                 'foto'                 =>  'images/product3.jpg',
-                'shopee_link'          =>  '',
-                'tokopedia_link'       =>  ''
+                'link_shopee'          =>  '',
+                'link_tokopedia'       =>  ''
             ],
             [
                 'name'                 =>  'product4',
-                'category_id'          =>  '4',
+                'id_kategori'          =>  '4',
                 'status'               =>  true,
                 'foto'                 =>  'images/product4.jpg',
-                'shopee_link'          =>  '',
-                'tokopedia_link'       =>  ''
+                'link_shopee'          =>  '',
+                'link_tokopedia'       =>  ''
             ],
             [
                 'name'                 =>  'product5',
-                'category_id'          =>  '5',
+                'id_kategori'          =>  '5',
                 'status'               =>  true,
                 'foto'                 =>  'images/product5.jpg',
-                'shopee_link'          =>  '',
-                'tokopedia_link'       =>  ''
+                'link_shopee'          =>  '',
+                'link_tokopedia'       =>  ''
             ],
             [
                 'name'                 =>  'product6',
-                'category_id'          =>  '6',
+                'id_kategori'          =>  '6',
                 'status'               =>  true,
                 'foto'                 =>  'images/product6.jpg',
-                'shopee_link'          =>  '',
-                'tokopedia_link'       =>  ''
+                'link_shopee'          =>  '',
+                'link_tokopedia'       =>  ''
             ]
         ]);
     }

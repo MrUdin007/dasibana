@@ -13,14 +13,14 @@ class Product extends Migration
      */
     public function up()
     {
-        Schema::create('product', function (Blueprint $table) {
+        Schema::create('produk', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('category_id');
+            $table->integer('id_kategori');
             $table->boolean('status');
             $table->string('foto');
-            $table->string('shopee_link');
-            $table->string('tokopedia_link');
+            $table->string('link_shopee');
+            $table->string('link_tokopedia');
             $table->rememberToken();
             $table->timestamps();
         });
