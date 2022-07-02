@@ -44,7 +44,7 @@
                         @endforeach
                         @endif
                     </div>
-                    <a href="#">
+                    <a href="{{ route('about') }}">
                         <b>tentang kami</b>
                     </a>
                 </div>
