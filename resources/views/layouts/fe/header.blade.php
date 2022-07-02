@@ -1,3 +1,7 @@
+<?php
+    use App\Models\KategoriProduk;
+?>
+
 <div class="header-dasibana">
     <nav class="navbar navbar-expand-md fixed-top">
         <div class="container">
@@ -13,16 +17,28 @@
                         <!-- <a class="nav-link {{ (Route::is('home')) ? 'active' : '' }}" aria-current="page" href="#">beranda</a> -->
                         <a class="nav-link active" aria-current="page" href="#">beranda</a>
                     </li>
+                    <?php
+                        $kategori_produk    =   KategoriProduk::selectRaw('kategori_produk.id, kategori_produk.name as kategoriName, kategori_produk.slug as urlProduk')
+                                                ->where('kategori_produk.status', 1)
+                                                ->orderBy('kategori_produk.created_at', 'DESC')
+                                                ->get();
+                    ?>
+                    @if(count($kategori_produk) > 0)
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             produk
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            @foreach($kategori_produk as $produkKategori)
+                            <li>
+                                <a id={{$produkKategori->id}} class="dropdown-item" href={{$produkKategori->urlProduk}}>
+                                    {{$produkKategori->kategoriName}}
+                                </a>
+                            </li>
+                            @endforeach
                         </ul>
                     </li>
+                    @endif
                     <li class="nav-item">
                         <a class="nav-link" href="#">tentang kami</a>
                     </li>

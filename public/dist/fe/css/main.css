@@ -166,7 +166,6 @@ label.error {
 .title-footer {
   font-size: 24px;
   text-align: left;
-  text-transform: capitalize;
   margin: 20px 0;
 }
 
@@ -244,19 +243,16 @@ label.error {
   padding-bottom: 50px !important;
 }
 
+.footer-dasibana .top-footer a, .footer-dasibana .top-footer h4, .footer-dasibana .top-footer p {
+  text-transform: capitalize;
+}
 .footer-dasibana .top-footer .gr-footer {
   grid-template-columns: 1fr 1fr 130px;
   grid-gap: 100px;
 }
-.footer-dasibana .top-footer .gr-footer .menu-footer ul {
-  -webkit-padding-start: 0;
-          padding-inline-start: 0;
-}
-.footer-dasibana .top-footer .gr-footer .menu-footer ul li {
-  margin: 10px 0;
-}
-.footer-dasibana .top-footer .gr-footer .menu-footer ul li a {
-  text-transform: capitalize;
+.footer-dasibana .top-footer .gr-footer .menu-footer .gr-footer-kategori {
+  grid-template-columns: repeat(2, minmax(10px, auto));
+  grid-gap: 5px;
 }
 .footer-dasibana .top-footer .gr-footer .ft-sosmed .menu-sosmed {
   grid-template-columns: repeat(4, minmax(1px, 60px));
