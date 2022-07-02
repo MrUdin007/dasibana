@@ -19,11 +19,10 @@ use Illuminate\Support\Facades\Route;
 //     return view('public.home');
 // });
 
-
+Auth::routes();
 
 /////////////// MANAGE - ADMIN ACCESS ///////////////////
 Route::namespace('Manage')->group(function () {
-    Auth::routes();
     Route::get('manage/product', 'ProductController@index')->name('product');
     Route::get('manage/admin', 'AdminController@index')->name('admin');
     Route::get('manage/produkkategori', 'ProductCategoryController@index')->name('produkkategori');
@@ -33,6 +32,6 @@ Route::namespace('Manage')->group(function () {
 
 
 /////////////// PUBLIC - COMMON USER ///////////////////
-Route::get('/', function () {
-    return view('public.home');
+Route::namespace('Frontend')->group(function () {
+    Route::get('/', 'HomeController@index')->name('home');
 });

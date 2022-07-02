@@ -22,7 +22,8 @@ class Product extends Migration
             $table->string('link_shopee');
             $table->string('link_tokopedia');
             $table->rememberToken();
-            $table->timestamps();
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 

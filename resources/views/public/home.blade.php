@@ -26,125 +26,30 @@
         <div class="desc-singkat-dasibana section-ct">
             <div class="container">
                 <p class="text-center mb-0">
-                    Kami produsen Dasi menyediakan berbagai macam dasi untuk kebutuhan kantor, wedding, sekolah, dll. Seperti Dasi Panjang dan Dasi Kupu-kupu, serta aksesoris lainnya seperti Penjepit Dasi dan Suspender. Menerima pesanan dalam jumlah banyak atau partai besar, bisa juga tambah sablon atau bordir sesuai keinginan anda dengan harga yang sangat terjangkau. Tidak hanya itu saja kami juga menyediakan grosir Oleh-oleh Haji berupa Sarung Tenun, Sajadah, Peci, Tasbih dan Sorban..
+                    {{ $profil->deskripsi }}
                 </p>
             </div>
         </div>
 
         <div class="produk-unggulan section-ct">
             <div class="container">
-                <h1 class="main-title">produk unggulan</h1>
+                <h1 class="main-title">produk terbaru</h1>
                 <div class="gr_display gr-prodc">
+                    @if(count($produk_terbaru) > 0)
+                    @foreach($produk_terbaru as $newProducts)
                     <div class="produk-item">
-                        <div class="pic-produk" style="background-image: url('{{asset('images/product1.jpg')}}')">
+                        <div class="pic-produk" style="background-image: url('{{asset($newProducts->fotoProduk)}}')">
                             <div class="bottom-hidden-btn">
                                 <div class="gr_display gr-btn-prdc">
-                                    <a class="pc-btn-prdct --shopee" target="_blank" href="https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a" style="background-image: url('{{asset('images/icons/shopee.png')}}')"></a>
-                                    <a class="pc-btn-prdct --tokped" target="_blank" href="https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik" style="background-image: url('{{asset('images/icons/tokopedia.png')}}')"></a>
+                                    <a class="pc-btn-prdct --shopee" target="_blank" href={{$newProducts->link_shopee}} style="background-image: url('{{asset('images/icons/shopee.png')}}')"></a>
+                                    <a class="pc-btn-prdct --tokped" target="_blank" href={{$newProducts->link_tokopedia}} style="background-image: url('{{asset('images/icons/tokopedia.png')}}')"></a>
                                 </div>
                                 <div class="overlay-btns-prd"></div>
                             </div>
                         </div>
                     </div>
-                    <div class="produk-item">
-                        <div class="pic-produk" style="background-image: url('{{asset('images/product5.jpg')}}')">
-                            <div class="bottom-hidden-btn">
-                                <div class="gr_display gr-btn-prdc">
-                                    <a class="pc-btn-prdct --shopee" target="_blank" href="https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a" style="background-image: url('{{asset('images/icons/shopee.png')}}')"></a>
-                                    <a class="pc-btn-prdct --tokped" target="_blank" href="https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik" style="background-image: url('{{asset('images/icons/tokopedia.png')}}')"></a>
-                                </div>
-                                <div class="overlay-btns-prd"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="produk-item">
-                        <div class="pic-produk" style="background-image: url('{{asset('images/product8.jpg')}}')">
-                            <div class="bottom-hidden-btn">
-                                <div class="gr_display gr-btn-prdc">
-                                    <a class="pc-btn-prdct --shopee" target="_blank" href="https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a" style="background-image: url('{{asset('images/icons/shopee.png')}}')"></a>
-                                    <a class="pc-btn-prdct --tokped" target="_blank" href="https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik" style="background-image: url('{{asset('images/icons/tokopedia.png')}}')"></a>
-                                </div>
-                                <div class="overlay-btns-prd"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="produk-item">
-                        <div class="pic-produk" style="background-image: url('{{asset('images/product1.jpg')}}')">
-                            <div class="bottom-hidden-btn">
-                                <div class="gr_display gr-btn-prdc">
-                                    <a class="pc-btn-prdct --shopee" target="_blank" href="https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a" style="background-image: url('{{asset('images/icons/shopee.png')}}')"></a>
-                                    <a class="pc-btn-prdct --tokped" target="_blank" href="https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik" style="background-image: url('{{asset('images/icons/tokopedia.png')}}')"></a>
-                                </div>
-                                <div class="overlay-btns-prd"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="produk-item">
-                        <div class="pic-produk" style="background-image: url('{{asset('images/product1.jpg')}}')">
-                            <div class="bottom-hidden-btn">
-                                <div class="gr_display gr-btn-prdc">
-                                    <a class="pc-btn-prdct --shopee" target="_blank" href="https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a" style="background-image: url('{{asset('images/icons/shopee.png')}}')"></a>
-                                    <a class="pc-btn-prdct --tokped" target="_blank" href="https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik" style="background-image: url('{{asset('images/icons/tokopedia.png')}}')"></a>
-                                </div>
-                                <div class="overlay-btns-prd"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="produk-item">
-                        <div class="pic-produk" style="background-image: url('{{asset('images/product5.jpg')}}')">
-                            <div class="bottom-hidden-btn">
-                                <div class="gr_display gr-btn-prdc">
-                                    <a class="pc-btn-prdct --shopee" target="_blank" href="https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a" style="background-image: url('{{asset('images/icons/shopee.png')}}')"></a>
-                                    <a class="pc-btn-prdct --tokped" target="_blank" href="https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik" style="background-image: url('{{asset('images/icons/tokopedia.png')}}')"></a>
-                                </div>
-                                <div class="overlay-btns-prd"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="produk-item">
-                        <div class="pic-produk" style="background-image: url('{{asset('images/product8.jpg')}}')">
-                            <div class="bottom-hidden-btn">
-                                <div class="gr_display gr-btn-prdc">
-                                    <a class="pc-btn-prdct --shopee" target="_blank" href="https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a" style="background-image: url('{{asset('images/icons/shopee.png')}}')"></a>
-                                    <a class="pc-btn-prdct --tokped" target="_blank" href="https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik" style="background-image: url('{{asset('images/icons/tokopedia.png')}}')"></a>
-                                </div>
-                                <div class="overlay-btns-prd"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="produk-item">
-                        <div class="pic-produk" style="background-image: url('{{asset('images/product1.jpg')}}')">
-                            <div class="bottom-hidden-btn">
-                                <div class="gr_display gr-btn-prdc">
-                                    <a class="pc-btn-prdct --shopee" target="_blank" href="https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a" style="background-image: url('{{asset('images/icons/shopee.png')}}')"></a>
-                                    <a class="pc-btn-prdct --tokped" target="_blank" href="https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik" style="background-image: url('{{asset('images/icons/tokopedia.png')}}')"></a>
-                                </div>
-                                <div class="overlay-btns-prd"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="produk-item">
-                        <div class="pic-produk" style="background-image: url('{{asset('images/product8.jpg')}}')">
-                            <div class="bottom-hidden-btn">
-                                <div class="gr_display gr-btn-prdc">
-                                    <a class="pc-btn-prdct --shopee" target="_blank" href="https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a" style="background-image: url('{{asset('images/icons/shopee.png')}}')"></a>
-                                    <a class="pc-btn-prdct --tokped" target="_blank" href="https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik" style="background-image: url('{{asset('images/icons/tokopedia.png')}}')"></a>
-                                </div>
-                                <div class="overlay-btns-prd"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="produk-item">
-                        <div class="pic-produk" style="background-image: url('{{asset('images/product1.jpg')}}')">
-                            <div class="bottom-hidden-btn">
-                                <div class="gr_display gr-btn-prdc">
-                                    <a class="pc-btn-prdct --shopee" target="_blank" href="https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a" style="background-image: url('{{asset('images/icons/shopee.png')}}')"></a>
-                                    <a class="pc-btn-prdct --tokped" target="_blank" href="https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik" style="background-image: url('{{asset('images/icons/tokopedia.png')}}')"></a>
-                                </div>
-                                <div class="overlay-btns-prd"></div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+                    @endif
                 </div>
             </div>
         </div>
@@ -154,17 +59,13 @@
             <div class="container ct-parallax">
                 <h1 class="main-title" style="color: #ffffff;">kategori produk</h1>
                 <div class="sec-kategori-home">
+                    @if(count($kategori_produk) > 0)
                     <div class="kategori-dsb-slick">
-                        <div>kategori 1</div>
-                        <div>kategori 2</div>
-                        <div>kategori 3</div>
-                        <div>kategori 4</div>
-                        <div>kategori 5</div>
-                        <div>kategori 6</div>
-                        <div>kategori 7</div>
-                        <div>kategori 8</div>
-                        <div>kategori 9</div>
+                        @foreach($kategori_produk as $productCathegory)
+                        <div>{{$productCathegory->kategoriName}}</div>
+                        @endforeach
                     </div>
+                    @endif
                 </div>
             </div>
         </div>
