@@ -1,34 +1,52 @@
+<?php
+    use App\Models\KategoriProduk;
+    use App\Models\Sosmed;
+?>
+
 <div class="footer-dasibana">
     <div class="container">
         <div class="top-footer section-ct">
             <div class="gr_display gr-footer">
                 <div class="menu-footer">
-                    <h4 class="title-footer">jelajahi dasibana</h4>
-                    <ul>
-                        <li>
-                            <a href="">dynamic</a>
-                        </li>
-                        <li>
-                            <a href="">tentang kami</a>
-                        </li>
-                    </ul>
+                    <h4 class="title-footer">kategori produk</h4>
+                    <div class="gr_display gr-footer-kategori">
+                        <?php
+                            $kategori_produk    =   KategoriProduk::selectRaw('kategori_produk.id, kategori_produk.name as kategoriName, kategori_produk.slug as urlProduk')
+                                                    ->where('kategori_produk.status', 1)
+                                                    ->orderBy('kategori_produk.created_at', 'DESC')
+                                                    ->get();
+                        ?>
+                        @if(count($kategori_produk) > 0)
+                        @foreach($kategori_produk as $produkKategori)
+                        <div class="ls-kategori-ft">
+                            <a id={{$produkKategori->id}} href={{$produkKategori->urlProduk}}>
+                                {{$produkKategori->kategoriName}}
+                            </a>
+                        </div>
+                        @endforeach
+                        @endif
+                    </div>
                 </div>
                 <div class="ft-sosmed">
                     <h4 class="title-footer">ikuti kami</h4>
-                    <div class="menu-sosmed gr_display">
-                        <a href="" target="_blank">
-                            <div class="footer-icn-smd" style="background-image: url('{{asset('images/icons/shopee.png')}}')"></div>
+                    <div class="menu-sosmed gr_display mb-3">
+                        <?php
+                            $sosmed    =   Sosmed::selectRaw('sosmed.id, sosmed.name as nameSosmed, sosmed.ikon as ikonSosmed, sosmed.slug as urlSosmed')
+                                            ->where('sosmed.status', 1)
+                                            ->orderBy('sosmed.created_at', 'DESC')
+                                            ->get();
+                        ?>
+                        @if(count($sosmed) > 0)
+                        @foreach($sosmed as $sosmeds)
+                        <a href={{$sosmeds->urlSosmed}} target="_blank" id={{$sosmeds->id}}>
+                            <div class="footer-icn-smd @if($sosmeds->nameSosmed == 'dasibanaTokopedia') --tokped @endif"style="background-image: url('{{asset($sosmeds->ikonSosmed)}}')"></div>
                         </a>
-                        <a href="" target="_blank">
-                            <div class="footer-icn-smd --tokped" style="background-image: url('{{asset('images/icons/tokopedia.png')}}')"></div>
-                        </a>
-                        <a href="" target="_blank">
-                            <div class="footer-icn-smd" style="background-image: url('{{asset('images/icons/facebook.png')}}')"></div>
-                        </a>
-                        <a href="" target="_blank">
-                            <div class="footer-icn-smd" style="background-image: url('{{asset('images/icons/instagram.png')}}')"></div>
-                        </a>
+                        @endforeach
+                        @endif
                     </div>
+                    <a href="{{ route('about') }}">
+                        <b>tentang kami</b>
+                    </a>
                 </div>
                 <div class="logo-footer">
                     <div class="footer-icn-smd-lg" style="background-image: url('{{asset('images/icon.png')}}')"></div>

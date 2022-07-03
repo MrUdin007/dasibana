@@ -1,0 +1,57 @@
+// -----------------------------------------------------------------------------
+// This file contains all about page styles.
+// -----------------------------------------------------------------------------
+
+@charset 'UTF-8';
+
+// 1 - Configuration and helpers
+@import '../abstracts/index';
+
+// 2 - Base stuff
+@import '../base/index';
+
+.about-dasibana {
+    background-color: $blue-dasibana;
+    .banner-about{
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 300px !important;
+        position: relative;
+
+        .bg-overlay-banner{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 0;
+            background: linear-gradient(180deg, rgba(6, 29, 38, 0.63) 0%, #05161d 140%);
+        }
+
+        h3{
+            font-size: 32px;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            z-index: 2;
+            left: 50%;
+            top: 50%;
+            text-transform: uppercase;
+        }
+    }
+
+    .about-content{
+        grid-template-columns: repeat(2, minmax(10px, 1fr));
+        grid-gap: 20px;
+        align-items: center;
+        padding: 50px 0;
+
+        .about-img{
+            background-position: top;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 500px;
+        }
+    }
+}

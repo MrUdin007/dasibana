@@ -1,7 +1,11 @@
+<?php
+    use App\Models\KategoriProduk;
+?>
+
 <div class="header-dasibana">
     <nav class="navbar navbar-expand-md fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="{{ url('/')}}">
+            <a class="navbar-brand" href="{{ route('home') }}">
                     <img src="{{asset('images/dasibana.png')}}" alt="">
                 </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,21 +14,35 @@
             <div class="collapse navbar-collapse menu-header" id="navbarCollapse">
                 <ul class="navbar-nav ms-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <!-- <a class="nav-link {{ (Route::is('home')) ? 'active' : '' }}" aria-current="page" href="#">beranda</a> -->
-                        <a class="nav-link active" aria-current="page" href="#">beranda</a>
+                        <a class="nav-link {{ (Route::is('home')) ? 'active' : '' }}" aria-current="page" href="{{ route('home') }}">beranda</a>
                     </li>
+                    <?php
+                        $kategori_produk    =   KategoriProduk::selectRaw('kategori_produk.id, kategori_produk.name as kategoriName, kategori_produk.slug as urlProduk')
+                                                ->where('kategori_produk.status', 1)
+                                                ->orderBy('kategori_produk.created_at', 'DESC')
+                                                ->get();
+                    ?>
+                    @if(count($kategori_produk) > 0)
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            produk
+                        <a class="nav-link dropdown-toggle {{ (Route::is('product_categhory')) ? 'active' : '' }}" href="{{ route('product_categhory') }}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            kategori produk
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            @foreach($kategori_produk as $produkKategori)
+                            <li>
+                                <a id={{$produkKategori->id}} class="dropdown-item" href={{$produkKategori->urlProduk}}>
+                                    {{$produkKategori->kategoriName}}
+                                </a>
+                            </li>
+                            @endforeach
                         </ul>
                     </li>
+                    @endif
                     <li class="nav-item">
-                        <a class="nav-link" href="#">tentang kami</a>
+                        <a class="nav-link {{ (Route::is('product')) ? 'active' : '' }}" href="{{ route('product') }}">produk</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ (Route::is('about')) ? 'active' : '' }}" href="{{ route('about') }}">tentang kami</a>
                     </li>
                 </ul>
             </div>

@@ -11,13 +11,14 @@ body {
     margin: 0;
     position: relative;
     overflow-x: hidden;
-    background-color: #FAFAFA;
+    background-color: $main-bg;
 }
 
 body, h1, h2, h3, h4, h5, h6, p, a, b, div, .form-control, small{
     font-family: "Asap_reg", sans-serif !important;
     font-size: 14px;
     word-wrap: break-word;
+    color: $white !important;
     white-space: inherit !important;
 }
 
@@ -38,7 +39,6 @@ a {
 
     @include on-event {
         text-decoration: none !important;
-        color: $black !important;
         opacity: .7;
     }
 

@@ -17,6 +17,7 @@ class Sosmed extends Migration
             $table->id();
             $table->string('name');
             $table->string('ikon');
+            $table->boolean('status');
             $table->string('slug')->unique();
             $table->rememberToken();
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));

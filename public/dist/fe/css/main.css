@@ -7,13 +7,14 @@ body {
   margin: 0;
   position: relative;
   overflow-x: hidden;
-  background-color: #FAFAFA;
+  background-color: #171a21;
 }
 
 body, h1, h2, h3, h4, h5, h6, p, a, b, div, .form-control, small {
   font-family: "Asap_reg", sans-serif !important;
   font-size: 14px;
   word-wrap: break-word;
+  color: #ffffff !important;
   white-space: inherit !important;
 }
 
@@ -34,7 +35,6 @@ a {
 }
 a:hover, a:active, a:focus {
   text-decoration: none !important;
-  color: #000000 !important;
   opacity: 0.7;
 }
 a i {
@@ -166,7 +166,6 @@ label.error {
 .title-footer {
   font-size: 24px;
   text-align: left;
-  text-transform: capitalize;
   margin: 20px 0;
 }
 
@@ -228,7 +227,7 @@ label.error {
 }
 
 .header-dasibana .navbar {
-  background-color: #b7bbc6;
+  background-color: #292d36;
 }
 .header-dasibana .navbar .navbar-brand img {
   width: 120px;
@@ -244,19 +243,20 @@ label.error {
   padding-bottom: 50px !important;
 }
 
+.dasibana-page {
+  margin-top: 84.5px;
+}
+
+.footer-dasibana .top-footer a, .footer-dasibana .top-footer h4, .footer-dasibana .top-footer p {
+  text-transform: capitalize;
+}
 .footer-dasibana .top-footer .gr-footer {
   grid-template-columns: 1fr 1fr 130px;
   grid-gap: 100px;
 }
-.footer-dasibana .top-footer .gr-footer .menu-footer ul {
-  -webkit-padding-start: 0;
-          padding-inline-start: 0;
-}
-.footer-dasibana .top-footer .gr-footer .menu-footer ul li {
-  margin: 10px 0;
-}
-.footer-dasibana .top-footer .gr-footer .menu-footer ul li a {
-  text-transform: capitalize;
+.footer-dasibana .top-footer .gr-footer .menu-footer .gr-footer-kategori {
+  grid-template-columns: repeat(2, minmax(10px, auto));
+  grid-gap: 5px;
 }
 .footer-dasibana .top-footer .gr-footer .ft-sosmed .menu-sosmed {
   grid-template-columns: repeat(4, minmax(1px, 60px));
@@ -285,10 +285,10 @@ label.error {
 }
 .footer-dasibana .bottom-footer {
   margin: auto;
-  padding: 10px;
-  background-color: #000000;
+  padding: 5px;
+  background-color: #292d36;
 }
 .footer-dasibana .bottom-footer p {
   text-align: center;
-  color: #ffffff;
+  font-size: 12px;
 }

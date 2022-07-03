@@ -5,19 +5,18 @@
 
 .footer-dasibana{
     .top-footer{
+        a, h4, p{
+            text-transform: capitalize;
+        }
+
         .gr-footer{
             grid-template-columns: 1fr 1fr 130px;
             grid-gap: 100px;
 
             .menu-footer{
-                ul{
-                    padding-inline-start: 0;
-                    li{
-                        margin: 10px 0;
-                        a{
-                            text-transform: capitalize;
-                        }
-                    }
+                .gr-footer-kategori{
+                    grid-template-columns: repeat(2, minmax(10px, auto));
+                    grid-gap: 5px;
                 }
             }
 
@@ -59,11 +58,11 @@
 
     .bottom-footer{
         margin: auto;
-        padding: 10px;
-        background-color: $black;
+        padding: 5px;
+        background-color: $blue-dasibana;
         p{
             text-align: center;
-            color: $white;
+            font-size: 12px;
         }
     }
 }
