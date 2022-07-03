@@ -37,4 +37,14 @@ class ProductCategoryController extends Controller
         }
         return view('manage.produkkategori.index');
     }
+
+    public function add(Request $request)
+    {
+
+    }
+
+    public function edit(Request $request)
+    {
+
+    }
 }

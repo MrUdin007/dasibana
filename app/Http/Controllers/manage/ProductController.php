@@ -47,4 +47,14 @@ class ProductController extends Controller
         }
         return view('manage.produk.index');
     }
+
+    public function add(Request $request)
+    {
+
+    }
+
+    public function edit(Request $request)
+    {
+
+    }
 }

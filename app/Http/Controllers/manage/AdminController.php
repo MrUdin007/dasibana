@@ -28,4 +28,14 @@ class AdminController extends Controller
         }
         return view('manage.admin.index');
     }
+
+    public function add(Request $request)
+    {
+
+    }
+
+    public function edit(Request $request)
+    {
+
+    }
 }

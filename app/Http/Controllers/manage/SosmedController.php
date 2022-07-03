@@ -32,4 +32,14 @@ class SosmedController extends Controller
         }
         return view('manage.sosmed.index');
     }
+
+    public function add(Request $request)
+    {
+
+    }
+
+    public function edit(Request $request)
+    {
+
+    }
 }
