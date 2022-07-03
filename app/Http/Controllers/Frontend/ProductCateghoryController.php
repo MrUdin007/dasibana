@@ -30,6 +30,7 @@ class ProductCateghoryController extends Controller
     {
         if($req->slug){
             $kategori_produk    =   KategoriProduk::selectRaw('kategori_produk.name')
+                                    ->where('kategori_produk.slug', $req->slug)
                                     ->first();
 
             $products = KategoriProduk::selectRaw('kategori_produk.name, produk.name as produkName, produk.foto, produk.link_shopee, produk.link_tokopedia')

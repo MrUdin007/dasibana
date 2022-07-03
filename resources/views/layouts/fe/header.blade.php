@@ -17,7 +17,7 @@
                         <a class="nav-link {{ (Route::is('home')) ? 'active' : '' }}" aria-current="page" href="{{ route('home') }}">beranda</a>
                     </li>
                     <?php
-                        $kategori_produk    =   KategoriProduk::selectRaw('kategori_produk.id, kategori_produk.name as kategoriName, kategori_produk.slug as urlProduk')
+                        $kategori_produk    =   KategoriProduk::selectRaw('kategori_produk.id, kategori_produk.name as kategoriName, kategori_produk.slug as urlKategori')
                                                 ->where('kategori_produk.status', 1)
                                                 ->orderBy('kategori_produk.created_at', 'DESC')
                                                 ->get();
@@ -30,7 +30,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             @foreach($kategori_produk as $produkKategori)
                             <li>
-                                <a id={{$produkKategori->id}} class="dropdown-item" href={{$produkKategori->urlProduk}}>
+                                <a id={{$produkKategori->id}} class="dropdown-item" href="{{ route('detail_categhory', [$produkKategori->urlKategori]) }}">
                                     {{$produkKategori->kategoriName}}
                                 </a>
                             </li>
