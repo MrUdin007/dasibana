@@ -6,6 +6,8 @@ mix
     .sass('resources/fe/sass/main.scss', 'public/dist/fe/css')
     .sass('resources/fe/sass/pages/home.scss', 'public/dist/fe/css')
     .sass('resources/fe/sass/pages/about.scss', 'public/dist/fe/css')
+    .sass('resources/fe/sass/pages/categhory.scss', 'public/dist/fe/css')
+    .sass('resources/fe/sass/pages/product.scss', 'public/dist/fe/css')
 
     .setResourceRoot('../public/dist/')
     .options({

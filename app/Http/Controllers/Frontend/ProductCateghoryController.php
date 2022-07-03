@@ -5,8 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-use App\Models\Profil;
-use App\Models\Sosmed;
+use App\Models\KategoriProduk;
 use Carbon\Carbon;
 use DB;
 use Mail;
@@ -16,16 +15,25 @@ class ProductCateghoryController extends Controller
 {
     public function index(Request $req)
     {
-        $sosmed =   Sosmed::selectRaw('sosmed.id, sosmed.name as nameSosmed, sosmed.ikon as ikonSosmed, sosmed.slug as urlSosmed')
-                    ->where('sosmed.status', 1)
-                    ->orderBy('sosmed.created_at', 'DESC')
-                    ->get();
+        $kategori_produk    =   KategoriProduk::selectRaw('kategori_produk.id, kategori_produk.name as kategoriName')
+                                ->where('kategori_produk.status', 1)
+                                ->orderBy('kategori_produk.created_at', 'DESC')
+                                ->get();
 
-        $profil = Profil::select('*')->first();
-
-        return view('public.product_categhory', compact(
-            'sosmed',
-            'profil'
+        return view('public.categhory.index', compact(
+            'kategori_produk'
         ));
     }
+
+    // public function detail(Request $req)
+    // {
+    //     $kategori_produk    =   KategoriProduk::selectRaw('kategori_produk.id, kategori_produk.name as kategoriName')
+    //                             ->where('kategori_produk.status', 1)
+    //                             ->orderBy('kategori_produk.created_at', 'DESC')
+    //                             ->get();
+
+    //     return view('public.categhory.detail', compact(
+    //         'detail_kategori'
+    //     ));
+    // }
 }

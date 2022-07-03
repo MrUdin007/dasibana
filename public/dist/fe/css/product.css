@@ -169,67 +169,44 @@ label.error {
   margin: 20px 0;
 }
 
-.home-dasibana {
-  background-color: #171a21;
+.product-dasibana {
+  background-color: #292d36;
 }
-.home-dasibana .banner-dasibana {
+.product-dasibana .banner-product {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: calc(100vh - 85px) !important;
+  height: 300px !important;
   position: relative;
 }
-.home-dasibana .banner-dasibana .bg-overlay-banner {
+.product-dasibana .banner-product .bg-overlay-banner {
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
   z-index: 0;
-  background: linear-gradient(180deg, rgba(81, 78, 78, 0.19) 0%, #282828 140%);
+  background: linear-gradient(180deg, rgba(6, 29, 38, 0.63) 0%, #05161d 140%);
 }
-.home-dasibana .banner-dasibana .content-banner-top {
-  position: relative;
-  z-index: 2;
-}
-.home-dasibana .banner-dasibana .logo-banner img {
-  width: 100%;
-  margin: auto;
-  display: block;
-  padding: 20px 100px;
-}
-.home-dasibana .banner-dasibana .dasibana-icon-name {
-  display: grid;
-  align-items: center;
-  height: 100vh;
-}
-.home-dasibana .banner-dasibana .dasibana-icon-name h1 {
-  text-transform: uppercase;
-  padding: 20px;
-  color: #b2aa03;
+.product-dasibana .banner-product h3 {
+  font-size: 32px;
   text-align: center;
-  font-size: 50px;
-  width: 320px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  text-transform: uppercase;
 }
-.home-dasibana .desc-singkat-dasibana {
-  background-color: #292d36;
-  margin: 0;
-}
-.home-dasibana .desc-singkat-dasibana .container {
-  margin: auto;
-  width: 65%;
-  padding: 50px 0;
-}
-.home-dasibana .produk-unggulan {
-  padding: 0 15%;
-}
-.home-dasibana .produk-unggulan .gr-prodc {
-  grid-template-columns: repeat(4, minmax(10px, 1fr));
+.product-dasibana .gr-prodc {
+  grid-template-columns: repeat(5, minmax(10px, 1fr));
   grid-gap: 20px;
   align-items: center;
   padding: 50px 0;
+  width: calc(100% - 100px);
+  margin: auto;
 }
-.home-dasibana .produk-unggulan .gr-prodc .produk-item .pic-produk {
+.product-dasibana .gr-prodc .produk-item .pic-produk {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -239,16 +216,16 @@ label.error {
   margin: auto;
   position: relative;
 }
-.home-dasibana .produk-unggulan .gr-prodc .produk-item .pic-produk:hover .bottom-hidden-btn, .home-dasibana .produk-unggulan .gr-prodc .produk-item .pic-produk:active .bottom-hidden-btn, .home-dasibana .produk-unggulan .gr-prodc .produk-item .pic-produk:focus .bottom-hidden-btn {
+.product-dasibana .gr-prodc .produk-item .pic-produk:hover .bottom-hidden-btn, .product-dasibana .gr-prodc .produk-item .pic-produk:active .bottom-hidden-btn, .product-dasibana .gr-prodc .produk-item .pic-produk:focus .bottom-hidden-btn {
   visibility: visible;
   opacity: 1;
 }
-.home-dasibana .produk-unggulan .gr-prodc .produk-item .pic-produk .bottom-hidden-btn {
+.product-dasibana .gr-prodc .produk-item .pic-produk .bottom-hidden-btn {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0.3s, opacity 0.3s linear;
 }
-.home-dasibana .produk-unggulan .gr-prodc .produk-item .pic-produk .bottom-hidden-btn .overlay-btns-prd {
+.product-dasibana .gr-prodc .produk-item .pic-produk .bottom-hidden-btn .overlay-btns-prd {
   background-color: #0c3443;
   height: 50px;
   z-index: 0;
@@ -259,7 +236,7 @@ label.error {
   left: 50%;
   opacity: 0.7;
 }
-.home-dasibana .produk-unggulan .gr-prodc .produk-item .pic-produk .bottom-hidden-btn .gr-btn-prdc {
+.product-dasibana .gr-prodc .produk-item .pic-produk .bottom-hidden-btn .gr-btn-prdc {
   grid-template-columns: repeat(2, minmax(1px, 0.5fr));
   grid-gap: 20px;
   align-items: center;
@@ -272,50 +249,18 @@ label.error {
   padding: 0 40px;
   z-index: 1;
 }
-.home-dasibana .produk-unggulan .gr-prodc .produk-item .pic-produk .bottom-hidden-btn .gr-btn-prdc .pc-btn-prdct {
+.product-dasibana .gr-prodc .produk-item .pic-produk .bottom-hidden-btn .gr-btn-prdc .pc-btn-prdct {
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
   display: block;
   margin: auto;
 }
-.home-dasibana .produk-unggulan .gr-prodc .produk-item .pic-produk .bottom-hidden-btn .gr-btn-prdc .pc-btn-prdct.\--shopee {
+.product-dasibana .gr-prodc .produk-item .pic-produk .bottom-hidden-btn .gr-btn-prdc .pc-btn-prdct.\--shopee {
   height: 30px;
   width: 30px;
 }
-.home-dasibana .produk-unggulan .gr-prodc .produk-item .pic-produk .bottom-hidden-btn .gr-btn-prdc .pc-btn-prdct.\--tokped {
+.product-dasibana .gr-prodc .produk-item .pic-produk .bottom-hidden-btn .gr-btn-prdc .pc-btn-prdct.\--tokped {
   height: 40px;
   width: 40px;
-}
-.home-dasibana .kategori-produk-dasibana {
-  position: relative;
-}
-.home-dasibana .kategori-produk-dasibana.parallax-bg {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.home-dasibana .kategori-produk-dasibana .overlay-bg-parallax {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  border-radius: 15px;
-  z-index: 0;
-  background: linear-gradient(180deg, rgba(81, 78, 78, 0.19) 0%, #282828 140%);
-}
-.home-dasibana .kategori-produk-dasibana .ct-parallax {
-  z-index: 1;
-  position: relative;
-}
-.home-dasibana .kategori-produk-dasibana .ct-parallax .sec-kategori-home {
-  padding: 60px;
-}
-.home-dasibana .kategori-produk-dasibana .ct-parallax .sec-kategori-home .kategori-dsb-slick .slick-list .slick-track .slick-slide {
-  background-color: #ffffff;
-  height: auto;
-  padding: 20px;
-  margin: 10px;
 }

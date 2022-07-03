@@ -37,4 +37,5 @@ Route::namespace('Frontend')->group(function () {
     Route::get('/tentang-kami', 'AboutController@index')->name('about');
     Route::get('/produk', 'ProductController@index')->name('product');
     Route::get('/kategori-produk', 'ProductCateghoryController@index')->name('product_categhory');
+    // Route::get('/kategori-produk', 'ProductCateghoryController@detail')->name('detail_categhory');
 });

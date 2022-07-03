@@ -16,16 +16,19 @@ class ProductController extends Controller
 {
     public function index(Request $req)
     {
-        $sosmed =   Sosmed::selectRaw('sosmed.id, sosmed.name as nameSosmed, sosmed.ikon as ikonSosmed, sosmed.slug as urlSosmed')
-                    ->where('sosmed.status', 1)
-                    ->orderBy('sosmed.created_at', 'DESC')
-                    ->get();
+        $products     =   Produk::selectRaw('produk.id, produk.foto as fotoProduk, produk.link_shopee, produk.link_tokopedia')
+                        ->where('produk.status', 1)
+                        ->orderBy('produk.created_at', 'DESC')
+                        ->get();
 
-        $profil = Profil::select('*')->first();
+        $kategori_produk    =  KategoriProduk::selectRaw('kategori_produk.id, kategori_produk.name as kategoriName')
+                                ->where('kategori_produk.status', 1)
+                                ->orderBy('kategori_produk.created_at', 'DESC')
+                                ->get();
 
         return view('public.product', compact(
-            'sosmed',
-            'profil'
+            'products',
+            'kategori_produk'
         ));
     }
 }
