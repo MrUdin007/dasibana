@@ -3,5 +3,6 @@
     "/dist/fe/css/home.css": "/dist/fe/css/home.css",
     "/dist/fe/css/about.css": "/dist/fe/css/about.css",
     "/dist/fe/css/categhory.css": "/dist/fe/css/categhory.css",
-    "/dist/fe/css/product.css": "/dist/fe/css/product.css"
+    "/dist/fe/css/product.css": "/dist/fe/css/product.css",
+    "/dist/fe/css/detail_product.css": "/dist/fe/css/detail_product.css"
 }

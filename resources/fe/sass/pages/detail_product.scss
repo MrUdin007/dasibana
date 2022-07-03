@@ -1,0 +1,121 @@
+// -----------------------------------------------------------------------------
+// This file contains all detail-product page styles.
+// -----------------------------------------------------------------------------
+
+@charset 'UTF-8';
+
+// 1 - Configuration and helpers
+@import '../abstracts/index';
+
+// 2 - Base stuff
+@import '../base/index';
+
+.detail-product-dasibana {
+    background-color: $blue-dasibana;
+    .banner-detail-product{
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 300px !important;
+        position: relative;
+
+        .bg-overlay-banner{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 0;
+            background: linear-gradient(180deg, rgba(6, 29, 38, 0.63) 0%, #05161d 140%);
+        }
+
+        h3{
+            font-size: 32px;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            z-index: 2;
+            left: 50%;
+            top: 50%;
+            text-transform: uppercase;
+        }
+    }
+
+    .gr-prodc{
+        grid-template-columns: repeat(5, minmax(10px, 1fr));
+        grid-gap: 20px;
+        align-items: center;
+        padding: 50px 0;
+        width: calc(100% - 100px);
+        margin: auto;
+        .produk-item{
+            .pic-produk{
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 205px;
+                width: 100%;
+                display: block;
+                margin: auto;
+                position: relative;
+
+                @include on-event{
+                    .bottom-hidden-btn{
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
+
+                .bottom-hidden-btn{
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: visibility .3s, opacity .3s linear;
+
+                    .overlay-btns-prd{
+                        background-color: #0c3443;
+                        height: 50px;
+                        z-index: 0;
+                        position: absolute;
+                        bottom: 0;
+                        transform: translate(-50%, 0);
+                        width: 100.2%;
+                        left: 50%;
+                        opacity: .7;
+                    }
+
+                    .gr-btn-prdc{
+                        grid-template-columns: repeat(2, minmax(1px, .5fr));
+                        grid-gap: 20px;
+                        align-items: center;
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        transform: translate(-50%, 0);
+                        width: 100%;
+                        height: 50px;
+                        padding: 0 40px;
+                        z-index: 1;
+
+                        .pc-btn-prdct{
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            background-size: 100%;
+                            display: block;
+                            margin: auto;
+
+                            &.--shopee{
+                                height: 30px;
+                                width: 30px;
+                            }
+
+                            &.--tokped{
+                                height: 40px;
+                                width: 40px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

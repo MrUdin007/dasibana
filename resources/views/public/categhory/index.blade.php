@@ -19,7 +19,7 @@
                 @if(count($kategori_produk) > 0)
                 @foreach($kategori_produk as $kategori)
                 <div class="categhory-lists">
-                    <a href="">{{$kategori->kategoriName}}</a>
+                    <a href="{{ route('detail_categhory', [$kategori->urlKategori]) }}">{{$kategori->kategoriName}}</a>
                 </div>
                 @endforeach
                 @endif
