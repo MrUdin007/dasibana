@@ -7,13 +7,14 @@ body {
   margin: 0;
   position: relative;
   overflow-x: hidden;
-  background-color: #FAFAFA;
+  background-color: #171a21;
 }
 
 body, h1, h2, h3, h4, h5, h6, p, a, b, div, .form-control, small {
   font-family: "Asap_reg", sans-serif !important;
   font-size: 14px;
   word-wrap: break-word;
+  color: #ffffff !important;
   white-space: inherit !important;
 }
 
@@ -34,7 +35,6 @@ a {
 }
 a:hover, a:active, a:focus {
   text-decoration: none !important;
-  color: #000000 !important;
   opacity: 0.7;
 }
 a i {
@@ -170,13 +170,13 @@ label.error {
 }
 
 .home-dasibana {
-  background-color: #b7bbc6;
+  background-color: #171a21;
 }
 .home-dasibana .banner-dasibana {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh !important;
+  height: calc(100vh - 85px) !important;
   position: relative;
 }
 .home-dasibana .banner-dasibana .bg-overlay-banner {
@@ -185,7 +185,6 @@ label.error {
   left: 0;
   height: 100%;
   width: 100%;
-  border-radius: 15px;
   z-index: 0;
   background: linear-gradient(180deg, rgba(81, 78, 78, 0.19) 0%, #282828 140%);
 }
@@ -213,7 +212,7 @@ label.error {
   width: 320px;
 }
 .home-dasibana .desc-singkat-dasibana {
-  background-color: #ffffff;
+  background-color: #292d36;
   margin: 0;
 }
 .home-dasibana .desc-singkat-dasibana .container {
@@ -250,7 +249,7 @@ label.error {
   transition: visibility 0.3s, opacity 0.3s linear;
 }
 .home-dasibana .produk-unggulan .gr-prodc .produk-item .pic-produk .bottom-hidden-btn .overlay-btns-prd {
-  background-color: #b2aa03;
+  background-color: #0c3443;
   height: 60px;
   z-index: 0;
   position: absolute;

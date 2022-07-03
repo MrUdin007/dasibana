@@ -35,4 +35,6 @@ Route::namespace('Manage')->group(function () {
 Route::namespace('Frontend')->group(function () {
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/tentang-kami', 'AboutController@index')->name('about');
+    Route::get('/produk', 'ProductController@index')->name('product');
+    Route::get('/kategori-produk', 'ProductCateghoryController@index')->name('product_categhory');
 });

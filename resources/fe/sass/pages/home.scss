@@ -17,7 +17,7 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        height: 100vh !important;
+        height: calc(100vh - 85px) !important;
         position: relative;
 
         .bg-overlay-banner{
@@ -26,7 +26,6 @@
             left: 0;
             height: 100%;
             width: 100%;
-            border-radius: 15px;
             z-index: 0;
             background: linear-gradient(180deg, rgba(81, 78, 78, 0.19) 0%, #282828 140%);
         }
@@ -61,7 +60,7 @@
     }
 
     .desc-singkat-dasibana{
-        background-color: $white;
+        background-color: $blue-dasibana;
         margin: 0;
 
         .container{
@@ -103,7 +102,7 @@
                         transition: visibility .3s, opacity .3s linear;
 
                         .overlay-btns-prd{
-                            background-color: $yellow-dasibana;
+                            background-color: #0c3443;
                             height: 60px;
                             z-index: 0;
                             position: absolute;

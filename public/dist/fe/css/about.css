@@ -7,13 +7,14 @@ body {
   margin: 0;
   position: relative;
   overflow-x: hidden;
-  background-color: #FAFAFA;
+  background-color: #171a21;
 }
 
 body, h1, h2, h3, h4, h5, h6, p, a, b, div, .form-control, small {
   font-family: "Asap_reg", sans-serif !important;
   font-size: 14px;
   word-wrap: break-word;
+  color: #ffffff !important;
   white-space: inherit !important;
 }
 
@@ -34,7 +35,6 @@ a {
 }
 a:hover, a:active, a:focus {
   text-decoration: none !important;
-  color: #000000 !important;
   opacity: 0.7;
 }
 a i {
@@ -167,4 +167,46 @@ label.error {
   font-size: 24px;
   text-align: left;
   margin: 20px 0;
+}
+
+.about-dasibana {
+  background-color: #292d36;
+}
+.about-dasibana .banner-about {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px !important;
+  position: relative;
+}
+.about-dasibana .banner-about .bg-overlay-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  background: linear-gradient(180deg, rgba(6, 29, 38, 0.63) 0%, #05161d 140%);
+}
+.about-dasibana .banner-about h3 {
+  font-size: 32px;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  text-transform: uppercase;
+}
+.about-dasibana .about-content {
+  grid-template-columns: repeat(2, minmax(10px, 1fr));
+  grid-gap: 20px;
+  align-items: center;
+  padding: 50px 0;
+}
+.about-dasibana .about-content .about-img {
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
 }

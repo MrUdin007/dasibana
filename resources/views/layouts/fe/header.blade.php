@@ -25,7 +25,7 @@
                     @if(count($kategori_produk) > 0)
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            produk
+                            kategori produk
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             @foreach($kategori_produk as $produkKategori)
@@ -38,6 +38,9 @@
                         </ul>
                     </li>
                     @endif
+                    <li class="nav-item">
+                        <a class="nav-link {{ (Route::is('product')) ? 'active' : '' }}" href="{{ route('product') }}">produk</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link {{ (Route::is('about')) ? 'active' : '' }}" href="{{ route('about') }}">tentang kami</a>
                     </li>
