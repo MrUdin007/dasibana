@@ -59,14 +59,14 @@
             var table = $('#kontakTable').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: "{{ route('kontak') }}",
+                ajax: "{{ route('manage.kontak') }}",
                 columns: [
                     {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-                    {data: 'address', name: 'address'},
-                    {data: 'year', name: 'year'},
-                    {data: 'business_name', name: 'business_name'},
-                    {data: 'owner', name: 'owner'},
-                    {data: 'description', name: 'description'},
+                    {data: 'alamat', name: 'alamat'},
+                    {data: 'tahun', name: 'tahun'},
+                    {data: 'nama_bisnis', name: 'nama_bisnis'},
+                    {data: 'pemilik', name: 'pemilik'},
+                    {data: 'deskripsi', name: 'deskripsi'},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
             });

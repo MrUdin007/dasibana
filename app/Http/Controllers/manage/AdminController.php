@@ -9,14 +9,15 @@ use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $Admin = DB::select('select * from admin');
+            $Admin = DB::select('select * from admins');
             return Datatables::of($Admin)
                     ->addIndexColumn()
                     ->addColumn('action', function($url){

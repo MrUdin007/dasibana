@@ -15,10 +15,15 @@ use Illuminate\Validation\Rule;
 
 class ProductController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $Product = DB::select('select * from product');
+            $Product = DB::select('select * from produk');
             return Datatables::of($Product)
                     ->addIndexColumn()
                     ->addColumn('status', function($status){
@@ -35,7 +40,7 @@ class ProductController extends Controller
                         return '<img src="'.$url.'" alt="'.$url.'">';
                     })
                     ->addColumn('action', function($url){
-                        $slug= asset($url->slug);
+                        $slug= asset($url->id);
                         return '<a href="'.$slug.'" class="edit btn btn-primary btn-sm">View</a>';
                     })
                     ->rawColumns(['foto','action'])->make(true);

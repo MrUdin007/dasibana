@@ -57,7 +57,7 @@
             var table = $('#adminTable').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: "{{ route('admin') }}",
+                ajax: "{{ route('manage.admin') }}",
                 columns: [
                     {data: 'DT_RowIndex', name: 'DT_RowIndex'},
                     {data: 'name', name: 'name'},

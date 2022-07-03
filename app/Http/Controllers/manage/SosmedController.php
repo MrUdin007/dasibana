@@ -9,21 +9,26 @@ use Illuminate\Support\Facades\DB;
 
 class SosmedController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index(Request $request)
     {
         if ($request->ajax()) {
             $Sosmed = DB::select('select * from sosmed');
             return Datatables::of($Sosmed)
                     ->addIndexColumn()
-                    ->addColumn('icon', function($pic){
-                        $url= asset($pic->icon);
+                    ->addColumn('ikon', function($pic){
+                        $url= asset($pic->ikon);
                         return '<img src="'.$url.'" alt="'.$url.'">';
                     })
                     ->addColumn('action', function($url){
                         $slug= asset($url->slug);
                         return '<a href="'.$slug.'" class="edit btn btn-primary btn-sm">View</a>';
                     })
-                    ->rawColumns(['action','icon'])->make(true);
+                    ->rawColumns(['action','ikon'])->make(true);
         }
         return view('manage.sosmed.index');
     }

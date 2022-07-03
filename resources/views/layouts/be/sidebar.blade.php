@@ -37,7 +37,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="sidebar-link text-capitalize" href="{{ route('admin')}}">
+                <a class="sidebar-link text-capitalize" href="{{ route('manage.admin')}}">
                     <span class="icon-holder">
                         <i class="c-blue-500 ti-user"></i>
                     </span>
@@ -45,7 +45,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="sidebar-link text-capitalize" href="{{ route('sosmed')}}">
+                <a class="sidebar-link text-capitalize" href="{{ route('manage.sosmed')}}">
                     <span class="icon-holder">
                         <i class="c-blue-500 ti-user"></i>
                     </span>
@@ -53,7 +53,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="sidebar-link text-capitalize" href="{{ route('kontak')}}">
+                <a class="sidebar-link text-capitalize" href="{{ route('manage.kontak')}}">
                     <span class="icon-holder">
                         <i class="c-blue-500 ti-user"></i>
                     </span>
@@ -72,12 +72,12 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li class="nav-item dropdown">
-                        <a href="{{ route('produkkategori')}}" class="text-capitalize">
+                        <a href="{{ route('manage.produkkategori')}}" class="text-capitalize">
                             <span>produk kategori</span>
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="{{ route('product')}}" class="text-capitalize">
+                        <a href="{{ route('manage.product')}}" class="text-capitalize">
                             <span>data produk</span>
                         </a>
                     </li>

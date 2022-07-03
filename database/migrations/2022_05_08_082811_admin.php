@@ -13,7 +13,7 @@ class Admin extends Migration
      */
     public function up()
     {
-        Schema::create('admin', function (Blueprint $table) {
+        Schema::create('admins', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('username')->unique();
@@ -22,6 +22,7 @@ class Admin extends Migration
             $table->string('foto');
             $table->string('slug')->unique();
             $table->rememberToken();
+            $table->timestamp('email_verified_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
@@ -34,6 +35,6 @@ class Admin extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admin');
+        Schema::dropIfExists('admins');
     }
 }

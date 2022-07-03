@@ -9,10 +9,15 @@ use Illuminate\Support\Facades\DB;
 
 class KontakController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $Profile = DB::select("select * from profile");
+            $Profile = DB::select("select * from profil");
             return Datatables::of($Profile)
                     ->addIndexColumn()
                     ->addColumn('action', function($url){
