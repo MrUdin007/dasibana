@@ -1150,8 +1150,8 @@ article img {
   border-radius: 3px;
 }
 .form-dasibana .checkbox.checkbox-success input[type=checkbox]:checked + label::before {
-  background-color: #1FBC9D;
-  border-color: #1FBC9D;
+  background-color: #0b303c;
+  border-color: #0b303c;
 }
 .form-dasibana .form-group .float-inpt-fld .floatfield,
 .form-dasibana .form-group .float-inpt-fld .floating-select {
@@ -1168,10 +1168,10 @@ article img {
 }
 .form-dasibana .form-group .float-inpt-fld label {
   color: #ffffff !important;
-  background: #1FBC9D;
+  background: #0b303c;
 }
 .form-dasibana .form-group .float-inpt-fld label.flt-label-select {
-  background: #1FBC9D;
+  background: #0b303c;
 }
 .form-dasibana .form-group .float-inpt-fld input {
   height: auto;
@@ -1457,7 +1457,7 @@ article img {
   border: unset;
 }
 .form-dasibana .custom-file input.form-control {
-  color: #1FBC9D !important;
+  color: #0b303c !important;
 }
 .form-dasibana .input-group {
   margin-bottom: 10px;
