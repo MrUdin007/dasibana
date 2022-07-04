@@ -254,13 +254,14 @@ label.error {
   margin: auto;
 }
 .categhory-dasibana .categhory-content .categhory-lists {
-  padding: 20px;
+  padding: 35px 20px;
   text-align: center;
   background-image: url("../../../../public/images/pic2.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
   position: relative;
+  box-shadow: 7px 7px 10px rgba(23, 13, 13, 0.1);
 }
 .categhory-dasibana .categhory-content .categhory-lists .parallax-slides {
   position: absolute;
@@ -273,7 +274,7 @@ label.error {
 }
 .categhory-dasibana .categhory-content .categhory-lists .ct-cat {
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }
 .categhory-dasibana .categhory-content .categhory-lists .ct-cat a {
   color: #ffffff !important;
