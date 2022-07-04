@@ -13,8 +13,8 @@
             </button>
             <div class="collapse navbar-collapse menu-header" id="navbarCollapse">
                 <ul class="navbar-nav ms-auto mb-2 mb-md-0">
-                    <li class="nav-item">
-                        <a class="nav-link {{ (Route::is('home')) ? 'active' : '' }}" aria-current="page" href="{{ route('home') }}">beranda</a>
+                    <li class="nav-item {{ (Route::is('home')) ? 'active' : '' }}">
+                        <a class="nav-link" aria-current="page" href="{{ route('home') }}">beranda</a>
                     </li>
                     <?php
                         $kategori_produk    =   KategoriProduk::selectRaw('kategori_produk.id, kategori_produk.name as kategoriName, kategori_produk.slug as urlKategori')
@@ -38,11 +38,11 @@
                         </ul>
                     </li>
                     @endif
-                    <li class="nav-item">
-                        <a class="nav-link {{ (Route::is('product')) ? 'active' : '' }}" href="{{ route('product') }}">produk</a>
+                    <li class="nav-item {{ (Route::is('product')) ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('product') }}">produk</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ (Route::is('about')) ? 'active' : '' }}" href="{{ route('about') }}">tentang kami</a>
+                    <li class="nav-item {{ (Route::is('about')) ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('about') }}">tentang kami</a>
                     </li>
                 </ul>
             </div>

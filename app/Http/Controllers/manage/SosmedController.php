@@ -35,11 +35,11 @@ class SosmedController extends Controller
 
     public function add(Request $request)
     {
-
+        return view('manage.sosmed.form');
     }
 
     public function edit(Request $request)
     {
-
+        return view('manage.sosmed.form');
     }
 }

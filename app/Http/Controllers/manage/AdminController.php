@@ -31,11 +31,11 @@ class AdminController extends Controller
 
     public function add(Request $request)
     {
-
+        return view('manage.admin.form');
     }
 
     public function edit(Request $request)
     {
-
+        return view('manage.admin.form');
     }
 }

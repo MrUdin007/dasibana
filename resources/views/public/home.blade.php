@@ -12,22 +12,30 @@
 
 @section('content')
     <section class="home-dasibana">
-        <div class="banner-dasibana" style="background-image: url('{{asset('images/banner.jpg')}}')">
+        <div class="banner-dasibana" style="background-image: url('{{asset('images/banner-home.jpg')}}')">
             <div class="bg-overlay-banner"></div>
             <div class="container content-banner-top">
                 <div class="dasibana-icon-name">
-                    <h1>
-                        dasibana
-                    </h1>
+                    <div class="ct-banner-text">
+                        <h1 class="text-uppercase mb-4">
+                            dasibana
+                        </h1>
+                        <p class="text-capitalize mt-4">
+                            menyediakan keperluan dasi, grosir sarung dan sajadah
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="desc-singkat-dasibana section-ct">
             <div class="container">
-                <p class="text-center mb-0">
-                    {{ $profil->deskripsi }}
-                </p>
+                <h1 class="main-title" style="color: #ffffff !important;">deskripsi perusahaan</h1>
+                <div class="box-desc">
+                    <p class="text-center mb-0">
+                        {{ $profil->deskripsi }}
+                    </p>
+                </div>
             </div>
         </div>
 
@@ -57,12 +65,15 @@
         <div class="kategori-produk-dasibana section-ct parallax-bg" style="background-image: url('{{asset('images/parallax.jpg')}}')">
             <div class="overlay-bg-parallax"></div>
             <div class="container ct-parallax">
-                <h1 class="main-title" style="color: #ffffff;">kategori produk</h1>
+                <h1 class="main-title" style="color: #ffffff !important;">kategori produk</h1>
                 <div class="sec-kategori-home">
                     @if(count($kategori_produk) > 0)
                     <div class="kategori-dsb-slick">
                         @foreach($kategori_produk as $productCathegory)
-                        <div>{{$productCathegory->kategoriName}}</div>
+                        <div class="ct-cat-home">
+                            <div class="parallax-slides"></div>
+                            <p class="mb-0 text-center">{{$productCathegory->kategoriName}}</p>
+                        </div>
                         @endforeach
                     </div>
                     @endif
@@ -81,7 +92,7 @@
             $('.kategori-dsb-slick').slick({
                 slidesToShow: 3,
                 slidesToScroll: 1,
-                autoplay: true,
+                autoplay: false,
                 autoplaySpeed: 3000,
             });
         });

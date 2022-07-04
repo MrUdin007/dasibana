@@ -31,11 +31,11 @@ class KontakController extends Controller
 
     public function add(Request $request)
     {
-
+        return view('manage.kontak.form');
     }
 
     public function edit(Request $request)
     {
-
+        return view('manage.kontak.form');
     }
 }

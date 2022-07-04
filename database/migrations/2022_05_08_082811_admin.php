@@ -19,7 +19,6 @@ class Admin extends Migration
             $table->string('username')->unique();
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('foto');
             $table->string('slug')->unique();
             $table->rememberToken();
             $table->timestamp('email_verified_at')->default(DB::raw('CURRENT_TIMESTAMP'));

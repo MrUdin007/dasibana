@@ -11,11 +11,11 @@ body {
     margin: 0;
     position: relative;
     overflow-x: hidden;
-    background-color: $main-bg;
+    background-color: $main-bg !important;
 }
 
 body, h1, h2, h3, h4, h5, h6, p, a, b, div, .form-control, small{
-    font-family: "Asap_reg", sans-serif !important;
+    font-family: "roboto_light", sans-serif !important;
     font-size: 14px;
     word-wrap: break-word;
     color: $white !important;

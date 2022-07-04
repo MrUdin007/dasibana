@@ -7,11 +7,11 @@ body {
   margin: 0;
   position: relative;
   overflow-x: hidden;
-  background-color: #ececec !important;
+  background-color: #dee5e6 !important;
 }
 
 body, h1, h2, h3, h4, h5, h6, p, a, b, div, .form-control, small {
-  font-family: "Asap_reg", sans-serif !important;
+  font-family: "roboto_light", sans-serif !important;
   font-size: 14px;
   word-wrap: break-word;
   color: #ffffff !important;
@@ -161,16 +161,63 @@ label.error {
   text-align: center;
   text-transform: uppercase;
   margin: 20px 40px;
+  color: #0b303c !important;
+  letter-spacing: 0.04em;
+  font-family: "asap_reg", sans-serif !important;
 }
 
 .title-footer {
-  font-size: 24px;
+  font-size: 18px;
+  color: #0b303c !important;
+  font-family: "asap_med", sans-serif !important;
   text-align: left;
+  text-transform: uppercase !important;
   margin: 20px 0;
 }
 
+.subs-title {
+  letter-spacing: 0.1em !important;
+  font-family: "asap_reg", sans-serif !important;
+}
+
+@font-face {
+  font-family: roboto_light;
+  src: url("../../../../public/dist/fonts/Roboto/Roboto-Light.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: roboto_reg;
+  src: url("../../../../public/dist/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: asap_reg;
+  src: url("../../../../public/dist/fonts/asap/Asap-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: asap_med;
+  src: url("../../../../public/dist/fonts/asap/Asap-Medium.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Montserrat_reg;
+  src: url("../../../../public/dist/fonts/Montserrat/Montserrat-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Montserrat_med;
+  src: url("../../../../public/dist/fonts/Montserrat/Montserrat-Medium.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
 .detail-product-dasibana {
-  background-color: #292d36;
+  background-color: #dee5e6;
 }
 .detail-product-dasibana .banner-detail-product {
   background-position: center;
@@ -186,10 +233,10 @@ label.error {
   height: 100%;
   width: 100%;
   z-index: 0;
-  background: linear-gradient(180deg, rgba(6, 29, 38, 0.63) 0%, #05161d 140%);
+  background: linear-gradient(180deg, rgba(11, 48, 60, 0.49) 0%, #152931 150%);
 }
 .detail-product-dasibana .banner-detail-product h3 {
-  font-size: 32px;
+  font-size: 40px;
   text-align: center;
   transform: translate(-50%, -50%);
   position: absolute;
