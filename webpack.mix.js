@@ -2,13 +2,16 @@ const mix = require('laravel-mix');
 
 mix
     //js & css for frontend
-    // .js('resources/be/js/app.js', 'public/dist/be/js')
+    .js('resources/be/js/app.js', 'public/dist/be/js')
     .sass('resources/fe/sass/main.scss', 'public/dist/fe/css')
     .sass('resources/fe/sass/pages/home.scss', 'public/dist/fe/css')
     .sass('resources/fe/sass/pages/about.scss', 'public/dist/fe/css')
     .sass('resources/fe/sass/pages/categhory.scss', 'public/dist/fe/css')
     .sass('resources/fe/sass/pages/product.scss', 'public/dist/fe/css')
     .sass('resources/fe/sass/pages/detail_categhory.scss', 'public/dist/fe/css')
+
+    .sass('resources/be/sass/main.scss', 'public/dist/be/css')
+    .sass('resources/be/sass/pages/login.scss', 'public/dist/be/css')
 
     .setResourceRoot('../public/dist/')
     .options({

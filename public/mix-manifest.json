@@ -1,8 +1,11 @@
 {
+    "/dist/be/js/app.js": "/dist/be/js/app.js",
     "/dist/fe/css/main.css": "/dist/fe/css/main.css",
     "/dist/fe/css/home.css": "/dist/fe/css/home.css",
     "/dist/fe/css/about.css": "/dist/fe/css/about.css",
     "/dist/fe/css/categhory.css": "/dist/fe/css/categhory.css",
     "/dist/fe/css/product.css": "/dist/fe/css/product.css",
-    "/dist/fe/css/detail_categhory.css": "/dist/fe/css/detail_categhory.css"
+    "/dist/fe/css/detail_categhory.css": "/dist/fe/css/detail_categhory.css",
+    "/dist/be/css/main.css": "/dist/be/css/main.css",
+    "/dist/be/css/login.css": "/dist/be/css/login.css"
 }

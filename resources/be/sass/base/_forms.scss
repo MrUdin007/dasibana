@@ -2,7 +2,7 @@
 // This file contains all forms style.
 // -----------------------------------------------------------------------------
 
-.form-vegan{
+.form-dasibana{
     .list-input-sdd{
         display: grid;
         align-items: flex-start;
@@ -50,7 +50,7 @@
             .floating-select{
                 background-color: transparent !important;
             }
-        
+
             .floatfield{
                 &:active, &:focus{
                     border: .5px solid $grey !important;
@@ -59,20 +59,20 @@
                     border: .5px solid $grey !important;
                 }
             }
-        
+
             .field-icon {
                 bottom: 24px;
             }
-        
+
             label {
                 color: $white !important;
                 background: $green-vegan;
-        
+
                 &.flt-label-select{
                     background: $green-vegan;
                 }
             }
-        
+
             input{
                 height: auto;
                 border-color: #000000;
@@ -131,7 +131,7 @@
                     &:first-child{
                         border-color: $black;
                     }
-                }      
+                }
             }
 
             .fld-inpt {
@@ -217,6 +217,7 @@
     }
     input, select, .select2-container, .select2-multiplect[multiple="multiple"]{
         height: 43px;
+        width: 90%;
     }
     textarea{
         height: auto;
@@ -234,12 +235,12 @@
     }
     input, select, textarea, .select2-container{
         box-shadow: none;
-        padding: 10px 15px;
+        padding: 0 15px;
         background: $white;
         border: 1px solid rgba(0, 0, 0, 0.2);
         border-radius: 5px;
         margin-bottom: 10px;
-        font-size: 15px !important;
+        font-size: 13px !important;
 
         &::placeholder{
             color: rgba(0, 0, 0, 0.4);
@@ -267,7 +268,7 @@
                 }
             }
         }
-        
+
         &.select2-dropdown-open{
             .select2-choice{
                 .select2-arrow{
@@ -334,13 +335,13 @@
             select{
                 appearance: none;
                 padding-right: 35px;
-    
+
                 option{
                     &:disabled{
                         color: rgba(0, 0, 0, 0.4);
                     }
                 }
-    
+
                 &::-ms-expand{
                     display: none;
                 }
@@ -519,7 +520,7 @@
                                 left: 1px;
                                 transition: all .5s ease-in-out;
                             }
-                            
+
                             .img-cvr{
                                 img{
                                     width: 100px;
@@ -531,7 +532,7 @@
                                     }
                                 }
                             }
-                            
+
                             .desc-rd{
                                 width: 350px;
                                 margin: auto;
