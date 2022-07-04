@@ -14,6 +14,7 @@
                             $kategori_produk    =   KategoriProduk::selectRaw('kategori_produk.id, kategori_produk.name as kategoriName, kategori_produk.slug as urlKategori')
                                                     ->where('kategori_produk.status', 1)
                                                     ->orderBy('kategori_produk.created_at', 'DESC')
+                                                    ->take(10)
                                                     ->get();
                         ?>
                         @if(count($kategori_produk) > 0)
