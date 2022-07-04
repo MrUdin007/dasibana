@@ -23,7 +23,7 @@ class HomeController extends Controller
                                 ->take(12)
                                 ->get();
 
-        $kategori_produk    =  KategoriProduk::selectRaw('kategori_produk.id, kategori_produk.name as kategoriName')
+        $kategori_produk    =  KategoriProduk::selectRaw('kategori_produk.id, kategori_produk.name as kategoriName, kategori_produk.slug')
                                 ->where('kategori_produk.status', 1)
                                 ->orderBy('kategori_produk.created_at', 'DESC')
                                 ->get();

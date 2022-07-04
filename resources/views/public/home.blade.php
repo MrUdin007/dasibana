@@ -72,7 +72,9 @@
                         @foreach($kategori_produk as $productCathegory)
                         <div class="ct-cat-home">
                             <div class="parallax-slides"></div>
-                            <p class="mb-0 text-center">{{$productCathegory->kategoriName}}</p>
+                            <a href="{{ route('detail_categhory', [$productCathegory->slug]) }}" class="mb-0 text-center">
+                                {{$productCathegory->kategoriName}}
+                            </a>
                         </div>
                         @endforeach
                     </div>
