@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 /////////////// MANAGE - ADMIN ACCESS ///////////////////
 Auth::routes();
-    Route::middleware('auth.be')->prefix('manage')->namespace('Manage')->group(function () {
+Route::prefix('manage')->namespace('Manage')->group(function () {
     ///Admin
     Route::get('admin', 'AdminController@index')->name('manage.admin');
     Route::get('admin/add', 'AdminController@add')->name('manage.admin.create');

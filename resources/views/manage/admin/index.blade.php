@@ -87,47 +87,19 @@
 
 @push('scripts')
     <script type="text/javascript">
-        var dataTable;
-
-        (function($) {
-            'use strict';
-            $(document).ready(function(){
-                dataTable = $('#adminTable').DataTable({
-                    responsive: true,
-                    scrollX: true,
-                    DisplayLength: 50,
-                    processing: true,
-                    serverSide: true,
-                    deferRender : true,
-                    stateSave: true,
-                    language: {
-                        search: '<i class="fas fa-search" aria-hidden="true"></i>',
-                        searchPlaceholder: 'Search Voucher'
-                    },
-                    ajax: "{{ route('manage.admin') }}",
-                    columnDefs: [{
-                        searchable: false,
-                        orderable: false,
-                        targets: 0
-                    }],
-                    columns: [
-                        {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-                        {data: 'name', name: 'name'},
-                        {data: 'username', name: 'username'},
-                        {data: 'email', name: 'email'},
-                        {data: 'action', name: 'action', orderable: false, searchable: false},
-                        {
-                            orderable: false,
-                            className: 'text-center',
-                            render: function (data, type, row) {
-                                return '<a title="Lihat" class="btn cur-p btn-secondary product-detail" data-id="' + row.id + '" href="javascript:void(0);" onclick=openDetail('+ row.id +') aria-pressed="false">View</a>'+
-                                '<a class="btn cur-p btn-primary editForm" title="Ubah" href="{{ route("be.voucher.edit",["id"=>""]) }}' + row.id +'" aria-pressed="false" autocomplete="off">Edit</a>'+
-                                '<a type="button" class="btn cur-p btn-danger" href="javascript:void(0)" onclick=deleteRow('+ row.id +')>Delete</a>';
-                            }
-                        },
-                    ]
-                });
+        $(document).ready(function(){
+            var table = $('#adminTable').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: "{{ route('manage.admin') }}",
+                columns: [
+                    {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+                    {data: 'name', name: 'name'},
+                    {data: 'username', name: 'username'},
+                    {data: 'email', name: 'email'},
+                    {data: 'action', name: 'action', orderable: false, searchable: false},
+                ]
             });
-	    })(jQuery);
+        });
     </script>
 @endpush

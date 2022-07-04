@@ -1,18 +1,19 @@
-@extends('layouts.be.be')
+@extends('layouts.be.app')
+
 @section('content')
 <div class="container-fluid">
     <div class="grid_layouts --two-auto">
         <div class="head-lst">
             <h5 class="page-title">
-                {{ Request::get('id') ? 'Edit Voucher' : 'Add Voucher' }}
+                Add / Edit
             </h5>
         </div>
         <div class="mn-rght">
             <ol class="breadcrumb">
                 <li><a href="javascript:void(0)">Home</a></li>
                 <li class="active">
-                    <a href="{{ Request::get('id') ? route('be.voucher.edit', Request::get('id')) : route('be.voucher.create') }}">
-                        {{ Request::get('id') ? 'Edit Voucher' : 'Add Voucher' }}
+                    <a href="#">
+                        Add / Edit
                     </a>
                 </li>
             </ol>
@@ -23,7 +24,7 @@
             <div class="bgc-white p-20 bd">
                 <div class="grid_layouts --two-auto">
                     <div class="head-lst">
-                        <h3 class="page-title">{{ Request::get('id') ? 'Edit Voucher' : 'Add Voucher' }}</h3>
+                        <h3 class="page-title">Add / Edit</h3>
                     </div>
                 </div>
                 <div>
@@ -87,7 +88,7 @@
                             </div>
                         </div>
                         <div class="mt-4">
-                            <a href="{{route('be.voucher')}}" class="btn btn-warning">Cancel</a>
+                            <a href="#" class="btn btn-warning">Cancel</a>
                             <button class="btn btn-sm btn-primary btn-customize" type="button" id="submitProduk">Submit</button>
                         </div>
                     </form>
@@ -100,16 +101,16 @@
 
 @push('scripts')
     <script type="text/javascript">
-        @if(Request('id'))
-            getEditData();
+        <!-- @if(Request('id'))
+            getEditData(); -->
             //console.log(counter);
-        @endif
+        <!-- @endif -->
 
-            $('#submitProduk').click(function (e) {
+            <!-- $('#submitProduk').click(function (e) { -->
 
            // e.preventDefault();
 
-            $.ajax({
+            <!-- $.ajax({
                 type:'post',
                 url :'{{ $api_url."voucher/save" }}' ,
                 data: {
@@ -145,10 +146,10 @@
                 error:function(xhr){
                     console.log(xhr);
                 }
-            });
-        });
+            }); -->
+        <!-- }); -->
 
-       function getEditData(){
+        <!-- function getEditData(){
          $.ajax({
                 type:'post',
                 url :'{{ $api_url."voucher/edit" }}' ,
@@ -183,6 +184,6 @@
 
                 }
             });
-        }
+        } -->
     </script>
 @endpush

@@ -1864,6 +1864,7 @@ table {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-top-width: 2px;
   border-bottom-width: 2px;
+  width: 100% !important;
 }
 table thead tr th {
   color: #1FBC9D;
