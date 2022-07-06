@@ -34,8 +34,12 @@
         @stack('css')
         <link href="{{ asset('dist/be/css/main.css') }}" rel="stylesheet">
         <link href="{{ asset('dist/be/vendor/css/style.css') }}" rel="stylesheet">
+        <link href="{{ asset('dist/be/vendor/datatables/rowReorder.dataTables.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('dist/vendors/css/bootstrap.css') }}" rel="stylesheet">
         <link href="{{ asset('vendor/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet">
-        <!-- <link href="{{ asset('dist/vendors/css/bootstrap.css') }}" rel="stylesheet"> -->
+        <link href="{{ asset('dist/vendors/select2/dist/css/select2.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('dist/be/vendor/datatables/jquery.dataTables.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('dist/be/css/floating_input.css') }}" rel="stylesheet">
         <style>
             table .tt-status{
                 position: relative;
@@ -56,6 +60,16 @@
                 bottom: 0.9em;
                 display: block;
                 opacity: 0.3;
+            }
+
+            .swal2-popup{
+                padding: 30px !important;
+                padding-bottom: 40px !important;
+            }
+
+            .swal2-popup .swal2-styled{
+                padding: 8px 25px !important;
+                font-size: 14px !important;
             }
         </style>
     </head>
@@ -97,12 +111,17 @@
         <!-- ============================================================== -->
         <!-- All Jquery -->
         <!-- ============================================================== -->
-        <!-- <script type="text/javascript" src="{{ asset('dist/be/js/app.js') }}"></script> -->
-        <!-- <script type="text/javascript" src="{{ asset('dist/be/vendor/jquery/dist/jquery.min.js') }}"></script> -->
+        <script type="text/javascript" src="{{ asset('dist/be/vendor/jquery/dist/jquery.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('dist/vendors/js/bootstrap.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('dist/vendors/js/hide_input.js') }}"></script>
         <script type="text/javascript" src="{{ asset('dist/be/vendor/js/vendor.js') }}"></script>
         <script type="text/javascript" src="{{ asset('dist/be/vendor/js/bundle.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('vendor/sweetalert2/sweetalert2.all.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('vendor/sweetalert2/sweetalert2.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('vendor/sweetalert2/sweetalert2.all.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('dist/be/vendor/datatables/dataTables.rowReorder.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('dist/be/vendor/datatables/jquery.dataTables.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('dist/vendors/select2/dist/js/select2.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('dist/be/vendor/ckeditor4/ckeditor.js') }}"></script>
 
         <script type="text/javascript">
             window.addEventListener('load', function load() {

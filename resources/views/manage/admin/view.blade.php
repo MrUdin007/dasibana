@@ -51,7 +51,7 @@
                             </div>
                         </div>
                         <div class="form-group m-t-30">
-                            <label class="control-label"><b>email</b><span class="text-danger">*</span></label>
+                            <label class="control-label"><b>Email Admin</b><span class="text-danger">*</span></label>
                             <div class="controls">
                                 <p class="form-control-static">{{ $admin->email }}</p>
                             </div>

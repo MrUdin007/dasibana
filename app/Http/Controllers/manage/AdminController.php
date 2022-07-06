@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Validator;
 use App\Models\Admin;
 use Carbon\Carbon;
 use DataTables;
@@ -64,20 +66,26 @@ class AdminController extends Controller
         {
             $action = '<div class="button-group">';
             $action .='
-                <a href="javascript:void(0)" title="view" class="btn btn-sm btn-rounded btn-info" onclick="openAdmin('.$val->id.')">
-                    <i class="fa fa-eye"></i>
+                <a href="javascript:void(0)" title="view" class="btn btn-sm btn-rounded btn-outline-info" onclick="openAdmin('.$val->id.')">
+                    <span class="icon-holder">
+                        <i class="c-blue-500 ti-eye"></i>
+                    </span>
                 </a>
             ';
 
             $action .='
-                <a href="'.route('admin.edit',$val->id).'" title="edit"  class="btn btn-sm btn-rounded btn-warning">
-                    <i class="fa fa-edit"></i>
+                <a href="'.route('admin.edit',$val->id).'" title="edit"  class="btn btn-sm btn-rounded btn-outline-success">
+                    <span class="icon-holder">
+                        <i class="c-blue-500 ti-pencil-alt"></i>
+                    </span>
                 </a>
             ';
 
             $action .='
-                <a href="javascript:void(0)" title="delete" class="btn btn-sm btn-rounded btn-danger" onclick="deleteAdmin(\'delete-form-'.$val->id.'\')">
-                    <i class="fa fa-trash"></i>
+                <a href="javascript:void(0)" title="delete" class="btn btn-sm btn-rounded btn-outline-danger" onclick="deleteAdmin(\'delete-form-'.$val->id.'\')">
+                    <span class="icon-holder">
+                        <i class="c-blue-500 ti-trash"></i>
+                    </span>
                 </a>
                 <form id="delete-form-'.$val->id.'" action="'.route('admin.delete',$val->id).'" method="POST" style="display: none;">'.csrf_field().'</form>
             ';
@@ -125,36 +133,50 @@ class AdminController extends Controller
     public function save(Request $req, $id=null)
     {
         if($id){
+            $validator = Validator::make($req->all(), [
+                'username' => 'required|string|max:255|unique:admins,username',
+                'email'     => 'required|string|unique:admins,email,'.$id,
+            ]);
+
+            if ($validator->fails()) {
+                $req->session()->flash('status', 'Data gagal diubah!');
+                return redirect()->route('admin.edit', $id);
+            }
+
             $admin = Admin::find($id);
         }else{
+            $validator = Validator::make($req->all(), [
+                'username' => 'required|string|max:255|unique:admins,username',
+                'email'     => 'required|string|unique:admins,email,'.$id,
+            ]);
+
+            if ($validator->fails()) {
+                $req->session()->flash('status', 'Data baru gagal dimasukkan!');
+                return redirect()->route('admin.add', $id);
+            }
             $admin = new Admin;
-            $same_slug = Admin::where('slug','like',str_slug($req->id).'%')->count();
+            $same_slug = Admin::where('slug','like',Str::slug($req->name).'%')->count();
             if ($same_slug > 0) {
-                $slug = str_slug($req->id.' '.$same_slug);
+                $slug = Str::slug($req->name.' '.$same_slug);
             } else {
-                $slug = str_slug($req->id);
+                $slug = Str::slug($req->name);
             }
             $admin->slug = $slug;
         }
 
         // Save data
-        $admin->name       = $req->nameadmin;
-        $admin->username   = $req->usernameadmin;
-        $admin->email      = $req->emailadmin;
-        $admin->password   = $req->passwordadmin;
+        $admin->name       = $req->name;
+        $admin->username   = $req->username;
+        $admin->email      = $req->email;
+        $admin->password   = bcrypt(sha1($req->password));
         if(!$id) {
             $admin->created_at = Carbon::now()->format('Y-m-d');
             $admin->updated_at = Carbon::now()->format('Y-m-d H:i:s');
         }
-        $admin->save();
 
-        if($id) {
-            $req->session()->flash('status', 'Edit Record Success!');
-            return redirect()->route('admin.edit', $id);
-        }else{
-            $req->session()->flash('status', 'Add Record Success!');
-            return redirect()->route('admin.add');
-        }
+        $admin->save();
+        $req->session()->flash('status', 'Data berhasil dimasukkan!');
+        return redirect()->route('admin.index');
     }
 
     public function delete(Request $req, $id)
@@ -164,7 +186,7 @@ class AdminController extends Controller
         $admin->deleted_at  = Carbon::now()->format('Y-m-d');
         $admin->save();
 
-        $req->session()->flash('status', 'Delete Success!');
+        $req->session()->flash('status', 'Data berhasil dihapus!');
         return redirect()->route('admin.index');
     }
 }

@@ -19,13 +19,25 @@
     <div class="row gap-20 pos-r">
         <div class="masonry-item col-md-12">
             <div class="bgc-white bd bdrs-3 p-20 mB-20">
+                @if(session('status'))
+                <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                    <h3 class="text-success">
+                        <span class="icon-holder">
+                            <i class="c-green-500 ti-check-box"></i>
+                        </span>
+                        Success
+                    </h3>
+                    {{ session('status') }}
+                </div>
+                @endif
                 <div class="grid_layouts --two-auto">
                     <div class="head-lst">
                         <h3 class="page-title text-uppercase">data Admin</h3>
                     </div>
                     <div class="mn-rght">
                         <button class="addbsnt --pluses">
-                            <a href="http://127.0.0.2/vim-fe/public/manage/supplier/tambah">
+                            <a href="{{ route('admin.add')}}">
                                 <i class="ti-plus"></i>
                             </a>
                         </button>
@@ -39,7 +51,7 @@
                             <th>Name</th>
                             <th>Username</th>
                             <th>Email</th>
-                            <th width="30px">Action</th>
+                            <th width="280px">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -54,7 +66,7 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title">Admin</h3>
+                    <h3 class="modal-title text-center">Data Admin - <span id="nameadmin"></span></h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -62,33 +74,33 @@
                 <div class="modal-body">
                     <form>
                     <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label class="control-label">Name</label>
-                                <p class="form-control-static" id="nameadmin"></p>
-                            </div>
+                        <div class="col-md-3">
+                            <label class="control-label">Nama Admin</label>
+                        </div>
+                        <div class="col-md-9">
+                            <p class="form-control-static">:  <span id="nameadmin"></span></p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label class="control-label">Username</label>
-                                <p class="form-control-static" id="usernameadmin"></p>
-                            </div>
+                        <div class="col-md-3">
+                            <label class="control-label">Username Admin</label>
+                        </div>
+                        <div class="col-md-9">
+                            <p class="form-control-static">:  <span id="usernameadmin"></span></p>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label class="control-label">Email</label>
-                                <p class="form-control-static" id="emailadmin"></p>
-                            </div>
+                        <div class="col-md-3">
+                            <label class="control-label">Email Admin</label>
+                        </div>
+                        <div class="col-md-9">
+                            <p class="form-control-static">:  <span id="emailadmin"></span></p>
                         </div>
                     </div>
                 </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-inverse" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -106,6 +118,10 @@
                 processing: true,
                 serverSide: true,
                 iDisplayLength: 50,
+                language: {
+                    search: '<i class="fas fa-search" aria-hidden="true"></i>',
+                    searchPlaceholder: 'Cari Data Admin'
+                },
                 ajax: {
                     url: "{{ route('admin.getdata') }}",
                     dataType: "json",
@@ -160,7 +176,6 @@
         function deleteAdmin(id) {
             Swal.fire({
                 type : "warning",
-                title: "Ups!",
                 text : "Anda yakin ingin menghapus data ini?",
                 showCancelButton  : true,
                 confirmButtonColor: "#DD6B55",
