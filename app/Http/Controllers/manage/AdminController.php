@@ -114,7 +114,6 @@ class AdminController extends Controller
             return response()->json([
                 'success'       => true,
                 'name'          => $admin->name,
-                'created_at'    => $admin->created_at,
                 'username'      => $admin->username,
                 'email'         => $admin->email,
             ]);
@@ -139,10 +138,10 @@ class AdminController extends Controller
         }
 
         // Save data
-        $admin->name       = $req->name;
-        $admin->username   = $req->username;
-        $admin->email      = $req->email;
-        $admin->password   = $req->password;
+        $admin->name       = $req->nameadmin;
+        $admin->username   = $req->usernameadmin;
+        $admin->email      = $req->emailadmin;
+        $admin->password   = $req->passwordadmin;
         if(!$id) {
             $admin->created_at = Carbon::now()->format('Y-m-d');
             $admin->updated_at = Carbon::now()->format('Y-m-d H:i:s');

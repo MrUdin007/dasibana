@@ -47,7 +47,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label">Content<span class="text-danger">*</span></label>
+                            <label class="control-label">Username<span class="text-danger">*</span></label>
                             <div class="controls">
                                 <input type="text" name="usernameadmin" id="usernameadmin" class="form-control" value="{{ (old('username') ? old('username') : ((isset($admin)) ? $admin->username : '')) }}" placeholder="Masukkan Username" required data-validation-required-message="This field is required">
                             </div>

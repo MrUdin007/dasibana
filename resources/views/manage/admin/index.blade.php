@@ -158,7 +158,7 @@
         }
 
         function deleteAdmin(id) {
-            swal({
+            Swal.fire({
                 type : "warning",
                 title: "Ups!",
                 text : "Anda yakin ingin menghapus data ini?",

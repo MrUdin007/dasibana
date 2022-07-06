@@ -27,13 +27,14 @@
         <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/favicons/favicon-16x16.png')}}">
         <link rel="manifest" href="{{asset('images/favicons/manifest.json')}}">
         <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="msapplication-TileImage" content="{{asset('images/favicons/ms-icon-144x144.png')}}"> 
+        <meta name="msapplication-TileImage" content="{{asset('images/favicons/ms-icon-144x144.png')}}">
         <meta name="theme-color" content="#ffffff">
         <!-- ****** faviconit.com favicons ****** -->
 
         @stack('css')
         <link href="{{ asset('dist/be/css/main.css') }}" rel="stylesheet">
         <link href="{{ asset('dist/be/vendor/css/style.css') }}" rel="stylesheet">
+        <link href="{{ asset('vendor/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet">
         <!-- <link href="{{ asset('dist/vendors/css/bootstrap.css') }}" rel="stylesheet"> -->
         <style>
             table .tt-status{
@@ -100,6 +101,8 @@
         <!-- <script type="text/javascript" src="{{ asset('dist/be/vendor/jquery/dist/jquery.min.js') }}"></script> -->
         <script type="text/javascript" src="{{ asset('dist/be/vendor/js/vendor.js') }}"></script>
         <script type="text/javascript" src="{{ asset('dist/be/vendor/js/bundle.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('vendor/sweetalert2/sweetalert2.all.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('vendor/sweetalert2/sweetalert2.min.js') }}"></script>
 
         <script type="text/javascript">
             window.addEventListener('load', function load() {
@@ -108,21 +111,6 @@
                     loader.classList.add('fadeOut');
                 }, 300);
             });
-            $(document).ready(function () {
-                $('#dropdownVeganesia').click(function(){
-                    $('#menudropdownheader').toggle();
-                });
-
-                $("#tesmodal").click(function(){
-                    $("#exampleModal").modal('show');
-                });
-
-                $('.logout-veg').click(function () {
-                    $('#formLogout').submit();
-                });
-
-            });
-
         </script>
         @stack('scripts')
     </body>
