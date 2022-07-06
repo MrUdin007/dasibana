@@ -37,7 +37,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="sidebar-link text-capitalize" href="{{ route('manage.admin')}}">
+                <a class="sidebar-link text-capitalize" href="{{ route('admin.index')}}">
                     <span class="icon-holder">
                         <i class="c-blue-500 ti-user"></i>
                     </span>

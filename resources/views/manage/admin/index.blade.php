@@ -49,57 +49,128 @@
         </div>
     </div>
 
-    <div class="modal fade" id="modalDetail" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <!-- Modal View -->
+    <div class="modal fade" role="dialog" id="modalViewAdmin">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Detail Admin</h4>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
+                    <h3 class="modal-title">Admin</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="input-group">
-                        <label for="nama_admin" class="col-sm-3 col-form-label">Nama</label>
-                        <div id="nama_admin"></div>
+                    <form>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label">Name</label>
+                                <p class="form-control-static" id="nameadmin"></p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="input-group">
-                        <label for="username_admin" class="col-sm-3 col-form-label">Username</label>
-                        <div id="username"></div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label">Username</label>
+                                <p class="form-control-static" id="usernameadmin"></p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="input-group">
-                        <label for="email_admin" class="col-sm-3 col-form-label">Email</label>
-                        <div id="email"></div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label">Email</label>
+                                <p class="form-control-static" id="emailadmin"></p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="input-group">
-                        <label for="password_admin" class="col-sm-3 col-form-label">Password</label>
-                        <div id="password_admin"></div>
-                    </div>
+                </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger btn-customize" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-inverse" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
+    <!-- End of Modal View -->
 @endsection
 
 
 @push('scripts')
     <script type="text/javascript">
+        var table;
+
         $(document).ready(function(){
-            var table = $('#adminTable').DataTable({
+            table= $('#adminTable').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: "{{ route('manage.admin') }}",
+                iDisplayLength: 50,
+                ajax: {
+                    url: "{{ route('admin.getdata') }}",
+                    dataType: "json",
+                    type: "POST",
+                    data: { _token: "{{ csrf_token() }}" }
+                },
                 columns: [
-                    {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-                    {data: 'name', name: 'name'},
-                    {data: 'username', name: 'username'},
-                    {data: 'email', name: 'email'},
-                    {data: 'action', name: 'action', orderable: false, searchable: false},
-                ]
+                    { data: "no" },
+                    { data: "name"},
+                    { data: "username"},
+                    { data: "email" },
+                    { data : "action",
+                        orderable : false,
+                        className : "text-center",
+                    },
+                ],
+                rowCallback: function (row, data, index) {
+                    /*
+                    * function ini digunakan untuk memanipulasi data 1 row, sebelum menjadi row pada table di html
+                    * contoh: mengubah nomor menjadi bold
+                    */
+                    $('td:eq(0)', row).html('<b>'+data.no+'</b>');
+                }
             });
         });
+
+        function openAdmin(admin_id) {
+            $.ajax({
+                type: 'GET',
+                url : '{{ route("admin.view") }}',
+                data: {
+                    id     : admin_id,
+                    _token : "{{ csrf_token() }}"
+                },
+                dataType: "json",
+                success: function (data) {
+                    if (data.success) {
+                        var html = '';
+                        $('#modalViewAdmin #nameadmin').html(data.name);
+                        $('#modalViewAdmin #usernameadmin').html(data.username);
+                        $('#modalViewAdmin #emailadmin').html(data.email);
+                        $('#modalViewAdmin').modal();
+                    }
+                },
+                error: function (data) {
+                    console.log('data admin');
+                    console.log(data);
+                }
+            });
+        }
+
+        function deleteAdmin(id) {
+            swal({
+                type : "warning",
+                title: "Ups!",
+                text : "Anda yakin ingin menghapus data ini?",
+                showCancelButton  : true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText : "Yes",
+                cancelButtonText  : "No",
+            }).then((result) => {
+                if (result.value) {
+                    document.getElementById(id).submit();
+                }
+            });
+        }
     </script>
 @endpush

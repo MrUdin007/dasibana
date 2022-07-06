@@ -1,189 +1,107 @@
 @extends('layouts.be.app')
 
 @section('content')
-<div class="container-fluid">
-    <div class="grid_layouts --two-auto">
-        <div class="head-lst">
-            <h5 class="page-title">
-                Add / Edit
-            </h5>
+    <div class="row page-titles">
+        <div class="col-md-5 align-self-center">
+            <h3 class="text-themecolor">Data Admin</h3>
         </div>
-        <div class="mn-rght">
+        <div class="col-md-7 align-self-center">
             <ol class="breadcrumb">
-                <li><a href="javascript:void(0)">Home</a></li>
-                <li class="active">
-                    <a href="#">
-                        Add / Edit
-                    </a>
+                <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">Admin</a></li>
+                <li class="breadcrumb-item active">
+                    @if($admin)
+                    <a href="{{ route('admin.edit',$admin->id) }}">Edit Data Admin</a>
+                    @else
+                    <a href="{{ route('admin.add') }}">Tambah Data Admin</a>
+                    @endif
                 </li>
             </ol>
         </div>
     </div>
-      <div class="row gap-20 pos-r">
-        <div class="masonry-item col-md-12">
-            <div class="bgc-white p-20 bd">
-                <div class="grid_layouts --two-auto">
-                    <div class="head-lst">
-                        <h3 class="page-title">Add / Edit</h3>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    <h4 class="card-title">{{ ($admin) ? 'Edit' : 'Add' }} Data Admin</h4>
+                    @if(session('status'))
+                    <div class="alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                        <h3 class="text-success"><i class="fa fa-check-circle"></i> Success</h3> {{ session('status') }}
                     </div>
-                </div>
-                <div>
-                    <form class="form-vegan" id="formPenjualan" method="POST" action="#">
+                    @endif
+                    <form id="formAdmin" class="form m-t-20" action="{{ ($admin) ? route('admin.edit',$admin->id) : route('admin.add') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="name">Voucher Code</label>
-                                    <input type="hidden" name="id" id="id" value="">
-                                    <input type="text" class="form-control" id="voucher_code" name="voucher_code" value="" placeholder="Voucher Code" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="name">Name</label>
-                                    <input type="text" class="form-control" id="voucher_name" name="voucher_name" value="" placeholder="Voucher Name" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="name">Start Date</label>
-                                    <input type="text" data-provide="datepicker" class="form-control" id="start_date" name="start_date" value="" placeholder="Start Date" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="name">End Date</label>
-                                    <input type="text" data-provide="datepicker" class="form-control" id="end_date" name="end_date" value="" placeholder="End Date" required>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="name">Type</label>
-                                    <select name="type" class="form-control" id="type">
-                                        <option value="1">Voucher</option>
-                                    <!--  <option value="2">Ongkir</option>
-                                        <option value="3">Gift</option> -->
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="name">Voucher Value</label>
-                                    <input type="number" class="form-control" id="voucher_value" name="voucher_value" value="" placeholder="Voucher Value" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="name">Point Required</label>
-                                    <input type="number" class="form-control" id="point_required" name="point_required" value="" placeholder="Point Required" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="name">Min Purchase</label>
-                                    <input type="number" class="form-control" id="min_purchase" name="min_purchase" value="" placeholder="Min Purchase" required>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="name">Max use</label>
-                                    <input type="number" class="form-control" id="max_use" name="max_use" value="" placeholder="Max Use" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="name">Keterangan</label>
-                                    <textarea class="form-control" style="min-height: 120px;" id="keterangan" name="keterangan" placeholder="Keterangan"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label for="name">Ketentuan</label>
-                                    <textarea class="form-control" style="min-height: 120px;" id="ketentuan" name="ketentuan" placeholder="Ketentuan"></textarea>
-                                </div>
+                        <div class="form-group">
+                            <label class="control-label">Nama Admin<span class="text-danger">*</span></label>
+                            <div class="controls">
+                                <input type="text" name="nameadmin" id="nameadmin" class="form-control" value="{{ (old('name') ? old('name') : ((isset($admin)) ? $admin->name : '')) }}" placeholder="Masukkan Nama" required data-validation-required-message="This field is required">
                             </div>
                         </div>
-                        <div class="mt-4">
-                            <a href="#" class="btn btn-warning">Cancel</a>
-                            <button class="btn btn-sm btn-primary btn-customize" type="button" id="submitProduk">Submit</button>
+                        <div class="form-group">
+                            <label class="control-label">Content<span class="text-danger">*</span></label>
+                            <div class="controls">
+                                <input type="text" name="usernameadmin" id="usernameadmin" class="form-control" value="{{ (old('username') ? old('username') : ((isset($admin)) ? $admin->username : '')) }}" placeholder="Masukkan Username" required data-validation-required-message="This field is required">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Email Admin<span class="text-danger">*</span></label>
+                            <div class="tags-default">
+                                <input type="text" name="emailadmin" id="emailadmin" value="{{ (old('email') ? old('email') : ((isset($admin)) ? $admin->email : '')) }}" placeholder="Masukkan Email"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Password Admin<span class="text-danger">*</span></label>
+                            <div class="tags-default">
+                                <input type="password" name="passwordadmin" id="passwordadmin" value="{{ (old('password') ? old('password') : ((isset($admin)) ? $admin->password : '')) }}" placeholder="Masukkan Password"/>
+                            </div>
+                        </div>
+
+                        <div class="text-xs-right">
+                            <hr>
+                            <button type="submit" class="btn btn-info">Submit</button>
+                            <a href="{{route('admin.index')}}"><button type="button" class="btn btn-inverse">Cancel</button></a>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection
 
 @push('scripts')
     <script type="text/javascript">
-        <!-- @if(Request('id'))
-            getEditData(); -->
-            //console.log(counter);
-        <!-- @endif -->
-
-            <!-- $('#submitProduk').click(function (e) { -->
-
-           // e.preventDefault();
-
-            <!-- $.ajax({
-                type:'post',
-                url :'{{ $api_url."voucher/save" }}' ,
-                data: {
-                    id:'{{Request("id") ? Request("id") : 0 }}',
-                    _token: '{{ csrf_token() }}',
-                    api_token: "{{ auth()->user()->api_token }}",
-                    code : $('#voucher_code').val(),
-                    name : $('#voucher_name').val(),
-                    start_date : $('#start_date').val(),
-                    end_date : $('#end_date').val(),
-                    type:$('#type').val(),
-                    voucher_value:$('#voucher_value').val(),
-                    point_required:$('#point_required').val(),
-                    min_purchase:$('#min_purchase').val(),
-                    max_use:$('#max_use').val(),
-                    keterangan:$('#keterangan').val(),
-                    ketentuan:$('#ketentuan').val()
-                },
-                dataType:"json",
-                beforeSend: function () {
-                   swal({
-                        title: "Please wait",
-                        text: "Your request is being processed",
-                        showConfirmButton: false,
-                    });
-
-                },
-                success: function (response) {
-                    console.log(response);
-                     location.href = "{{route('be.voucher')}}";
-                 // location.href = "{{ route('be.stockin') }}";
-                },
-                error:function(xhr){
-                    console.log(xhr);
+        $(document).ready(function(){
+            $("#formAdmin").submit( function(e) {
+                var messageLength = CKEDITOR.instances['post_content'].getData().replace(/<[^>]*>/gi, '').length;
+                if( !messageLength ) {
+                    alert( 'Please fill Content' );
+                    e.preventDefault();
+                    $("form").find('[type=submit]').removeAttr("disabled");
                 }
-            }); -->
-        <!-- }); -->
 
-        <!-- function getEditData(){
-         $.ajax({
-                type:'post',
-                url :'{{ $api_url."voucher/edit" }}' ,
-                data: {
-                   _token: '{{ csrf_token() }}',
-                   id:'{{Request::get("id")}}',
-                   api_token: "{{ auth()->user()->api_token }}"
-                },
-                dataType:"json",
-                beforeSend: function () {
-                   swal({
-                        title: "Please wait",
-                        text: "Your request is being processed",
-                        showConfirmButton: false,
-                    });
-
-                },
-                success: function (response) {
-                    swal.close();
-                    console.log(response);
-                    $('#id').val(response.id);
-                    $('#voucher_code').val(response.kode);
-                    $('#voucher_name').val(response.title);
-                    $('#start_date').val(response.start_date);
-                    $('#end_date').val(response.end_date);
-                    $('#voucher_value').val(response.disc_idr);
-                    $('#point_required').val(response.poin_required);
-                    $('#min_purchase').val(response.min_pembelanjaan);
-                    $('#max_use').val(response.max_use);
-                    $('#keterangan').val(response.keterangan);
-                    $('#ketentuan').val(response.ketentuan);
-
-                }
             });
-        } -->
+        });
+
+        $('.datetimepicker').datetimepicker({
+            format:'YYYY-MM-DD HH:mm:ss',
+            });
+
+        $('.dp').datepicker({
+            format: 'yyyy-mm-dd',
+            autoclose: true
+        });
+
+        $(function() {
+            CKEDITOR.replace('post_content');
+        });
     </script>
 @endpush

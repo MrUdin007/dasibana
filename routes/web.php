@@ -17,9 +17,14 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 Route::prefix('manage')->namespace('Manage')->group(function () {
     ///Admin
-    Route::get('admin', 'AdminController@index')->name('manage.admin');
-    Route::get('admin/add', 'AdminController@add')->name('manage.admin.create');
-    Route::get('admin/edit', 'AdminController@edit')->name('manage.admin.edit');
+    Route::get('admin','AdminController@index')->name('admin.index');
+    Route::post('admin/getdata', 'AdminController@getData')->name('admin.getdata');
+    Route::get('admin/add','AdminController@form')->name('admin.add');
+    Route::post('admin/add','AdminController@save')->name('admin.add');
+    Route::get('admin/edit/{id}','AdminController@form')->name('admin.edit');
+    Route::post('admin/edit/{id}','AdminController@save')->name('admin.edit');
+    Route::post('admin/delete/{id}','AdminController@delete')->name('admin.delete');
+    Route::get('admin/view','AdminController@view')->name('admin.view');
 
     ///Produk
     Route::get('produk', 'ProductController@index')->name('manage.product');
