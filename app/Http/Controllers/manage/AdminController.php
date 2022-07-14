@@ -50,6 +50,7 @@ class AdminController extends Controller
 
         $admin = Admin::select($columns_alias);
         $admin->where('admins.deleted_at', null);
+        $admin->orderBy('admins.created_at', 'DESC');
 
         $total_data = $admin->count();
         $filtered_data = $admin->count();

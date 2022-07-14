@@ -3,7 +3,18 @@
 @section('content')
     <div class="row page-titles">
         <div class="col-md-5 align-self-center">
-            <h3 style="font-size: 16px !important;">{{ ($admin) ? 'Edit' : 'Add' }} Data Admin</h3>
+            <ol class="breadcrumb">
+                <li>
+                    <h3 style="font-size: 16px !important;">
+                        <a href="{{ route('admin.index')}}">Admin</a>
+                    </h3>
+                </li>
+                <li class="active">
+                    <h3 style="font-size: 16px !important;">
+                        {{ ($admin) ? 'Edit' : 'Add' }} Data Admin
+                    </h3>
+                </li>
+            </ol>
         </div>
     </div>
     <div class="row">
@@ -45,13 +56,13 @@
                         <div class="form-group">
                             <label class="control-label">Email<span class="text-danger">*</span></label>
                             <div class="controls">
-                                <input type="email" name="email" id="email" class="form-control" value="{{ (old('email') ? old('email') : ((isset($admin)) ? $admin->email : '')) }}" placeholder="Masukkan Email" required data-validation-required-message="This field is required">
+                                <input type="email" name="email" id="email" class="form-control" @if($admin) ? disabled : ''@endif value="{{ (old('email') ? old('email') : ((isset($admin)) ? $admin->email : '')) }}" placeholder="Masukkan Email" required data-validation-required-message="This field is required">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label">Password<span class="text-danger">*</span></label>
                             <div class="controls">
-                                <input type="password" name="password" id="password" class="form-control" value="{{ (old('password') ? old('password') : ((isset($admin)) ? $admin->password : '')) }}" placeholder="Masukkan Password" required data-validation-required-message="This field is required">
+                                <input type="password" name="password" id="password" class="form-control" @if($admin) ? disabled : ''@endif value="{{ (old('password') ? old('password') : ((isset($admin)) ? $admin->password : '')) }}" placeholder="Masukkan Password" required data-validation-required-message="This field is required">
                             </div>
                         </div>
                         <div class="text-xs-right">
