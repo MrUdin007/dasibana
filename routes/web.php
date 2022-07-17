@@ -37,9 +37,14 @@ Route::prefix('manage')->namespace('Manage')->group(function () {
     Route::get('produk-kategori/edit', 'ProductCategoryController@edit')->name('manage.produkkategori.edit');
 
     ///Kontak
-    Route::get('kontak', 'KontakController@index')->name('manage.kontak');
-    Route::get('kontak/add', 'KontakController@add')->name('manage.kontak.create');
-    Route::get('kontak/edit', 'KontakController@edit')->name('manage.kontak.edit');
+    Route::get('kontak','KontakController@index')->name('kontak.index');
+    Route::post('kontak/getdata', 'KontakController@getData')->name('kontak.getdata');
+    Route::get('kontak/add','KontakController@form')->name('kontak.add');
+    Route::post('kontak/add','KontakController@save')->name('kontak.add');
+    Route::get('kontak/edit/{id}','KontakController@form')->name('kontak.edit');
+    Route::post('kontak/edit/{id}','KontakController@save')->name('kontak.edit');
+    Route::post('kontak/delete/{id}','KontakController@delete')->name('kontak.delete');
+    Route::get('kontak/view','KontakController@view')->name('kontak.view');
 
     ///Sosmed
     Route::get('sosmed','SosmedController@index')->name('sosmed.index');

@@ -46,7 +46,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="sidebar-link text-capitalize" href="{{ route('manage.kontak')}}">
+                <a class="sidebar-link text-capitalize" href="{{ route('kontak.index')}}">
                     <span class="icon-holder">
                         <i class="c-blue-500 ti-agenda "></i>
                     </span>
