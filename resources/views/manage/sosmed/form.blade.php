@@ -51,7 +51,7 @@
                             <label class="control-label">Icon<span class="text-danger">*</span></label>
                             <div class="input-group mb-3">
                                 <label class="input-group-text" for="icon">Upload</label>
-                                <input type="file" class="form-control" id="icon">
+                                <input type="file" class="form-control" id="ikon">
                             </div>
                         </div>
                         <div class="form-group">

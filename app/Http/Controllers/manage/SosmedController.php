@@ -32,14 +32,14 @@ class SosmedController extends Controller
         $columns = array(
             0 => "sosmed.id",
             1 => "sosmed.name",
-            2 => "sosmed.icon",
+            2 => "sosmed.ikon",
             3 => "sosmed.status",
         );
 
         $columns_alias = array(
             0 => "sosmed.id",
             1 => "sosmed.name",
-            2 => "sosmed.icon",
+            2 => "sosmed.ikon",
             3 => "sosmed.status",
         );
 
@@ -132,7 +132,7 @@ class SosmedController extends Controller
         if($id){
             $validator = Validator::make($req->all(), [
                 'name' => 'required|string|max:255|unique:sosmed,name',
-                'icon'     => 'required|string|max:255|unique:sosmed,icon,'.$id,
+                'ikon'     => 'required|string|max:255|unique:sosmed,ikon,'.$id,
                 'status'     => 'required|string|unique:sosmed,status,'.$id,
             ]);
 
@@ -145,7 +145,7 @@ class SosmedController extends Controller
         }else{
             $validator = Validator::make($req->all(), [
                 'name' => 'required|string|max:255|unique:sosmed,name',
-                'icon'     => 'required|string|max:255|unique:sosmed,icon,'.$id,
+                'ikon'     => 'required|string|max:255|unique:sosmed,ikon,'.$id,
                 'status'     => 'required|string|unique:sosmed,status,'.$id,
             ]);
 
@@ -165,9 +165,9 @@ class SosmedController extends Controller
 
         // Save data
         $sosmed->name       = $req->name;
-        $sosmed->icon       = $req->icon;
+        $sosmed->ikon       = $req->ikon;
         $sosmed->status     = $req->status;
-        
+
         if(!$id) {
             $sosmed->created_at = Carbon::now()->format('Y-m-d');
             $sosmed->updated_at = Carbon::now()->format('Y-m-d H:i:s');

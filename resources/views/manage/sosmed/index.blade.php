@@ -49,7 +49,7 @@
                         <tr>
                             <th width="5">No</th>
                             <th>Name</th>
-                            <th>Icon</th>
+                            <th>Ikon</th>
                             <th>Status</th>
                             <th width="280px">Action</th>
                         </tr>
@@ -83,10 +83,10 @@
                     </div>
                     <div class="row">
                         <div class="col-md-3">
-                            <label class="control-label">Icon Sosmed</label>
+                            <label class="control-label">Ikon Sosmed</label>
                         </div>
                         <div class="col-md-9">
-                            <p class="form-control-static">:  <span id="iconsosmed"></span></p>
+                            <p class="form-control-static">:  <span id="ikonsosmed"></span></p>
                         </div>
                     </div>
                 </form>
@@ -103,10 +103,8 @@
 
 @push('scripts')
     <script type="text/javascript">
-        var table;
-
         $(document).ready(function(){
-            table = $('#SosmedTable').DataTable({
+        var SosmedTable = $('#SosmedTable').DataTable({
                 processing: true,
                 serverSide: true,
                 iDisplayLength: 50,
@@ -123,7 +121,7 @@
                 columns: [
                     { data: "no" },
                     { data: "name"},
-                    { data: "icon"},
+                    { data: "ikon"},
                     { data: "status" },
                     { data : "action",
                         orderable : false,
@@ -140,7 +138,7 @@
             });
         });
 
-        function opensosmed(sosmed_id) {
+        function openSosmed(sosmed_id) {
             $.ajax({
                 type: 'GET',
                 url : '{{ route("sosmed.view") }}',
@@ -153,7 +151,7 @@
                     if (data.success) {
                         var html = '';
                         $('#modalViewSosmed #namesosmed').html(data.name);
-                        $('#modalViewSosmed #iconsosmed').html(data.icon);
+                        $('#modalViewSosmed #ikonsosmed').html(data.ikon);
                         $('#modalViewSosmed').modal();
                     }
                 },
@@ -164,7 +162,7 @@
             });
         }
 
-        function deletesosmed(id) {
+        function deleteSosmed(id) {
             Swal.fire({
                 type : "warning",
                 text : "Anda yakin ingin menghapus data ini?",
