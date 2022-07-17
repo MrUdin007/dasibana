@@ -5,15 +5,8 @@
             <div class="peers ai-c fxw-nw">
                 <div class="peer peer-greed">
                     <a class="sidebar-link td-n" href="">
-                        <div class="peers ai-c fxw-nw">
-                            <div class="peer">
-                                <div class="logo">
-                                    <img class="logo-vgn" src="" alt="">
-                                </div>
-                            </div>
-                            <div class="peer peer-greed">
-                                <h5 class="lh-1 mB-0 logo-text logo-text-vegan f-pattaya_reg">Veganesia</h5>
-                            </div>
+                        <div class="logo">
+                            <img class="logo-vgn" src="{{asset('images/dasibana.png')}}" alt="Dasibana Brand">
                         </div>
                     </a>
                 </div>
@@ -37,7 +30,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="sidebar-link text-capitalize" href="{{ route('admin')}}">
+                <a class="sidebar-link text-capitalize" href="{{ route('admin.index')}}">
                     <span class="icon-holder">
                         <i class="c-blue-500 ti-user"></i>
                     </span>
@@ -45,25 +38,25 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="sidebar-link text-capitalize" href="{{ route('sosmed')}}">
+                <a class="sidebar-link text-capitalize" href="{{ route('manage.sosmed')}}">
                     <span class="icon-holder">
-                        <i class="c-blue-500 ti-user"></i>
+                        <i class="c-blue-500 ti-themify-favicon"></i>
                     </span>
                     <span class="title">sosmed</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="sidebar-link text-capitalize" href="{{ route('kontak')}}">
+                <a class="sidebar-link text-capitalize" href="{{ route('manage.kontak')}}">
                     <span class="icon-holder">
-                        <i class="c-blue-500 ti-user"></i>
+                        <i class="c-blue-500 ti-agenda "></i>
                     </span>
-                    <span class="title">kontak</span>
+                    <span class="title">Perusahaan</span>
                 </a>
             </li>
             <li class="nav-item dropdown">
                 <a class="dropdown-toggle text-capitalize" href="javascript:void(0);">
                     <span class="icon-holder">
-                        <i class="c-teal-500 ti-bell"></i>
+                        <i class="c-teal-500 ti-shopping-cart-full "></i>
                     </span>
                     <span class="title">produk</span>
                     <span class="arrow">
@@ -72,12 +65,12 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li class="nav-item dropdown">
-                        <a href="{{ route('produkkategori')}}" class="text-capitalize">
+                        <a href="{{ route('manage.produkkategori')}}" class="text-capitalize">
                             <span>produk kategori</span>
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="{{ route('product')}}" class="text-capitalize">
+                        <a href="{{ route('manage.product')}}" class="text-capitalize">
                             <span>data produk</span>
                         </a>
                     </li>

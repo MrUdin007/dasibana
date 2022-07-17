@@ -86,7 +86,7 @@ class ProductTableSeeder extends Seeder
             ],
             [
                 'name'                 =>  'product10',
-                'id_kategori'          =>  '10',
+                'id_kategori'          =>  '1',
                 'status'               =>  true,
                 'foto'                 =>  'images/product4.jpg',
                 'link_shopee'          =>  'https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a',
@@ -94,7 +94,7 @@ class ProductTableSeeder extends Seeder
             ],
             [
                 'name'                 =>  'product11',
-                'id_kategori'          =>  '11',
+                'id_kategori'          =>  '2',
                 'status'               =>  true,
                 'foto'                 =>  'images/product5.jpg',
                 'link_shopee'          =>  'https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a',
@@ -102,7 +102,7 @@ class ProductTableSeeder extends Seeder
             ],
             [
                 'name'                 =>  'product12',
-                'id_kategori'          =>  '12',
+                'id_kategori'          =>  '3',
                 'status'               =>  true,
                 'foto'                 =>  'images/product6.jpg',
                 'link_shopee'          =>  'https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a',
@@ -110,7 +110,7 @@ class ProductTableSeeder extends Seeder
             ],
             [
                 'name'                 =>  'product13',
-                'id_kategori'          =>  '13',
+                'id_kategori'          =>  '4',
                 'status'               =>  true,
                 'foto'                 =>  'images/product1.jpg',
                 'link_shopee'          =>  'https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a',
@@ -118,7 +118,7 @@ class ProductTableSeeder extends Seeder
             ],
             [
                 'name'                 =>  'product14',
-                'id_kategori'          =>  '14',
+                'id_kategori'          =>  '5',
                 'status'               =>  true,
                 'foto'                 =>  'images/product2.jpg',
                 'link_shopee'          =>  'https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a',
@@ -126,7 +126,7 @@ class ProductTableSeeder extends Seeder
             ],
             [
                 'name'                 =>  'product15',
-                'id_kategori'          =>  '15',
+                'id_kategori'          =>  '6',
                 'status'               =>  true,
                 'foto'                 =>  'images/product3.jpg',
                 'link_shopee'          =>  'https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a',
@@ -134,7 +134,7 @@ class ProductTableSeeder extends Seeder
             ],
             [
                 'name'                 =>  'product16',
-                'id_kategori'          =>  '16',
+                'id_kategori'          =>  '7',
                 'status'               =>  true,
                 'foto'                 =>  'images/product4.jpg',
                 'link_shopee'          =>  'https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a',

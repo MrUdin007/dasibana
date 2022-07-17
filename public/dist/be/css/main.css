@@ -7267,8 +7267,8 @@ readers do not read off random characters that represent icons */
   border-radius: 3px;
 }
 .form-vegan .checkbox.checkbox-success input[type=checkbox]:checked + label::before {
-  background-color: #1FBC9D;
-  border-color: #1FBC9D;
+  background-color: #113e4d;
+  border-color: #113e4d;
 }
 .form-vegan .form-group .float-inpt-fld .floatfield,
 .form-vegan .form-group .float-inpt-fld .floating-select {
@@ -7285,10 +7285,10 @@ readers do not read off random characters that represent icons */
 }
 .form-vegan .form-group .float-inpt-fld label {
   color: #ffffff !important;
-  background: #1FBC9D;
+  background: #113e4d;
 }
 .form-vegan .form-group .float-inpt-fld label.flt-label-select {
-  background: #1FBC9D;
+  background: #113e4d;
 }
 .form-vegan .form-group .float-inpt-fld input {
   height: auto;
@@ -7573,7 +7573,7 @@ readers do not read off random characters that represent icons */
   border: unset;
 }
 .form-vegan .custom-file input.form-control {
-  color: #1FBC9D !important;
+  color: #113e4d !important;
 }
 .form-vegan .input-group {
   margin-bottom: 10px;
@@ -7772,15 +7772,15 @@ readers do not read off random characters that represent icons */
   line-height: 1px !important;
 }
 .breadcrumb li.active {
-  color: #1FBC9D !important;
+  color: #113e4d !important;
   font-family: "asap_med", sans-serif !important;
 }
 .breadcrumb li.active a {
-  color: #1FBC9D !important;
+  color: #113e4d !important;
   font-family: "asap_med", sans-serif !important;
 }
 .breadcrumb li.active::marker {
-  color: #1FBC9D !important;
+  color: #113e4d !important;
 }
 .breadcrumb li:first-child {
   padding-left: 0;
@@ -7827,16 +7827,16 @@ readers do not read off random characters that represent icons */
 }
 
 .btn {
-  border: none !important;
   border-radius: 5px !important;
   padding: 7px 15px !important;
   margin: 5px !important;
-  color: #ffffff !important;
+  color: #ffffff;
   line-height: initial !important;
   transition: all 0.3s ease-in-out !important;
   font-size: 15px !important;
   text-transform: capitalize !important;
-  border: 1px solid transparent !important;
+  border-width: 1px;
+  border-style: solid;
   min-width: 80px !important;
   max-width: 100% !important;
 }
@@ -7850,17 +7850,32 @@ readers do not read off random characters that represent icons */
 .btn:last-child {
   margin-right: 0;
 }
-.btn.btn-warning {
-  background-color: #FDB13D !important;
+.btn.btn-warning, .btn-outline-warning {
+  border-color: #FDB13D !important;
 }
-.btn.btn-danger {
-  background-color: #F33155 !important;
+.btn.btn-danger, .btn-outline-danger {
+  border-color: #F33155 !important;
 }
-.btn.btn-primary {
-  background-color: #00AEEF !important;
+.btn.btn-primary, .btn-outline-primary {
+  border-color: #00AEEF !important;
 }
-.btn.btn-success {
-  background-color: #7ACE4C !important;
+.btn.btn-success, .btn-outline-success {
+  border-color: #7ACE4C !important;
+}
+.btn-outline-warning .icon-holder i {
+    color: #FDB13D !important;
+}
+.btn-outline-danger .icon-holder i {
+    color: #F33155 !important;
+}
+.btn-outline-primary .icon-holder i {
+    color: #00AEEF !important;
+}
+.btn-outline-success .icon-holder i {
+    color: #7ACE4C !important;
+}
+.btn:hover  .icon-holder i{
+    color: #ffffff !important;
 }
 .btn.--reject {
   background-color: rgba(0, 0, 0, 0.05);
@@ -7954,7 +7969,7 @@ readers do not read off random characters that represent icons */
   border: unset;
 }
 .addbsnt.--pluses {
-  background-color: #1FBC9D !important;
+  background-color: #113e4d !important;
 }
 .addbsnt a i {
   color: #ffffff;
@@ -7982,7 +7997,7 @@ table {
   border-bottom-width: 2px;
 }
 table thead tr th {
-  color: #1FBC9D;
+  color: #113e4d;
   font-weight: normal;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-top: none !important;
@@ -7993,7 +8008,7 @@ table thead tr th {
   vertical-align: middle;
 }
 table thead tr th.sorting::after {
-  color: #1FBC9D;
+  color: #113e4d;
 }
 table thead tr td {
   text-align: center;
@@ -8049,12 +8064,12 @@ table.dataTable {
   border-right-width: 1px !important;
 }
 .dataTables_paginate span .paginate_button:hover, .dataTables_paginate span .paginate_button:active, .dataTables_paginate span .paginate_button:focus {
-  background-color: #1FBC9D !important;
-  border-color: #1FBC9D !important;
+  background-color: #113e4d !important;
+  border-color: #113e4d !important;
 }
 .dataTables_paginate span .paginate_button.current {
-  border-color: #1FBC9D !important;
-  background-color: #1FBC9D !important;
+  border-color: #113e4d !important;
+  background-color: #113e4d !important;
 }
 .dataTables_paginate .paginate_button {
   background: #ffffff !important;
@@ -8066,8 +8081,8 @@ table.dataTable {
   transition: all 0.3s ease-in-out !important;
 }
 .dataTables_paginate .paginate_button:hover, .dataTables_paginate .paginate_button:active, .dataTables_paginate .paginate_button:focus {
-  background-color: #1FBC9D !important;
-  border-color: #1FBC9D !important;
+  background-color: #113e4d !important;
+  border-color: #113e4d !important;
 }
 .dataTables_paginate .paginate_button.disabled {
   background: #ffffff !important;
@@ -8105,7 +8120,7 @@ table.dataTable {
   color: rgba(0, 0, 0, 0.6);
 }
 .dataTables_filter label input:hover, .dataTables_filter label input:active, .dataTables_filter label input:focus {
-  border: 1px solid #1FBC9D !important;
+  border: 1px solid #113e4d !important;
 }
 
 .dataTables_length {
@@ -8127,7 +8142,7 @@ table.dataTable {
 }
 
 .header.navbar {
-  background: linear-gradient(90deg, #16A387 26.11%, #1FBC9D 74.13%);
+  background: linear-gradient(90deg, #0b303c 26.11%, #113e4d 74.13%);
 }
 .header.navbar .header-container {
   position: relative;
@@ -8146,29 +8161,35 @@ table.dataTable {
 }
 
 .sidebar .sidebar-inner .sidebar-logo .peer .mobile-toggle a .ti-arrow-circle-left::before {
-  color: #1FBC9D !important;
+  color: #113e4d !important;
 }
 .sidebar .sidebar-inner .sidebar-logo a .logo {
   min-height: 100% !important;
 }
+@media screen and (min-width: 992px) and (max-width: 1439px){
+    .sidebar .sidebar-inner .sidebar-logo a .logo {
+        background-position: center !important;
+        width: 100% !important;
+    }
+}
 @media (max-width: 991px) {
   .sidebar .sidebar-inner .sidebar-logo a .logo {
-    width: 60px;
+    width: 100%;
   }
 }
 .sidebar .sidebar-inner .sidebar-logo a .logo .logo-vgn {
-  width: 50px;
+  width: 120px;
   margin: auto;
   display: block;
   padding-top: 7px;
 }
 @media (max-width: 991px) {
   .sidebar .sidebar-inner .sidebar-logo a .logo .logo-vgn {
-    width: 40px;
+    width: 100%;
   }
 }
 .sidebar .sidebar-inner .sidebar-logo a .logo-text-vegan {
-  color: #1FBC9D !important;
+  color: #113e4d !important;
   font-size: 30px !important;
   padding-left: 5px;
 }
@@ -8182,14 +8203,14 @@ table.dataTable {
   margin: 5px 0;
 }
 .sidebar .sidebar-inner .sidebar-menu .nav-item.open .dropdown-toggle {
-  color: #1FBC9D !important;
+  color: #113e4d !important;
   font-family: "asap_med", sans-serif !important;
 }
 .sidebar .sidebar-inner .sidebar-menu .nav-item.open .dropdown-toggle .icon-holder i {
   font-weight: bold;
 }
 .sidebar .sidebar-inner .sidebar-menu .nav-item .actives {
-  color: #1FBC9D !important;
+  color: #113e4d !important;
   font-family: "asap_med", sans-serif !important;
 }
 .sidebar .sidebar-inner .sidebar-menu .nav-item .actives .icon-holder i {
@@ -8199,5 +8220,5 @@ table.dataTable {
   letter-spacing: 0.04em;
 }
 .sidebar .sidebar-inner .sidebar-menu .nav-item a .icon-holder i {
-  color: #1FBC9D !important;
+  color: #113e4d !important;
 }

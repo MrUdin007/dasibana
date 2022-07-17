@@ -57,7 +57,7 @@
             var table = $('#produkTable').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: "{{ route('product') }}",
+                ajax: "{{ route('manage.product') }}",
                 columns: [
                     {data: 'DT_RowIndex', name: 'DT_RowIndex'},
                     {data: 'name', name: 'name'},

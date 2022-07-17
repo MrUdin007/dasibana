@@ -13,29 +13,46 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/////////////// PUBLIC ///////////////////
-//contoh static route -->data bukan dari database (hardcode)
-// Route::get('/', function () {
-//     return view('public.home');
-// });
-
-Auth::routes();
-
 /////////////// MANAGE - ADMIN ACCESS ///////////////////
-Route::namespace('Manage')->group(function () {
-    Route::get('manage/product', 'ProductController@index')->name('product');
-    Route::get('manage/admin', 'AdminController@index')->name('admin');
-    Route::get('manage/produkkategori', 'ProductCategoryController@index')->name('produkkategori');
-    Route::get('manage/kontak', 'KontakController@index')->name('kontak');
-    Route::get('manage/sosmed', 'SosmedController@index')->name('sosmed');
+Auth::routes();
+Route::prefix('manage')->namespace('Manage')->group(function () {
+    ///Admin
+    Route::get('admin','AdminController@index')->name('admin.index');
+    Route::post('admin/getdata', 'AdminController@getData')->name('admin.getdata');
+    Route::get('admin/add','AdminController@form')->name('admin.add');
+    Route::post('admin/add','AdminController@save')->name('admin.add');
+    Route::get('admin/edit/{id}','AdminController@form')->name('admin.edit');
+    Route::post('admin/edit/{id}','AdminController@save')->name('admin.edit');
+    Route::post('admin/delete/{id}','AdminController@delete')->name('admin.delete');
+    Route::get('admin/view','AdminController@view')->name('admin.view');
+
+    ///Produk
+    Route::get('produk', 'ProductController@index')->name('manage.product');
+    Route::get('produk/add', 'ProductController@add')->name('manage.product.create');
+    Route::get('produk/edit', 'ProductController@edit')->name('manage.product.edit');
+
+    ///Produk Kategori
+    Route::get('produk-kategori', 'ProductCategoryController@index')->name('manage.produkkategori');
+    Route::get('produk-kategori/add', 'ProductCategoryController@add')->name('manage.produkkategori.create');
+    Route::get('produk-kategori/edit', 'ProductCategoryController@edit')->name('manage.produkkategori.edit');
+
+    ///Kontak
+    Route::get('kontak', 'KontakController@index')->name('manage.kontak');
+    Route::get('kontak/add', 'KontakController@add')->name('manage.kontak.create');
+    Route::get('kontak/edit', 'KontakController@edit')->name('manage.kontak.edit');
+
+    ///Sosmed
+    Route::get('sosmed', 'SosmedController@index')->name('manage.sosmed');
+    Route::get('sosmed/add', 'SosmedController@add')->name('manage.sosmed.create');
+    Route::get('sosmed/edit', 'SosmedController@edit')->name('manage.sosmed.edit');
 });
 
 
 /////////////// PUBLIC - COMMON USER ///////////////////
 Route::namespace('Frontend')->group(function () {
     Route::get('/', 'HomeController@index')->name('home');
-    Route::get('/tentang-kami', 'AboutController@index')->name('about');
-    Route::get('/produk', 'ProductController@index')->name('product');
-    Route::get('/kategori-produk', 'ProductCateghoryController@index')->name('product_categhory');
-    // Route::get('/kategori-produk', 'ProductCateghoryController@detail')->name('detail_categhory');
+    Route::get('tentang-kami', 'AboutController@index')->name('about');
+    Route::get('produk', 'ProductController@index')->name('product');
+    Route::get('kategori-produk', 'ProductCateghoryController@index')->name('product_categhory');
+    Route::get('kategori-produk/{slug}', 'ProductCateghoryController@detail')->name('detail_categhory');
 });

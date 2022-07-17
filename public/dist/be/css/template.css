@@ -7268,8 +7268,8 @@ readers do not read off random characters that represent icons */
   border-radius: 3px;
 }
 .form-vegan .checkbox.checkbox-success input[type=checkbox]:checked + label::before {
-  background-color: #1FBC9D;
-  border-color: #1FBC9D;
+  background-color: #113e4d;
+  border-color: #113e4d;
 }
 .form-vegan .form-group .float-inpt-fld .floatfield,
 .form-vegan .form-group .float-inpt-fld .floating-select {
@@ -7286,10 +7286,10 @@ readers do not read off random characters that represent icons */
 }
 .form-vegan .form-group .float-inpt-fld label {
   color: #ffffff !important;
-  background: #1FBC9D;
+  background: #113e4d;
 }
 .form-vegan .form-group .float-inpt-fld label.flt-label-select {
-  background: #1FBC9D;
+  background: #113e4d;
 }
 .form-vegan .form-group .float-inpt-fld input {
   height: auto;
@@ -7574,7 +7574,7 @@ readers do not read off random characters that represent icons */
   border: unset;
 }
 .form-vegan .custom-file input.form-control {
-  color: #1FBC9D !important;
+  color: #113e4d !important;
 }
 .form-vegan .input-group {
   margin-bottom: 10px;
@@ -7846,7 +7846,7 @@ body {
   .auth-reg-vegan .gr-vegan .forms-vegan {
     position: relative;
     height: 100vh;
-    background: #1FBC9D;
+    background: #113e4d;
   }
   .auth-reg-vegan .gr-vegan .forms-vegan .cover-vegan {
     display: none;
@@ -7915,7 +7915,7 @@ body {
     width: calc(100% - 150px);
     margin: auto;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-    background: #1FBC9D;
+    background: #113e4d;
   }
 }
 @media (min-width: 768px) and (max-width: 1199px) {

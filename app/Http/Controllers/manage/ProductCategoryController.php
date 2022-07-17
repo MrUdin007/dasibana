@@ -9,10 +9,15 @@ use Illuminate\Support\Facades\DB;
 
 class ProductCategoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $ProdukKategori = DB::select('select * from product_category');
+            $ProdukKategori = DB::select('select * from kategori_produk');
             return Datatables::of($ProdukKategori)
                     ->addIndexColumn()
                     ->addColumn('status', function($status){
@@ -31,5 +36,15 @@ class ProductCategoryController extends Controller
                     ->rawColumns(['action'])->make(true);
         }
         return view('manage.produkkategori.index');
+    }
+
+    public function add(Request $request)
+    {
+        return view('manage.produkkategori.form');
+    }
+
+    public function edit(Request $request)
+    {
+        return view('manage.produkkategori.form');
     }
 }

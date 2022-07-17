@@ -11,15 +11,16 @@
                     <h4 class="title-footer">kategori produk</h4>
                     <div class="gr_display gr-footer-kategori">
                         <?php
-                            $kategori_produk    =   KategoriProduk::selectRaw('kategori_produk.id, kategori_produk.name as kategoriName, kategori_produk.slug as urlProduk')
+                            $kategori_produk    =   KategoriProduk::selectRaw('kategori_produk.id, kategori_produk.name as kategoriName, kategori_produk.slug as urlKategori')
                                                     ->where('kategori_produk.status', 1)
                                                     ->orderBy('kategori_produk.created_at', 'DESC')
+                                                    ->take(10)
                                                     ->get();
                         ?>
                         @if(count($kategori_produk) > 0)
                         @foreach($kategori_produk as $produkKategori)
                         <div class="ls-kategori-ft">
-                            <a id={{$produkKategori->id}} href={{$produkKategori->urlProduk}}>
+                            <a id={{$produkKategori->id}} href="{{ route('detail_categhory', [$produkKategori->urlKategori]) }}">
                                 {{$produkKategori->kategoriName}}
                             </a>
                         </div>
@@ -45,7 +46,7 @@
                         @endif
                     </div>
                     <a href="{{ route('about') }}">
-                        <b>tentang kami</b>
+                        tentang kami
                     </a>
                 </div>
                 <div class="logo-footer">

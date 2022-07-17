@@ -56,11 +56,16 @@
             var table = $('#sosmedTable').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: "{{ route('sosmed') }}",
+                iDisplayLength: 50,
+                language: {
+                    search: '<i class="fas fa-search" aria-hidden="true"></i>',
+                    searchPlaceholder: 'Cari Data Sosmed'
+                },
+                ajax: "{{ route('manage.sosmed') }}",
                 columns: [
                     {data: 'DT_RowIndex', name: 'DT_RowIndex'},
                     {data: 'name', name: 'name'},
-                    {data: 'icon', name: 'icon'},
+                    {data: 'ikon', name: 'ikon'},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ]
             });

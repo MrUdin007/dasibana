@@ -14,7 +14,7 @@
                         <img class="w-2r bdrs-50p" src="https://randomuser.me/api/portraits/men/10.jpg" alt="">
                     </div>
                     <div class="peer">
-                        <span class="fsz-sm f-asap_med" style="color: #ffffff;">username admin</span>
+                        <span class="fsz-sm f-asap_med" style="color: #ffffff;">{{ auth()->user()->name }}</span>
                     </div>
                 </a>
                 <ul style="display: none;" id="menudropdownheader" class="dropdown-menu fsz-sm">

@@ -13,12 +13,8 @@ use DB;
 use Mail;
 use Hash;
 
-class HomeController extends Controller {
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
-
+class HomeController extends Controller
+{
     public function index(Request $req)
     {
         $produk_terbaru     =   Produk::selectRaw('produk.id, produk.foto as fotoProduk, produk.link_shopee, produk.link_tokopedia')
@@ -27,7 +23,7 @@ class HomeController extends Controller {
                                 ->take(12)
                                 ->get();
 
-        $kategori_produk    =  KategoriProduk::selectRaw('kategori_produk.id, kategori_produk.name as kategoriName')
+        $kategori_produk    =  KategoriProduk::selectRaw('kategori_produk.id, kategori_produk.name as kategoriName, kategori_produk.slug')
                                 ->where('kategori_produk.status', 1)
                                 ->orderBy('kategori_produk.created_at', 'DESC')
                                 ->get();
