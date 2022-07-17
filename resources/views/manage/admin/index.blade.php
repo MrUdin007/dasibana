@@ -44,19 +44,22 @@
                     </div>
                 </div>
 
-                <table id="adminTable" class="table table-bordered data-table">
-                    <thead>
-                        <tr>
-                            <th width="5">No</th>
-                            <th>Name</th>
-                            <th>Username</th>
-                            <th>Email</th>
-                            <th width="280px">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
+				<!-- <table id="adminTable" class="table table-striped table-hover dt-responsive nowrap table-responsive" style="width:100%"> -->
+                <div class="table-responsive-xl">
+                    <table id="adminTable" class="table table-striped table-hover dt-responsive nowrap" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th width="20px">No</th>
+                                <th>Name</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th width="280px">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
@@ -118,6 +121,7 @@
                 processing: true,
                 serverSide: true,
                 iDisplayLength: 50,
+                autoWidth: false,
                 language: {
                     search: '<i class="fas fa-search" aria-hidden="true"></i>',
                     searchPlaceholder: 'Cari Data Admin'

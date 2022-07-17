@@ -50,16 +50,15 @@
                         <div class="form-group">
                             <label class="control-label">Icon<span class="text-danger">*</span></label>
                             <div class="input-group mb-3">
-                                <label class="input-group-text" for="icon">Upload</label>
-                                <input type="file" class="form-control" id="ikon">
+                                <input type="file" class="form-control" name="ikon" id="ikon" value="{{ (old('ikon') ? old('ikon') : ((isset($sosmed)) ? $sosmed->ikon : '')) }}">
                             </div>
                         </div>
                         <div class="form-group">
-                        <label class="control-label">Status<span class="text-danger">*</span></label>
+                        <label class="control-label">Status</label>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="status">
+                                <input class="form-check-input" type="checkbox" name="status" id="status" value="{{ (old('status') ? old('status') : ((isset($sosmed)) ? $sosmed->status : '')) }}">
                                 <label class="form-check-label" for="status">
-                                    Status
+                                    Aktif
                                 </label>
                             </div>
                         </div>

@@ -91,8 +91,20 @@ class SosmedController extends Controller
             ';
             $action .= '</div>';
 
+            $url= asset($val->ikon);
+            $image = '<img src="'.$url.'" alt="'.$val->name.'">';
+
+            if($val->status === 1){
+                $status = '<span class="badge bg-success dasibana-badge">Aktif</span>';
+            }
+            else{
+                $status = '<span class="badge bg-secondary dasibana-badge">Tidak Aktif</span>';
+            }
+
             $data[$key] = $val->toArray();
             $data[$key]['no'] = $key+$start+1;
+            $data[$key]['ikon'] = $image;
+            $data[$key]['status'] = $status;
             $data[$key]['action'] = $action;
         }
 
@@ -118,10 +130,13 @@ class SosmedController extends Controller
     public function view(Request $req)
     {
         $sosmed = Sosmed::find($req->id);
+        $url= asset($sosmed->ikon);
+        $image = '<img src="'.$url.'" alt="'.$url.'" style="width: 60px;">';
         if ($req->ajax()) {
             return response()->json([
                 'success'       => true,
                 'name'          => $sosmed->name,
+                'ikon'          => $image,
             ]);
         }
 
@@ -131,26 +146,24 @@ class SosmedController extends Controller
     {
         if($id){
             $validator = Validator::make($req->all(), [
-                'name' => 'required|string|max:255|unique:sosmed,name',
-                'ikon'     => 'required|string|max:255|unique:sosmed,ikon,'.$id,
-                'status'     => 'required|string|unique:sosmed,status,'.$id,
+                'name'      => 'required|string|max:255',
+                'ikon'      => 'required|image|max:1024|mimes:jpg,jpeg,png',
             ]);
 
             if ($validator->fails()) {
-                $req->session()->flash('status', 'Data gagal diubah!');
+                $req->session()->flash('status', 'Data gagal diubah! Maksimal File Yang Diunggah : 1.024KB');
                 return redirect()->route('sosmed.edit', $id);
             }
 
             $sosmed = Sosmed::find($id);
         }else{
             $validator = Validator::make($req->all(), [
-                'name' => 'required|string|max:255|unique:sosmed,name',
-                'ikon'     => 'required|string|max:255|unique:sosmed,ikon,'.$id,
-                'status'     => 'required|string|unique:sosmed,status,'.$id,
+                'name'      => 'required|string|max:255',
+                'ikon'      => 'required|image|max:1024|mimes:jpg,jpeg,png',
             ]);
 
             if ($validator->fails()) {
-                $req->session()->flash('status', 'Data baru gagal dimasukkan!');
+                $req->session()->flash('status', 'Data baru gagal dimasukkan! Maksimal File Yang Diunggah : 1.024KB');
                 return redirect()->route('sosmed.add', $id);
             }
             $sosmed = new Sosmed;
@@ -163,10 +176,27 @@ class SosmedController extends Controller
             $sosmed->slug = $slug;
         }
 
+        // directory image
+        $dir = 'images/ikon/';
+        if(!file_exists($dir)){
+            mkdir($dir);
+        }
+
         // Save data
+        if($req->hasFile('ikon')){
+            $image     = $req->file('ikon');
+            $file_name = Carbon::now()->toDateString().'-'.uniqid().'.'. $image->getClientOriginalExtension();
+            if($id) {
+                if(file_exists($sosmed->ikon)){
+                    unlink($sosmed->ikon);
+                }
+            }
+            $image->move($dir, $file_name);
+            $sosmed->ikon = $dir.$file_name;
+        }
+
         $sosmed->name       = $req->name;
-        $sosmed->ikon       = $req->ikon;
-        $sosmed->status     = $req->status;
+        $sosmed->status     = $req->status == 0 ? 0 : $req->status;
 
         if(!$id) {
             $sosmed->created_at = Carbon::now()->format('Y-m-d');
@@ -188,22 +218,4 @@ class SosmedController extends Controller
         $req->session()->flash('status', 'Data berhasil dihapus!');
         return redirect()->route('sosmed.index');
     }
-    // public function index(Request $request)
-    // {
-    //     if ($request->ajax()) {
-    //         $Sosmed = DB::select('select * from sosmed');
-    //         return Datatables::of($Sosmed)
-    //                 ->addIndexColumn()
-    //                 ->addColumn('ikon', function($pic){
-    //                     $url= asset($pic->ikon);
-    //                     return '<img src="'.$url.'" alt="'.$url.'">';
-    //                 })
-    //                 ->addColumn('action', function($url){
-    //                     $slug= asset($url->slug);
-    //                     return '<a href="'.$slug.'" class="edit btn btn-primary btn-sm">View</a>';
-    //                 })
-    //                 ->rawColumns(['action','ikon'])->make(true);
-    //     }
-    //     return view('manage.sosmed.index');
-    // }
 }

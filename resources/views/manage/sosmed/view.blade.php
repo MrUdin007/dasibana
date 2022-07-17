@@ -43,9 +43,9 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="control-label"><b>Icon Sosmed</b><span class="text-danger">*</span></label>
+                                    <label class="control-label"><b>Ikon Sosmed</b><span class="text-danger">*</span></label>
                                     <div class="controls">
-                                        <img/>
+                                        <div id="ikonsosmed">{{ $sosmed->ikon }}</div>
                                     </div>
                                 </div>
                             </div>
