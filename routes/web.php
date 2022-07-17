@@ -42,9 +42,14 @@ Route::prefix('manage')->namespace('Manage')->group(function () {
     Route::get('kontak/edit', 'KontakController@edit')->name('manage.kontak.edit');
 
     ///Sosmed
-    Route::get('sosmed', 'SosmedController@index')->name('manage.sosmed');
-    Route::get('sosmed/add', 'SosmedController@add')->name('manage.sosmed.create');
-    Route::get('sosmed/edit', 'SosmedController@edit')->name('manage.sosmed.edit');
+    Route::get('sosmed','SosmedController@index')->name('sosmed.index');
+    Route::post('sosmed/getdata', 'SosmedController@getData')->name('sosmed.getdata');
+    Route::get('sosmed/add','SosmedController@form')->name('sosmed.add');
+    Route::post('sosmed/add','SosmedController@save')->name('sosmed.add');
+    Route::get('sosmed/edit/{id}','SosmedController@form')->name('sosmed.edit');
+    Route::post('sosmed/edit/{id}','SosmedController@save')->name('sosmed.edit');
+    Route::post('sosmed/delete/{id}','SosmedController@delete')->name('sosmed.delete');
+    Route::get('sosmed/view','SosmedController@view')->name('sosmed.view');
 });
 
 

@@ -38,7 +38,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="sidebar-link text-capitalize" href="{{ route('manage.sosmed')}}">
+                <a class="sidebar-link text-capitalize" href="{{ route('sosmed.index')}}">
                     <span class="icon-holder">
                         <i class="c-blue-500 ti-themify-favicon"></i>
                     </span>
