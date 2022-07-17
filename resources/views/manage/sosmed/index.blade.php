@@ -44,7 +44,7 @@
                     </div>
                 </div>
 
-				<table id="SosmedTable" class="table table-striped table-hover dt-responsive nowrap table-responsive" style="width:100%">
+				<table id="SosmedTable" class="table table-striped table-hover dt-responsive nowrap" style="width:100%">
                 <!-- <div class="table-responsive">
                     <table id="SosmedTable" class="table table-striped table-hover dt-responsive nowrap" style="width:100%"> -->
                         <thead>

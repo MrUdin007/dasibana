@@ -44,9 +44,9 @@
                     </div>
                 </div>
 
-				<!-- <table id="adminTable" class="table table-striped table-hover dt-responsive nowrap table-responsive" style="width:100%"> -->
-                <div class="table-responsive-xl">
-                    <table id="adminTable" class="table table-striped table-hover dt-responsive nowrap" style="width:100%">
+				<table id="adminTable" class="table table-striped table-hover dt-responsive nowrap" style="width:100%">
+                <!-- <div class="table-responsive-xl">
+                    <table id="adminTable" class="table table-striped table-hover dt-responsive nowrap" style="width:100%"> -->
                         <thead>
                             <tr>
                                 <th width="20px">No</th>
@@ -59,7 +59,7 @@
                         <tbody>
                         </tbody>
                     </table>
-                </div>
+                <!-- </div> -->
             </div>
         </div>
     </div>
