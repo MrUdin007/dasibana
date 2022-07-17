@@ -37,9 +37,14 @@ Route::prefix('manage')->namespace('Manage')->group(function () {
     Route::get('produk/view','ProductController@view')->name('produk.view');
 
     ///Produk Kategori
-    Route::get('produk-kategori', 'ProductCategoryController@index')->name('manage.produkkategori');
-    Route::get('produk-kategori/add', 'ProductCategoryController@add')->name('manage.produkkategori.create');
-    Route::get('produk-kategori/edit', 'ProductCategoryController@edit')->name('manage.produkkategori.edit');
+    Route::get('kategori_produk','ProductCategoryController@index')->name('produkkategori.index');
+    Route::post('kategori_produk/getdata', 'ProductCategoryController@getData')->name('produkkategori.getdata');
+    Route::get('kategori_produk/add','ProductCategoryController@form')->name('produkkategori.add');
+    Route::post('kategori_produk/add','ProductCategoryController@save')->name('produkkategori.add');
+    Route::get('kategori_produk/edit/{id}','ProductCategoryController@form')->name('produkkategori.edit');
+    Route::post('kategori_produk/edit/{id}','ProductCategoryController@save')->name('produkkategori.edit');
+    Route::post('kategori_produk/delete/{id}','ProductCategoryController@delete')->name('produkkategori.delete');
+    Route::get('kategori_produk/view','ProductCategoryController@view')->name('produkkategori.view');
 
     ///Kontak
     Route::get('kontak','KontakController@index')->name('kontak.index');

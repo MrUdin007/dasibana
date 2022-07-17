@@ -65,7 +65,7 @@
                 </a>
                 <ul class="dropdown-menu">
                     <li class="nav-item dropdown">
-                        <a href="{{ route('manage.produkkategori')}}" class="text-capitalize">
+                        <a href="{{ route('produkkategori.index')}}" class="text-capitalize">
                             <span>produk kategori</span>
                         </a>
                     </li>
