@@ -142,6 +142,7 @@ class SosmedController extends Controller
 
         return 'html';
     }
+
     public function save(Request $req, $id=null)
     {
         if($id){

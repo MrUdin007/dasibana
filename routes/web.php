@@ -27,9 +27,14 @@ Route::prefix('manage')->namespace('Manage')->group(function () {
     Route::get('admin/view','AdminController@view')->name('admin.view');
 
     ///Produk
-    Route::get('produk', 'ProductController@index')->name('manage.product');
-    Route::get('produk/add', 'ProductController@add')->name('manage.product.create');
-    Route::get('produk/edit', 'ProductController@edit')->name('manage.product.edit');
+    Route::get('produk','ProductController@index')->name('produk.index');
+    Route::post('produk/getdata', 'ProductController@getData')->name('produk.getdata');
+    Route::get('produk/add','ProductController@form')->name('produk.add');
+    Route::post('produk/add','ProductController@save')->name('produk.add');
+    Route::get('produk/edit/{id}','ProductController@form')->name('produk.edit');
+    Route::post('produk/edit/{id}','ProductController@save')->name('produk.edit');
+    Route::post('produk/delete/{id}','ProductController@delete')->name('produk.delete');
+    Route::get('produk/view','ProductController@view')->name('produk.view');
 
     ///Produk Kategori
     Route::get('produk-kategori', 'ProductCategoryController@index')->name('manage.produkkategori');

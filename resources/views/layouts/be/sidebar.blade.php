@@ -70,11 +70,10 @@
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="{{ route('manage.product')}}" class="text-capitalize">
+                        <a href="{{ route('produk.index')}}" class="text-capitalize">
                             <span>data produk</span>
                         </a>
                     </li>
-
                 </ul>
             </li>
         </ul>
