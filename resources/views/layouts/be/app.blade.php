@@ -33,6 +33,7 @@
 
         @stack('css')
         <link href="{{ asset('dist/be/css/main.css') }}" rel="stylesheet">
+        <link href="{{ asset('dist/be/css/custom.css') }}" rel="stylesheet">
         <link href="{{ asset('dist/be/vendor/css/style.css') }}" rel="stylesheet">
         <link href="{{ asset('dist/be/vendor/datatables/rowReorder.dataTables.min.css') }}" rel="stylesheet">
         <link href="{{ asset('dist/vendors/css/bootstrap.css') }}" rel="stylesheet">
@@ -70,6 +71,10 @@
             .swal2-popup .swal2-styled{
                 padding: 8px 25px !important;
                 font-size: 14px !important;
+            }
+
+            div, span, p, h1, h2, h3, h4, h5, small, td{
+                word-wrap: anywhere;
             }
         </style>
     </head>
