@@ -121,9 +121,14 @@ class ProductController extends Controller
     {
 
         $produk = Produk::find($id);
+        $kategoriProduk = KategoriProduk::where('kategori_produk.status', 1)
+                        ->where('kategori_produk.deleted_at', null)
+                        ->orderBy('kategori_produk.created_at', 'DESC')
+                        ->get();
 
         return view('manage.produk.form', [
-            'produk' => $produk
+            'produk'            => $produk,
+            'kategoriProduk'    => $kategoriProduk
         ]);
     }
 
@@ -143,71 +148,86 @@ class ProductController extends Controller
 
         return 'html';
     }
-    // public function save(Request $req, $id=null)
-    // {
-    //     if($id){
-    //         $validator = Validator::make($req->all(), [
-    //             'name'      => 'required|string|max:255',
-    //             'ikon'      => 'required|image|max:1024|mimes:jpg,jpeg,png',
-    //         ]);
 
-    //         if ($validator->fails()) {
-    //             $req->session()->flash('status', 'Data gagal diubah! Maksimal File Yang Diunggah : 1.024KB');
-    //             return redirect()->route('produk.edit', $id);
-    //         }
+    public function save(Request $req, $id=null)
+    {
+        if($id){
+            $validator = Validator::make($req->all(), [
+                'name'              => 'required|string|max:255',
+                'foto'              => 'required|image|max:1024|mimes:jpg,jpeg,png',
+                'id_kategori'       => 'required|integer|max:11',
+                'link_shopee'       => 'required|string|max:255',
+                'link_tokopedia'    => 'required|string|max:255',
+            ]);
 
-    //         $produk = produk::find($id);
-    //     }else{
-    //         $validator = Validator::make($req->all(), [
-    //             'name'      => 'required|string|max:255',
-    //             'ikon'      => 'required|image|max:1024|mimes:jpg,jpeg,png',
-    //         ]);
+            if ($validator->fails()) {
+                $req->session()->flash('status', 'Data gagal diubah! Maksimal File Yang Diunggah : 1.024KB');
+                return redirect()->route('produk.edit', $id);
+            }
 
-    //         if ($validator->fails()) {
-    //             $req->session()->flash('status', 'Data baru gagal dimasukkan! Maksimal File Yang Diunggah : 1.024KB');
-    //             return redirect()->route('produk.add', $id);
-    //         }
-    //         $produk = new produk;
-    //         $same_slug = produk::where('slug','like',Str::slug($req->name).'%')->count();
-    //         if ($same_slug > 0) {
-    //             $slug = Str::slug($req->name.' '.$same_slug);
-    //         } else {
-    //             $slug = Str::slug($req->name);
-    //         }
-    //         $produk->slug = $slug;
-    //     }
+            $produk = Produk::find($id);
+            // $produk->status         = $req->status;
+        }else{
+            $validator = Validator::make($req->all(), [
+                'name'              => 'required|string|max:255',
+                'foto'              => 'required|image|max:1024|mimes:jpg,jpeg,png',
+                'id_kategori'       => 'required|integer|max:11',
+                'link_shopee'       => 'required|string|max:255',
+                'link_tokopedia'    => 'required|string|max:255',
+            ]);
 
-    //     // directory image
-    //     $dir = 'images/ikon/';
-    //     if(!file_exists($dir)){
-    //         mkdir($dir);
-    //     }
+            if ($validator->fails()) {
+                $req->session()->flash('status', 'Data baru gagal dimasukkan! Maksimal File Yang Diunggah : 1.024KB');
+                return redirect()->route('produk.add', $id);
+            }
+            $produk         = new Produk;
+            $same_slug      = Produk::where('slug','like',Str::slug($req->name).'%')->count();
+            if ($same_slug > 0) {
+                $slug = Str::slug($req->name.' '.$same_slug);
+            } else {
+                $slug = Str::slug($req->name);
+            }
+            $produk->slug = $slug;
+        }
 
-    //     // Save data
-    //     if($req->hasFile('ikon')){
-    //         $image     = $req->file('ikon');
-    //         $file_name = Carbon::now()->toDateString().'-'.uniqid().'.'. $image->getClientOriginalExtension();
-    //         if($id) {
-    //             if(file_exists($produk->ikon)){
-    //                 unlink($produk->ikon);
-    //             }
-    //         }
-    //         $image->move($dir, $file_name);
-    //         $produk->ikon = $dir.$file_name;
-    //     }
+        // directory image
+        $dir = 'images/foto-produk/';
+        if(!file_exists($dir)){
+            mkdir($dir);
+        }
 
-    //     $produk->name       = $req->name;
-    //     $produk->status     = $req->status == 0 ? 0 : $req->status;
+        // Save data
+        if($req->hasFile('foto')){
+            $image     = $req->file('foto');
+            $file_name = Carbon::now()->toDateString().'-'.uniqid().'.'. $image->getClientOriginalExtension();
+            if($id) {
+                if(file_exists($produk->foto)){
+                    unlink($produk->foto);
+                }
+            }
+            $image->move($dir, $file_name);
+            $produk->foto = $dir.$file_name;
+        }
 
-    //     if(!$id) {
-    //         $produk->created_at = Carbon::now()->format('Y-m-d');
-    //         $produk->updated_at = Carbon::now()->format('Y-m-d H:i:s');
-    //     }
+        ///utk set k database   = ambil value dari form
+        $produk->name           = $req->name;
+        $produk->link_shopee    = $req->link_shopee;
+        $produk->link_tokopedia = $req->link_tokopedia;
+        $produk->id_kategori    = $req->id_kategori;
+        $produk->status         = $req->input('status');
+        // $produk->status         = $req->status == 0 ? 0 : $req->status;
 
-    //     $produk->save();
-    //     $req->session()->flash('status', 'Data berhasil dimasukkan!');
-    //     return redirect()->route('produk.index');
-    // }
+        dd($produk);
+
+        if(!$id) {
+            $produk->created_at = Carbon::now()->format('Y-m-d');
+            $produk->updated_at = Carbon::now()->format('Y-m-d H:i:s');
+        }
+
+        $produk->save();
+        $req->session()->flash('status', 'Data berhasil dimasukkan!');
+        return redirect()->route('produk.index');
+    }
 
     public function delete(Request $req, $id)
     {
@@ -219,32 +239,4 @@ class ProductController extends Controller
         $req->session()->flash('status', 'Data berhasil dihapus!');
         return redirect()->route('produk.index');
     }
-
-    // public function index(Request $request)
-    // {
-    //     if ($request->ajax()) {
-    //         $produk = DB::select('select * from produk');
-    //         return Datatables::of($produk)
-    //                 ->addIndexColumn()
-    //                 ->addColumn('status', function($status){
-    //                     if($status->status === 1){
-    //                         $pills = '<div class="tt-status"><span class="badge badge-pill badge-success">Active</span></div>';
-    //                     }
-    //                     else{
-    //                         $pills = '<div class="tt-status"><span class="badge badge-pill badge-secondary">Inactive</span></div>';
-    //                     }
-    //                     return $pills;
-    //                 })
-    //                 ->addColumn('foto', function($pic){
-    //                     $url= asset($pic->foto);
-    //                     return '<img src="'.$url.'" alt="'.$url.'">';
-    //                 })
-    //                 ->addColumn('action', function($url){
-    //                     $slug= asset($url->id);
-    //                     return '<a href="'.$slug.'" class="edit btn btn-primary btn-sm">View</a>';
-    //                 })
-    //                 ->rawColumns(['foto','action'])->make(true);
-    //     }
-    //     return view('manage.produk.index');
-    // }
 }

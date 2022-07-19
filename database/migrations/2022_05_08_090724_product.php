@@ -21,6 +21,7 @@ class Product extends Migration
             $table->string('foto');
             $table->string('link_shopee');
             $table->string('link_tokopedia');
+            $table->string('slug')->unique();
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

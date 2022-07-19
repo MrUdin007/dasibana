@@ -18,7 +18,8 @@ class ProductTableSeeder extends Seeder
                 'status'               =>  true,
                 'foto'                 =>  'images/product1.jpg',
                 'link_shopee'          =>  'https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a',
-                'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik'
+                'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik',
+                'slug'                 =>  'product1'
             ],
             [
                 'name'                 =>  'product2',
@@ -26,7 +27,8 @@ class ProductTableSeeder extends Seeder
                 'status'               =>  true,
                 'foto'                 =>  'images/product2.jpg',
                 'link_shopee'          =>  'https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a',
-                'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik'
+                'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik',
+                'slug'                 =>  'product2'
             ],
             [
                 'name'                 =>  'product3',
@@ -34,7 +36,8 @@ class ProductTableSeeder extends Seeder
                 'status'               =>  true,
                 'foto'                 =>  'images/product3.jpg',
                 'link_shopee'          =>  'https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a',
-                'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik'
+                'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik',
+                'slug'                 =>  'product3'
             ],
             [
                 'name'                 =>  'product4',
@@ -42,7 +45,8 @@ class ProductTableSeeder extends Seeder
                 'status'               =>  true,
                 'foto'                 =>  'images/product4.jpg',
                 'link_shopee'          =>  'https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a',
-                'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik'
+                'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik',
+                'slug'                 =>  'product4'
             ],
             [
                 'name'                 =>  'product5',
@@ -50,7 +54,8 @@ class ProductTableSeeder extends Seeder
                 'status'               =>  true,
                 'foto'                 =>  'images/product5.jpg',
                 'link_shopee'          =>  'https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a',
-                'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik'
+                'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik',
+                'slug'                 =>  'product5'
             ],
             [
                 'name'                 =>  'product6',
@@ -58,7 +63,8 @@ class ProductTableSeeder extends Seeder
                 'status'               =>  true,
                 'foto'                 =>  'images/product6.jpg',
                 'link_shopee'          =>  'https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a',
-                'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik'
+                'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik',
+                'slug'                 =>  'product6'
             ],
             [
                 'name'                 =>  'product7',
@@ -66,7 +72,8 @@ class ProductTableSeeder extends Seeder
                 'status'               =>  true,
                 'foto'                 =>  'images/product1.jpg',
                 'link_shopee'          =>  'https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a',
-                'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik'
+                'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik',
+                'slug'                 =>  'product7'
             ],
             [
                 'name'                 =>  'product8',
@@ -74,7 +81,8 @@ class ProductTableSeeder extends Seeder
                 'status'               =>  true,
                 'foto'                 =>  'images/product2.jpg',
                 'link_shopee'          =>  'https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a',
-                'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik'
+                'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik',
+                'slug'                 =>  'product8'
             ],
             [
                 'name'                 =>  'product9',
@@ -82,7 +90,8 @@ class ProductTableSeeder extends Seeder
                 'status'               =>  true,
                 'foto'                 =>  'images/product3.jpg',
                 'link_shopee'          =>  'https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a',
-                'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik'
+                'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik',
+                'slug'                 =>  'product9'
             ],
             [
                 'name'                 =>  'product10',
@@ -90,7 +99,8 @@ class ProductTableSeeder extends Seeder
                 'status'               =>  true,
                 'foto'                 =>  'images/product4.jpg',
                 'link_shopee'          =>  'https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a',
-                'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik'
+                'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik',
+                'slug'                 =>  'product10'
             ],
             [
                 'name'                 =>  'product11',
@@ -98,7 +108,8 @@ class ProductTableSeeder extends Seeder
                 'status'               =>  true,
                 'foto'                 =>  'images/product5.jpg',
                 'link_shopee'          =>  'https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a',
-                'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik'
+                'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik',
+                'slug'                 =>  'product11'
             ],
             [
                 'name'                 =>  'product12',
@@ -106,7 +117,8 @@ class ProductTableSeeder extends Seeder
                 'status'               =>  true,
                 'foto'                 =>  'images/product6.jpg',
                 'link_shopee'          =>  'https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a',
-                'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik'
+                'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik',
+                'slug'                 =>  'product12'
             ],
             [
                 'name'                 =>  'product13',
@@ -114,7 +126,8 @@ class ProductTableSeeder extends Seeder
                 'status'               =>  true,
                 'foto'                 =>  'images/product1.jpg',
                 'link_shopee'          =>  'https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a',
-                'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik'
+                'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik',
+                'slug'                 =>  'product13'
             ],
             [
                 'name'                 =>  'product14',
@@ -122,7 +135,8 @@ class ProductTableSeeder extends Seeder
                 'status'               =>  true,
                 'foto'                 =>  'images/product2.jpg',
                 'link_shopee'          =>  'https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a',
-                'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik'
+                'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik',
+                'slug'                 =>  'product14'
             ],
             [
                 'name'                 =>  'product15',
@@ -130,7 +144,8 @@ class ProductTableSeeder extends Seeder
                 'status'               =>  true,
                 'foto'                 =>  'images/product3.jpg',
                 'link_shopee'          =>  'https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a',
-                'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik'
+                'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik',
+                'slug'                 =>  'product15'
             ],
             [
                 'name'                 =>  'product16',
@@ -138,7 +153,8 @@ class ProductTableSeeder extends Seeder
                 'status'               =>  true,
                 'foto'                 =>  'images/product4.jpg',
                 'link_shopee'          =>  'https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a',
-                'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik'
+                'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik',
+                'slug'                 =>  'product16'
             ]
         ]);
     }
