@@ -35,13 +35,6 @@
                     <div class="head-lst">
                         <h3 class="page-title text-uppercase">data Admin</h3>
                     </div>
-                    <div class="mn-rght">
-                        <button class="addbsnt --pluses">
-                            <a href="{{ route('admin.add')}}">
-                                <i class="ti-plus"></i>
-                            </a>
-                        </button>
-                    </div>
                 </div>
 
 				<table id="adminTable" class="table table-striped table-hover dt-responsive nowrap" style="width:100%">
@@ -173,21 +166,6 @@
                 error: function (data) {
                     console.log('data admin');
                     console.log(data);
-                }
-            });
-        }
-
-        function deleteAdmin(id) {
-            Swal.fire({
-                type : "warning",
-                text : "Anda yakin ingin menghapus data ini?",
-                showCancelButton  : true,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText : "Yes",
-                cancelButtonText  : "No",
-            }).then((result) => {
-                if (result.value) {
-                    document.getElementById(id).submit();
                 }
             });
         }

@@ -50,7 +50,6 @@ class KontakController extends Controller
         $search = $req->search['value']; //mengambil data yg diinput pada search field
 
         $kontak = Profil::select($columns_alias); //manggil datatable dari database berdasarkan column_alies
-        $kontak->where('profil.deleted_at', null);
         $kontak->orderBy('profil.created_at', 'DESC');
 
         $total_data = $kontak->count();
@@ -178,33 +177,4 @@ class KontakController extends Controller
         $req->session()->flash('status', 'Data berhasil dimasukkan!');
         return redirect()->route('kontak.index');
     }
-
-    public function delete(Request $req, $id) //menghapus data dari database berdasarkan id tombol delete yg ditekan
-    {
-
-        $kontak = Profil::find($id);
-        $kontak->deleted_at  = Carbon::now()->format('Y-m-d');
-        $kontak->save();
-
-        $req->session()->flash('status', 'Data berhasil dihapus!');
-        return redirect()->route('kontak.index');
-    }
-    // public function index(Request $request)
-    // {
-    //     if ($request->ajax()) {
-    //         $kontak = DB::select('select * from kontak');
-    //         return Datatables::of($kontak)
-    //                 ->addIndexColumn()
-    //                 ->addColumn('tahun', function($pic){
-    //                     $url= asset($pic->tahun);
-    //                     return '<img src="'.$url.'" alt="'.$url.'">';
-    //                 })
-    //                 ->addColumn('action', function($url){
-    //                     $slug= asset($url->slug);
-    //                     return '<a href="'.$slug.'" class="edit btn btn-primary btn-sm">View</a>';
-    //                 })
-    //                 ->rawColumns(['action','tahun'])->make(true);
-    //     }
-    //     return view('manage.kontak.index');
-    // }
 }

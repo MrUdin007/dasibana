@@ -37,6 +37,7 @@
                                             ->where('sosmed.status', 1)
                                             ->where('sosmed.deleted_at', '=', null)
                                             ->orderBy('sosmed.created_at', 'DESC')
+                                            ->take(4)
                                             ->get();
                         ?>
                         @if(count($sosmed) > 0)

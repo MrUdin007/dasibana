@@ -19,7 +19,6 @@ class AdminTableSeeder extends Seeder
                 'email'     =>  'risna@gmail.com',
                 'password'  =>  Hash::make('superadmin1'),
                 'slug'      =>  'admin1',
-                'email_verified_at' => now(),
                 'remember_token' => Str::random(10)
             ],
             [
@@ -28,7 +27,6 @@ class AdminTableSeeder extends Seeder
                 'email'     =>  'rifki@gmail.com',
                 'password'  =>  Hash::make('superadmin2'),
                 'slug'      =>  'admin2',
-                'email_verified_at' => now(),
                 'remember_token' => Str::random(10)
             ],
             [
@@ -37,7 +35,6 @@ class AdminTableSeeder extends Seeder
                 'email'     =>  'fitri@gmail.com',
                 'password'  =>  Hash::make('superadmin3'),
                 'slug'      =>  'admin3',
-                'email_verified_at' => now(),
                 'remember_token' => Str::random(10)
             ]
         ]);

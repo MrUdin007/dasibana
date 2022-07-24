@@ -16,6 +16,9 @@
 @endpush
 
 @section('content')
+    <?php
+        use App\Models\Profil;
+    ?>
     <div class="row gap-20 pos-r">
         <div class="masonry-item col-md-12">
             <div class="bgc-white bd bdrs-3 p-20 mB-20">
@@ -35,6 +38,10 @@
                     <div class="head-lst">
                         <h3 class="page-title text-uppercase">Data Kontak</h3>
                     </div>
+                    <?php
+                        $profil    =   Profil::selectRaw('*')->get();
+                    ?>
+                    @if(count($profil) < 1)
                     <div class="mn-rght">
                         <button class="addbsnt --pluses">
                             <a href="{{ route('kontak.add')}}">
@@ -42,6 +49,7 @@
                             </a>
                         </button>
                     </div>
+                    @endif
                 </div>
 
                 <table id="KontakTable" class="table table-bordered data-table">

@@ -21,9 +21,7 @@ class Admin extends Migration
             $table->string('password');
             $table->string('slug')->unique();
             $table->rememberToken();
-            $table->timestamp('email_verified_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

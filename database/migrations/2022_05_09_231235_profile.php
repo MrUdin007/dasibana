@@ -23,7 +23,6 @@ class Profile extends Migration
             $table->string('slug')->unique();
             $table->rememberToken();
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

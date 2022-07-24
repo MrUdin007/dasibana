@@ -49,7 +49,6 @@ class AdminController extends Controller
         $search = $req->search['value'];
 
         $admin = Admin::select($columns_alias);
-        $admin->where('admins.deleted_at', null);
         $admin->orderBy('admins.created_at', 'DESC');
 
         $total_data = $admin->count();
@@ -80,15 +79,6 @@ class AdminController extends Controller
                         <i class="c-blue-500 ti-pencil-alt"></i>
                     </span>
                 </a>
-            ';
-
-            $action .='
-                <a href="javascript:void(0)" title="delete" class="btn btn-sm btn-rounded btn-outline-danger" onclick="deleteAdmin(\'delete-form-'.$val->id.'\')">
-                    <span class="icon-holder">
-                        <i class="c-blue-500 ti-trash"></i>
-                    </span>
-                </a>
-                <form id="delete-form-'.$val->id.'" action="'.route('admin.delete',$val->id).'" method="POST" style="display: none;">'.csrf_field().'</form>
             ';
             $action .= '</div>';
 
@@ -146,15 +136,6 @@ class AdminController extends Controller
 
             $admin = Admin::find($id);
         }else{
-            $validator = Validator::make($req->all(), [
-                'username' => 'required|string|max:255|unique:admins,username',
-                'email'     => 'required|string|unique:admins,email,'.$id,
-            ]);
-
-            if ($validator->fails()) {
-                $req->session()->flash('status', 'Data baru gagal dimasukkan!');
-                return redirect()->route('admin.add', $id);
-            }
             $admin = new Admin;
             $same_slug = Admin::where('slug','like',Str::slug($req->name).'%')->count();
             if ($same_slug > 0) {
@@ -177,17 +158,6 @@ class AdminController extends Controller
 
         $admin->save();
         $req->session()->flash('status', 'Data berhasil dimasukkan!');
-        return redirect()->route('admin.index');
-    }
-
-    public function delete(Request $req, $id)
-    {
-
-        $admin = Admin::find($id);
-        $admin->deleted_at  = Carbon::now()->format('Y-m-d');
-        $admin->save();
-
-        $req->session()->flash('status', 'Data berhasil dihapus!');
         return redirect()->route('admin.index');
     }
 }
