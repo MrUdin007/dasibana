@@ -18,6 +18,7 @@ class ProductCateghoryController extends Controller
     {
         $kategori_produk    =   KategoriProduk::selectRaw('kategori_produk.id, kategori_produk.name as kategoriName, kategori_produk.slug as urlKategori')
                                 ->where('kategori_produk.status', 1)
+                                ->where('kategori_produk.deleted_at', '=', null)
                                 ->orderBy('kategori_produk.created_at', 'DESC')
                                 ->get();
 
@@ -35,8 +36,10 @@ class ProductCateghoryController extends Controller
 
             $products = KategoriProduk::selectRaw('kategori_produk.name, produk.name as produkName, produk.foto, produk.link_shopee, produk.link_tokopedia')
                         ->leftJoin('produk','produk.id_kategori','=','kategori_produk.id')
+                        ->where('kategori_produk.deleted_at', '=', null)
                         ->where('kategori_produk.slug', $req->slug)
                         ->where('kategori_produk.status', 1)
+                        ->where('produk.deleted_at', '=', null)
                         ->where('produk.status', 1)
                         ->orderBy('produk.created_at', 'DESC')
                         ->get();

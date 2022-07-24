@@ -18,13 +18,18 @@ class HomeController extends Controller
     public function index(Request $req)
     {
         $produk_terbaru     =   Produk::selectRaw('produk.id, produk.foto as fotoProduk, produk.link_shopee, produk.link_tokopedia')
+                                ->leftJoin('kategori_produk','kategori_produk.id','=','produk.id_kategori')
+                                ->where('kategori_produk.status', 1)
+                                ->where('kategori_produk.deleted_at', '=', null)
                                 ->where('produk.status', 1)
+                                ->where('produk.deleted_at', '=', null)
                                 ->orderBy('produk.created_at', 'DESC')
                                 ->take(12)
                                 ->get();
 
         $kategori_produk    =  KategoriProduk::selectRaw('kategori_produk.id, kategori_produk.name as kategoriName, kategori_produk.slug')
                                 ->where('kategori_produk.status', 1)
+                                ->where('kategori_produk.deleted_at', '=', null)
                                 ->orderBy('kategori_produk.created_at', 'DESC')
                                 ->get();
 

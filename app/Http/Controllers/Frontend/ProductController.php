@@ -16,13 +16,18 @@ class ProductController extends Controller
 {
     public function index(Request $req)
     {
-        $products     =   Produk::selectRaw('produk.id, produk.foto as fotoProduk, produk.link_shopee, produk.link_tokopedia')
-                        ->where('produk.status', 1)
-                        ->orderBy('produk.created_at', 'DESC')
-                        ->get();
+        $products       =   Produk::selectRaw('produk.id, produk.foto as fotoProduk, produk.link_shopee, produk.link_tokopedia')
+                            ->leftJoin('kategori_produk','kategori_produk.id','=','produk.id_kategori')
+                            ->where('kategori_produk.status', 1)
+                            ->where('kategori_produk.deleted_at', '=', null)
+                            ->where('produk.status', 1)
+                            ->where('produk.deleted_at', '=', null)
+                            ->orderBy('produk.created_at', 'DESC')
+                            ->get();
 
         $kategori_produk    =  KategoriProduk::selectRaw('kategori_produk.id, kategori_produk.name as kategoriName')
                                 ->where('kategori_produk.status', 1)
+                                ->where('kategori_produk.deleted_at', '=', null)
                                 ->orderBy('kategori_produk.created_at', 'DESC')
                                 ->get();
 

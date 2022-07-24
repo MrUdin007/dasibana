@@ -81,15 +81,6 @@ class KontakController extends Controller
                     </span>
                 </a>
             ';
-
-            $action .='
-                <a href="javascript:void(0)" title="delete" class="btn btn-sm btn-rounded btn-outline-danger" onclick="deleteKontak(\'delete-form-'.$val->id.'\')">
-                    <span class="icon-holder">
-                        <i class="c-blue-500 ti-trash"></i>
-                    </span>
-                </a>
-                <form id="delete-form-'.$val->id.'" action="'.route('kontak.delete',$val->id).'" method="POST" style="display: none;">'.csrf_field().'</form>
-            ';
             $action .= '</div>';
 
             $data[$key] = $val->toArray();

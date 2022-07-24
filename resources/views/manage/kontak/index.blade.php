@@ -50,7 +50,7 @@
                             <th width="20px">No</th>
                             <th width="150px">Nama Bisnis</th>
                             <th width="150px">Pemilik</th>
-                            <th>Deskripsi</th> 
+                            <th>Deskripsi</th>
                             <th width="280px">Action</th>
                         </tr>
                     </thead>
@@ -185,21 +185,6 @@
                 error: function (data) {
                     console.log('data kontak');
                     console.log(data);
-                }
-            });
-        }
-
-        function deleteKontak(id) {
-            Swal.fire({
-                type : "warning",
-                text : "Anda yakin ingin menghapus data ini?",
-                showCancelButton  : true,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText : "Yes",
-                cancelButtonText  : "No",
-            }).then((result) => {
-                if (result.value) {
-                    document.getElementById(id).submit();
                 }
             });
         }

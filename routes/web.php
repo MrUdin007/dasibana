@@ -53,7 +53,6 @@ Route::prefix('manage')->namespace('Manage')->group(function () {
     Route::post('kontak/add','KontakController@save')->name('kontak.add');
     Route::get('kontak/edit/{id}','KontakController@form')->name('kontak.edit');
     Route::post('kontak/edit/{id}','KontakController@save')->name('kontak.edit');
-    Route::post('kontak/delete/{id}','KontakController@delete')->name('kontak.delete');
     Route::get('kontak/view','KontakController@view')->name('kontak.view');
 
     ///Sosmed

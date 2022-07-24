@@ -13,6 +13,7 @@
                         <?php
                             $kategori_produk    =   KategoriProduk::selectRaw('kategori_produk.id, kategori_produk.name as kategoriName, kategori_produk.slug as urlKategori')
                                                     ->where('kategori_produk.status', 1)
+                                                    ->where('kategori_produk.deleted_at', '=', null)
                                                     ->orderBy('kategori_produk.created_at', 'DESC')
                                                     ->take(10)
                                                     ->get();
@@ -34,6 +35,7 @@
                         <?php
                             $sosmed    =   Sosmed::selectRaw('sosmed.id, sosmed.name as nameSosmed, sosmed.ikon as ikonSosmed, sosmed.slug as urlSosmed')
                                             ->where('sosmed.status', 1)
+                                            ->where('sosmed.deleted_at', '=', null)
                                             ->orderBy('sosmed.created_at', 'DESC')
                                             ->get();
                         ?>

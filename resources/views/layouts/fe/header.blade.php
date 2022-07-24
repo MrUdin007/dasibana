@@ -19,6 +19,7 @@
                     <?php
                         $kategori_produk    =   KategoriProduk::selectRaw('kategori_produk.id, kategori_produk.name as kategoriName, kategori_produk.slug as urlKategori')
                                                 ->where('kategori_produk.status', 1)
+                                                ->where('kategori_produk.deleted_at', '=', null)
                                                 ->orderBy('kategori_produk.created_at', 'DESC')
                                                 ->get();
                     ?>
