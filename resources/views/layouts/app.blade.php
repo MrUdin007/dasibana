@@ -35,10 +35,11 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('dist/be/css/main.css') }}" rel="stylesheet">
-    <link href="{{ asset('dist/be/css/login.css') }}" rel="stylesheet">
+    <!-- <link href="{{ asset('dist/be/css/main.css') }}" rel="stylesheet"> -->
+    <link href="{{ asset('dist/be/css/logins.css') }}" rel="stylesheet">
 </head>
 <body>
+    <div class="bg-overlay-banner"></div>
     <div id="app-login">
         <div class="overlay-app"></div>
         <main class="py-4">
