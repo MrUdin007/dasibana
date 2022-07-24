@@ -11,7 +11,7 @@
             <li class="dropdown">
                 <a href="javascript:void(0);" type="button" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" id="dropdownVeganesia">
                     <div class="peer">
-                        <span class="fsz-sm f-asap_med" style="color: #ffffff;">{{ auth()->user()->name }}</span>
+                        <span class="fsz-sm f-asap_med" style="color: #ffffff;">{{ auth()->user()->username }}</span>
                     </div>
                 </a>
                 <ul style="display: none;" id="menudropdownheader" class="dropdown-menu fsz-sm">
