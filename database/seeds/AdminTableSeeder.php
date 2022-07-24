@@ -15,10 +15,10 @@ class AdminTableSeeder extends Seeder
     {
         DB::table('admins')->insert([
             [
-                'name'      =>  'incess bala-bala',
-                'username'  =>  'risna',
-                'email'     =>  'risna@gmail.com',
-                'password'  =>  Hash::make('superadmin1'),
+                'name'      =>  'rifki',
+                'username'  =>  'rifki123',
+                'email'     =>  'rifki@gmail.com',
+                'password'  =>  Hash::make('rifki123'),
                 'slug'      =>  'admin1',
                 'remember_token' => Str::random(10),
                 'created_at'    =>  Carbon::now()

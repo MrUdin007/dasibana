@@ -25,7 +25,7 @@ class ProductTableSeeder extends Seeder
                 'name'                 =>  'product2',
                 'id_kategori'          =>  '2',
                 'status'               =>  true,
-                'foto'                 =>  'images/product2.jpg',
+                'foto'                 =>  'images/product3.jpg',
                 'link_shopee'          =>  'https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a',
                 'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik',
                 'slug'                 =>  'product2'
@@ -79,7 +79,7 @@ class ProductTableSeeder extends Seeder
                 'name'                 =>  'product8',
                 'id_kategori'          =>  '8',
                 'status'               =>  true,
-                'foto'                 =>  'images/product2.jpg',
+                'foto'                 =>  'images/product3.jpg',
                 'link_shopee'          =>  'https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a',
                 'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik',
                 'slug'                 =>  'product8'
@@ -133,7 +133,7 @@ class ProductTableSeeder extends Seeder
                 'name'                 =>  'product14',
                 'id_kategori'          =>  '5',
                 'status'               =>  true,
-                'foto'                 =>  'images/product2.jpg',
+                'foto'                 =>  'images/product3.jpg',
                 'link_shopee'          =>  'https://shopee.co.id/Dasii-Kupu-kupu-Hitam-Polos-Mengkilap-TOP-QUALITY-i.35300544.592150122?sp_atk=301a5d17-6012-4ad1-af69-f937d8c0244a&xptdk=301a5d17-6012-4ad1-af69-f937d8c0244a',
                 'link_tokopedia'       =>  'https://www.tokopedia.com/konveksibana/dasi-panjang-import-lurik',
                 'slug'                 =>  'product14'
