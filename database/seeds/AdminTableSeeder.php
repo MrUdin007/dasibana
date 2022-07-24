@@ -20,22 +20,6 @@ class AdminTableSeeder extends Seeder
                 'password'  =>  Hash::make('superadmin1'),
                 'slug'      =>  'admin1',
                 'remember_token' => Str::random(10)
-            ],
-            [
-                'name'      =>  'iki bala-bala',
-                'username'  =>  'rifki',
-                'email'     =>  'rifki@gmail.com',
-                'password'  =>  Hash::make('superadmin2'),
-                'slug'      =>  'admin2',
-                'remember_token' => Str::random(10)
-            ],
-            [
-                'name'      =>  'piti bala-bala',
-                'username'  =>  'fitri',
-                'email'     =>  'fitri@gmail.com',
-                'password'  =>  Hash::make('superadmin3'),
-                'slug'      =>  'admin3',
-                'remember_token' => Str::random(10)
             ]
         ]);
     }
