@@ -76,6 +76,11 @@
             div, span, p, h1, h2, h3, h4, h5, small, td{
                 word-wrap: anywhere;
             }
+
+            ::placeholder {
+                color:rgb(133,130,130);
+                opacity: 1;
+            }
         </style>
     </head>
     <body class="app">

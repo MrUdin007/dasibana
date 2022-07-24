@@ -50,7 +50,7 @@
                         <div class="form-group">
                             <label class="control-label">Foto Produk<span class="text-danger">*</span><small> <b style="font-size: 11px !important;">(Maksimal File Yang Diunggah : 1.024KB)</b></small></label>
                             <div class="input-group mb-3">
-                                <input type="file" class="form-control" name="foto" id="foto" value="{{ isset($produk) ? $produk->foto : '' }}">
+                                <input type="file" class="form-control dasibana-pic" name="foto" id="foto" value="{{ isset($produk) ? $produk->foto : '' }}">
                             </div>
                         </div>
                         <div class="form-group">
@@ -68,9 +68,16 @@
                         <div class="form-group">
                             <label class="control-label">Kategori Produk<span class="text-danger">*</span></label>
                             <div class="controls">
-                                <select class="form-select form-control" name="id_kategori">
+                                <select class="form-select form-control" name="id_kategori" id="id_kategori">
                                     <option selected>Pilih Kategori Produk</option>
                                     @foreach($kategoriProduk as $kategori)
+                                    <option value="{{$kategori->id}}"
+                                        @isset($kategori)
+                                            selected
+                                        @endisset
+                                    >   {{$kategori->name}}
+                                    </option>
+
                                     <option value="{{$kategori->id}}" id="{{$kategori->id}}">{{$kategori->name}}</option>
                                     @endforeach
                                 </select>

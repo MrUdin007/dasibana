@@ -151,19 +151,20 @@ class ProductController extends Controller
 
     public function save(Request $req, $id=null)
     {
-        $regex = '/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/';
         if($id){
-            $validator = Validator::make($req->all(), [
-                'name'              => 'required|string|max:255',
-                'foto'              => 'required|image|max:1024|mimes:jpg,jpeg,png',
-                'id_kategori'       => 'required|integer|max:11',
-                'link_shopee'       => 'required|regex:'.$regex.'|max:255',
-                'link_tokopedia'    => 'required|regex:'.$regex.'|max:255',
-            ]);
+            if($req->name != null && $req->foto != null && $req->id_kategori != null && $req->link_shopee != null && $req->link_tokopedia != null){
+                $validator = Validator::make($req->all(), [
+                    'name'              => 'required|string|max:255',
+                    'foto'              => 'required|image|max:1024|mimes:jpg,jpeg,png',
+                    'id_kategori'       => 'required|integer|max:11',
+                    'link_shopee'       => 'required|string',
+                    'link_tokopedia'    => 'required|string',
+                ]);
 
-            if ($validator->fails()) {
-                $req->session()->flash('status', 'Data gagal diubah!');
-                return redirect()->route('produk.edit', $id);
+                if ($validator->fails()) {
+                    $req->session()->flash('status', 'Data gagal diubah!');
+                    return redirect()->route('produk.edit', $id);
+                }
             }
 
             $produk = Produk::find($id);
@@ -172,8 +173,8 @@ class ProductController extends Controller
                 'name'              => 'required|string|max:255',
                 'foto'              => 'required|image|max:1024|mimes:jpg,jpeg,png',
                 'id_kategori'       => 'required|integer|max:11',
-                'link_shopee'       => 'required|regex:'.$regex.'|max:255',
-                'link_tokopedia'    => 'required|regex:'.$regex.'|max:255',
+                'link_shopee'       => 'required|string',
+                'link_tokopedia'    => 'required|string',
             ]);
 
             if ($validator->fails()) {
