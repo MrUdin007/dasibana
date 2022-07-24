@@ -44,25 +44,25 @@
                         <div class="form-group">
                             <label class="control-label">Nama<span class="text-danger">*</span></label>
                             <div class="controls">
-                                <input type="text" name="name" id="name" class="form-control" value="{{ (old('name') ? old('name') : ((isset($admin)) ? $admin->name : '')) }}" placeholder="Masukkan Nama" required data-validation-required-message="This field is required">
+                                <input type="text" name="name" id="name" class="form-control" value="{{ isset($admin) ? $admin->name : '' }}" placeholder="Masukkan Nama" required data-validation-required-message="This field is required">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label">Username<span class="text-danger">*</span></label>
                             <div class="controls">
-                                <input type="text" name="username" id="username" class="form-control" value="{{ (old('username') ? old('username') : ((isset($admin)) ? $admin->username : '')) }}" placeholder="Masukkan Username" required data-validation-required-message="This field is required">
+                                <input type="text" name="username" id="username" class="form-control" value="{{ isset($admin) ? $admin->username : '' }}" placeholder="Masukkan Username" required data-validation-required-message="This field is required">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label">Email<span class="text-danger">*</span></label>
                             <div class="controls">
-                                <input type="email" name="email" id="email" class="form-control" @if($admin) ? disabled : ''@endif value="{{ (old('email') ? old('email') : ((isset($admin)) ? $admin->email : '')) }}" placeholder="Masukkan Email" required data-validation-required-message="This field is required">
+                                <input type="email" class="form-control" @if($admin) ? disabled : ''@endif value="{{ isset($admin) ? $admin->email : '' }}" placeholder="Masukkan Email" required data-validation-required-message="This field is required">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label">Password<span class="text-danger">*</span></label>
                             <div class="controls">
-                                <input type="password" name="password" id="password" class="form-control" @if($admin) ? disabled : ''@endif value="{{ (old('password') ? old('password') : ((isset($admin)) ? $admin->password : '')) }}" placeholder="Masukkan Password" required data-validation-required-message="This field is required">
+                                <input type="password" class="form-control" @if($admin) ? disabled : ''@endif value="{{ isset($admin) ? $admin->password : '' }}" placeholder="Masukkan Password" required data-validation-required-message="This field is required">
                             </div>
                         </div>
                         <div class="text-xs-right">

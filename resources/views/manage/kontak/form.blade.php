@@ -44,31 +44,31 @@
                         <div class="form-group">
                             <label class="control-label">Nama Bisnis<span class="text-danger">*</span></label>
                             <div class="controls">
-                                <input type="text" name="nama_bisnis" id="nama_bisnis" class="form-control" value="{{ (old('nama_bisnis') ? old('nama_bisnis') : ((isset($kontak)) ? $kontak->nama_bisnis : '')) }}" placeholder="Masukkan Nama Bisnis" required data-validation-required-message="Kolom ini tidak boleh kosong">
+                                <input type="text" name="nama_bisnis" id="nama_bisnis" class="form-control" value="{{ isset($kontak)) ? $kontak->nama_bisnis : '' }}" placeholder="Masukkan Nama Bisnis" required data-validation-required-message="Kolom ini tidak boleh kosong">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label">Pemilik<span class="text-danger">*</span></label>
                             <div class="controls">
-                                <input type="text" name="pemilik" id="pemilik" class="form-control" value="{{ (old('pemilik') ? old('pemilik') : ((isset($kontak)) ? $kontak->pemilik : '')) }}" placeholder="Masukkan Nama Pemilik" required data-validation-required-message="Kolom ini tidak boleh kosong">
+                                <input type="text" name="pemilik" id="pemilik" class="form-control" value="{{ isset($kontak)) ? $kontak->pemilik : '' }}" placeholder="Masukkan Nama Pemilik" required data-validation-required-message="Kolom ini tidak boleh kosong">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label">Tahun<span class="text-danger">*</span></label>
                             <div class="controls">
-                                <input type="number" name="tahun" id="tahun" class="form-control" value="{{ (old('tahun') ? old('tahun') : ((isset($kontak)) ? $kontak->tahun : '')) }}" placeholder="Masukkan Tahun" required data-validation-required-message="Kolom ini tidak boleh kosong">
+                                <input type="number" name="tahun" id="tahun" class="form-control" value="{{ isset($kontak)) ? $kontak->tahun : '' }}" placeholder="Masukkan Tahun" required data-validation-required-message="Kolom ini tidak boleh kosong">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label">Alamat<span class="text-danger">*</span></label>
                             <div class="controls">
-                                <input type="text" name="alamat" id="alamat" class="form-control" value="{{ (old('alamat') ? old('alamat') : ((isset($kontak)) ? $kontak->alamat : '')) }}" placeholder="Masukkan Deskripsi" required data-validation-required-message="Kolom ini tidak boleh kosong">
+                                <input type="text" name="alamat" id="alamat" class="form-control" value="{{ isset($kontak)) ? $kontak->alamat : '' }}" placeholder="Masukkan Deskripsi" required data-validation-required-message="Kolom ini tidak boleh kosong">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label">Deskripsi<span class="text-danger">*</span></label>
                             <div class="controls">
-                                <input type="text" name="deskripsi" id="deskripsi" class="form-control" value="{{ (old('deskripsi') ? old('deskripsi') : ((isset($kontak)) ? $kontak->deskripsi : '')) }}" placeholder="Masukkan Deskripsi" required data-validation-required-message="Kolom ini tidak boleh kosong">
+                                <input type="text" name="deskripsi" id="deskripsi" class="form-control" value="{{ isset($kontak)) ? $kontak->deskripsi : '' }}" placeholder="Masukkan Deskripsi" required data-validation-required-message="Kolom ini tidak boleh kosong">
                             </div>
                         </div>
                         <div class="text-xs-right">

@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -19,7 +20,8 @@ class AdminTableSeeder extends Seeder
                 'email'     =>  'risna@gmail.com',
                 'password'  =>  Hash::make('superadmin1'),
                 'slug'      =>  'admin1',
-                'remember_token' => Str::random(10)
+                'remember_token' => Str::random(10),
+                'created_at'    =>  Carbon::now()
             ]
         ]);
     }

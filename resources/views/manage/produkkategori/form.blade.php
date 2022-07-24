@@ -44,7 +44,7 @@
                         <div class="form-group">
                             <label class="control-label">Nama<span class="text-danger">*</span></label>
                             <div class="controls">
-                                <input type="text" name="name" id="name" class="form-control" value="{{ (old('name') ? old('name') : ((isset($produkkategori)) ? $produkkategori->name : '')) }}" placeholder="Masukkan Nama" required data-validation-required-message="Kolom ini tidak boleh kosong">
+                                <input type="text" name="name" id="name" class="form-control" value="{{ isset($produkkategori)) ? $produkkategori->name : '' }}" placeholder="Masukkan Nama" required data-validation-required-message="Kolom ini tidak boleh kosong">
                             </div>
                         </div>
                         <div class="form-group">

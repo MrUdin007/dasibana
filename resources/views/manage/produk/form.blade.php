@@ -44,25 +44,25 @@
                         <div class="form-group">
                             <label class="control-label">Nama<span class="text-danger">*</span></label>
                             <div class="controls">
-                                <input type="text" name="name" id="name" class="form-control" value="{{ (old('name') ? old('name') : ((isset($produk)) ? $produk->name : '')) }}" placeholder="Masukkan Nama" required data-validation-required-message="This field is required">
+                                <input type="text" name="name" id="name" class="form-control" value="{{ isset($produk)) ? $produk->name : '' }}" placeholder="Masukkan Nama" required data-validation-required-message="This field is required">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label">Foto Produk<span class="text-danger">*</span><small> <b style="font-size: 11px !important;">(Maksimal File Yang Diunggah : 1.024KB)</b></small></label>
                             <div class="input-group mb-3">
-                                <input type="file" class="form-control" name="foto" id="foto" value="{{ (old('foto') ? old('foto') : ((isset($produk)) ? $produk->foto : '')) }}">
+                                <input type="file" class="form-control" name="foto" id="foto" value="{{ isset($produk)) ? $produk->foto : '' }}">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label">Link Shopee<span class="text-danger">*</span><small> <b style="font-size: 11px !important;">(Contoh : www.google.com)</b></small></label>
                             <div class="controls">
-                                <input type="text" name="link_shopee" id="link_shopee" class="form-control" value="{{ (old('link_shopee') ? old('link_shopee') : ((isset($produk)) ? $produk->link_shopee : '')) }}" placeholder="Masukkan Link Shopee" required data-validation-required-message="This field is required">
+                                <input type="text" name="link_shopee" id="link_shopee" class="form-control" value="{{ isset($produk)) ? $produk->link_shopee : '' }}" placeholder="Masukkan Link Shopee" required data-validation-required-message="This field is required">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label">Link Tokopedia<span class="text-danger">*</span><small> <b style="font-size: 11px !important;">(Contoh : www.google.com)</b></small></label>
                             <div class="controls">
-                                <input type="text" name="link_tokopedia" id="link_tokopedia" class="form-control" value="{{ (old('link_tokopedia') ? old('link_tokopedia') : ((isset($produk)) ? $produk->link_tokopedia : '')) }}" placeholder="Masukkan Link Tokopedia" required data-validation-required-message="This field is required">
+                                <input type="text" name="link_tokopedia" id="link_tokopedia" class="form-control" value="{{ isset($produk)) ? $produk->link_tokopedia : '' }}" placeholder="Masukkan Link Tokopedia" required data-validation-required-message="This field is required">
                             </div>
                         </div>
                         <div class="form-group">

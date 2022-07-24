@@ -124,19 +124,7 @@ class AdminController extends Controller
     public function save(Request $req, $id=null)
     {
         if($id){
-            $validator = Validator::make($req->all(), [
-                'username' => 'required|string|max:255|unique:admins,username',
-                'email'     => 'required|string|unique:admins,email,'.$id,
-            ]);
-
-            if ($validator->fails()) {
-                $req->session()->flash('status', 'Data gagal diubah!');
-                return redirect()->route('admin.edit', $id);
-            }
-
             $admin = Admin::find($id);
-        }else{
-            $admin = new Admin;
             $same_slug = Admin::where('slug','like',Str::slug($req->name).'%')->count();
             if ($same_slug > 0) {
                 $slug = Str::slug($req->name.' '.$same_slug);
@@ -144,17 +132,12 @@ class AdminController extends Controller
                 $slug = Str::slug($req->name);
             }
             $admin->slug = $slug;
+            $admin->updated_at = Carbon::now()->format('Y-m-d H:i:s');
         }
 
         // Save data
         $admin->name       = $req->name;
         $admin->username   = $req->username;
-        $admin->email      = $req->email;
-        $admin->password   = bcrypt(sha1($req->password));
-        if(!$id) {
-            $admin->created_at = Carbon::now()->format('Y-m-d');
-            $admin->updated_at = Carbon::now()->format('Y-m-d H:i:s');
-        }
 
         $admin->save();
         $req->session()->flash('status', 'Data berhasil dimasukkan!');

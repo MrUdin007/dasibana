@@ -152,7 +152,7 @@ class SosmedController extends Controller
             ]);
 
             if ($validator->fails()) {
-                $req->session()->flash('status', 'Data gagal diubah! Maksimal File Yang Diunggah : 1.024KB');
+                $req->session()->flash('status', 'Data gagal diubah!');
                 return redirect()->route('sosmed.edit', $id);
             }
 
@@ -164,7 +164,7 @@ class SosmedController extends Controller
             ]);
 
             if ($validator->fails()) {
-                $req->session()->flash('status', 'Data baru gagal dimasukkan! Maksimal File Yang Diunggah : 1.024KB');
+                $req->session()->flash('status', 'Data baru gagal dimasukkan!');
                 return redirect()->route('sosmed.add', $id);
             }
             $sosmed = new Sosmed;

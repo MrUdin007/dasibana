@@ -44,13 +44,13 @@
                         <div class="form-group">
                             <label class="control-label">Nama<span class="text-danger">*</span></label>
                             <div class="controls">
-                                <input type="text" name="name" id="name" class="form-control" value="{{ (old('name') ? old('name') : ((isset($sosmed)) ? $sosmed->name : '')) }}" placeholder="Masukkan Nama" required data-validation-required-message="This field is required">
+                                <input type="text" name="name" id="name" class="form-control" value="{{ isset($sosmed)) ? $sosmed->name : '' }}" placeholder="Masukkan Nama" required data-validation-required-message="This field is required">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label">Icon<span class="text-danger">*</span></label>
+                            <label class="control-label">Icon<span class="text-danger">*</span><small> <b style="font-size: 11px !important;">(Maksimal File Yang Diunggah : 1.024KB)</b></small></label>
                             <div class="input-group mb-3">
-                                <input type="file" class="form-control" name="ikon" id="ikon" value="{{ (old('ikon') ? old('ikon') : ((isset($sosmed)) ? $sosmed->ikon : '')) }}">
+                                <input type="file" class="form-control" name="ikon" id="ikon" value="{{ isset($sosmed)) ? $sosmed->ikon : '' }}">
                             </div>
                         </div>
                         <div class="form-group">

@@ -10,9 +10,6 @@
         <ul class="nav-right">
             <li class="dropdown">
                 <a href="javascript:void(0);" type="button" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" id="dropdownVeganesia">
-                    <div class="peer mR-10">
-                        <img class="w-2r bdrs-50p" src="https://randomuser.me/api/portraits/men/10.jpg" alt="">
-                    </div>
                     <div class="peer">
                         <span class="fsz-sm f-asap_med" style="color: #ffffff;">{{ auth()->user()->name }}</span>
                     </div>
