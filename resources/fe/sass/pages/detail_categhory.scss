@@ -37,7 +37,16 @@
             z-index: 2;
             left: 50%;
             top: 50%;
+            width: 100%;
             text-transform: uppercase;
+            @include respond-max(mid-md-dekstop) {
+                margin: 15px;
+            }
+            @include respond-max(mid-sm-tablet) {
+                font-size: 28px;
+                line-height: 34px;
+                margin: auto;
+            }
         }
     }
 

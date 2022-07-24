@@ -14,7 +14,15 @@
     margin: 20px 40px;
     color: $blue-dasibana !important;
     letter-spacing: .04em;
+    line-height: 50px;
     font-family: "asap_reg", sans-serif !important;
+    @include respond-max(mid-md-dekstop) {
+        margin: 15px;
+    }
+    @include respond-max(mid-sm-tablet) {
+        font-size: 28px;
+        line-height: 34px;
+    }
 }
 
 
@@ -25,6 +33,9 @@
     text-align: left;
     text-transform: uppercase !important;
     margin: 20px 0;
+    @include respond-max(mid-lg-tablet) {
+        font-size: 16px;
+    }
 }
 
 .subs-title{

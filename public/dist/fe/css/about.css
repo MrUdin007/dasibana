@@ -163,7 +163,19 @@ label.error {
   margin: 20px 40px;
   color: #0b303c !important;
   letter-spacing: 0.04em;
+  line-height: 50px;
   font-family: "asap_reg", sans-serif !important;
+}
+@media (max-width: 992px) {
+  .main-title {
+    margin: 15px;
+  }
+}
+@media (max-width: 576px) {
+  .main-title {
+    font-size: 28px;
+    line-height: 34px;
+  }
 }
 
 .title-footer {
@@ -173,6 +185,11 @@ label.error {
   text-align: left;
   text-transform: uppercase !important;
   margin: 20px 0;
+}
+@media (max-width: 768px) {
+  .title-footer {
+    font-size: 16px;
+  }
 }
 
 .subs-title {
@@ -243,7 +260,20 @@ label.error {
   z-index: 2;
   left: 50%;
   top: 50%;
+  width: 100%;
   text-transform: uppercase;
+}
+@media (max-width: 992px) {
+  .about-dasibana .banner-about h3 {
+    margin: 15px;
+  }
+}
+@media (max-width: 576px) {
+  .about-dasibana .banner-about h3 {
+    font-size: 28px;
+    line-height: 34px;
+    margin: auto;
+  }
 }
 .about-dasibana .about-content {
   grid-template-columns: repeat(2, minmax(10px, 1fr));
@@ -251,11 +281,22 @@ label.error {
   align-items: center;
   padding: 50px 0;
 }
+@media (max-width: 768px) {
+  .about-dasibana .about-content {
+    padding: 0;
+    grid-template-columns: repeat(1, minmax(10px, 1fr));
+  }
+}
 .about-dasibana .about-content .about-img {
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
   height: 600px;
+}
+@media (max-width: 768px) {
+  .about-dasibana .about-content .about-img {
+    display: none;
+  }
 }
 .about-dasibana .about-content .ct-about h4, .about-dasibana .about-content .ct-about p {
   color: #0b303c !important;

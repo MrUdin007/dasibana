@@ -37,17 +37,37 @@
             z-index: 2;
             left: 50%;
             top: 50%;
+            width: 100%;
             text-transform: uppercase;
+            @include respond-max(mid-md-dekstop) {
+                margin: 15px;
+            }
+            @include respond-max(mid-sm-tablet) {
+                font-size: 28px;
+                line-height: 34px;
+                margin: auto;
+            }
         }
     }
 
     .categhory-content{
-        grid-template-columns: repeat(3, minmax(10px, 1fr));
         grid-gap: 30px;
         align-items: center;
         padding: 50px 0;
         width: 85%;
         margin: auto;
+        @media screen and (min-width: 1201px){
+            grid-template-columns: repeat(3, minmax(10px, 1fr));
+        }
+        @include respond-max(mid-lg-dekstop) {
+            grid-template-columns: repeat(3, minmax(10px, 1fr));
+        }
+        @include respond-max(mid-md-dekstop) {
+            grid-template-columns: repeat(2, minmax(10px, 1fr));
+        }
+        @include respond-max(mid-lg-tablet) {
+            grid-template-columns: repeat(1, minmax(10px, 1fr));
+        }
 
         .categhory-lists{
             padding: 35px 20px;

@@ -163,7 +163,19 @@ label.error {
   margin: 20px 40px;
   color: #0b303c !important;
   letter-spacing: 0.04em;
+  line-height: 50px;
   font-family: "asap_reg", sans-serif !important;
+}
+@media (max-width: 992px) {
+  .main-title {
+    margin: 15px;
+  }
+}
+@media (max-width: 576px) {
+  .main-title {
+    font-size: 28px;
+    line-height: 34px;
+  }
 }
 
 .title-footer {
@@ -173,6 +185,11 @@ label.error {
   text-align: left;
   text-transform: uppercase !important;
   margin: 20px 0;
+}
+@media (max-width: 768px) {
+  .title-footer {
+    font-size: 16px;
+  }
 }
 
 .subs-title {
@@ -243,15 +260,54 @@ label.error {
   z-index: 2;
   left: 50%;
   top: 50%;
+  width: 100%;
   text-transform: uppercase;
 }
+@media (max-width: 992px) {
+  .product-dasibana .banner-product h3 {
+    margin: 15px;
+  }
+}
+@media (max-width: 576px) {
+  .product-dasibana .banner-product h3 {
+    font-size: 28px;
+    line-height: 34px;
+    margin: auto;
+  }
+}
 .product-dasibana .gr-prodc {
-  grid-template-columns: repeat(5, minmax(10px, 1fr));
   grid-gap: 20px;
   align-items: center;
   padding: 50px 0;
   width: calc(100% - 100px);
   margin: auto;
+}
+@media screen and (min-width: 1201px) {
+  .product-dasibana .gr-prodc {
+    grid-template-columns: repeat(5, minmax(10px, 1fr));
+  }
+}
+@media (max-width: 1200px) {
+  .product-dasibana .gr-prodc {
+    grid-template-columns: repeat(4, minmax(10px, 1fr));
+  }
+}
+@media (max-width: 992px) {
+  .product-dasibana .gr-prodc {
+    grid-template-columns: repeat(3, minmax(10px, 1fr));
+  }
+}
+@media (max-width: 768px) {
+  .product-dasibana .gr-prodc {
+    grid-template-columns: repeat(2, minmax(10px, 1fr));
+  }
+}
+@media (max-width: 425px) {
+  .product-dasibana .gr-prodc {
+    grid-template-columns: minmax(10px, 1fr);
+    width: 200px;
+    margin: auto;
+  }
 }
 .product-dasibana .gr-prodc .produk-item {
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
@@ -265,6 +321,12 @@ label.error {
   display: block;
   margin: auto;
   position: relative;
+}
+@media (max-width: 425px) {
+  .product-dasibana .gr-prodc .produk-item .pic-produk {
+    height: 200px;
+    width: 200px;
+  }
 }
 .product-dasibana .gr-prodc .produk-item .pic-produk:hover .bottom-hidden-btn, .product-dasibana .gr-prodc .produk-item .pic-produk:active .bottom-hidden-btn, .product-dasibana .gr-prodc .produk-item .pic-produk:focus .bottom-hidden-btn {
   visibility: visible;

@@ -14,11 +14,22 @@
         .gr-footer{
             grid-template-columns: 1fr 1fr 130px;
             grid-gap: 100px;
+            @include respond-max(mid-lg-tablet) {
+                grid-template-columns: repeat(2, minmax(10px, auto));
+                grid-gap: 60px;
+            }
+            @include respond-max(mid-lg-mobile) {
+                grid-template-columns: repeat(1, minmax(10px, auto));
+                grid-gap: 30px;
+            }
 
             .menu-footer{
                 .gr-footer-kategori{
                     grid-template-columns: repeat(2, minmax(10px, auto));
                     grid-gap: 5px;
+                    @include respond-max(mid-md-dekstop) {
+                        grid-template-columns: repeat(1, minmax(10px, auto));
+                    }
                 }
             }
 
@@ -28,6 +39,9 @@
                     grid-gap: 20px;
                     margin-left: -10px;
                     align-items: center;
+                    @include respond-max(mid-md-dekstop) {
+                        grid-template-columns: repeat(2, minmax(10px, 60px));
+                    }
 
                     .footer-icn-smd{
                         background-position: center;
@@ -53,6 +67,9 @@
                     background-size: contain;
                     height: 130px;
                     width: 100%;
+                    @include respond-max(mid-lg-tablet) {
+                        display: none;
+                    }
                 }
             }
         }

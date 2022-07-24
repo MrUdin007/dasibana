@@ -163,7 +163,19 @@ label.error {
   margin: 20px 40px;
   color: #0b303c !important;
   letter-spacing: 0.04em;
+  line-height: 50px;
   font-family: "asap_reg", sans-serif !important;
+}
+@media (max-width: 992px) {
+  .main-title {
+    margin: 15px;
+  }
+}
+@media (max-width: 576px) {
+  .main-title {
+    font-size: 28px;
+    line-height: 34px;
+  }
 }
 
 .title-footer {
@@ -173,6 +185,11 @@ label.error {
   text-align: left;
   text-transform: uppercase !important;
   margin: 20px 0;
+}
+@media (max-width: 768px) {
+  .title-footer {
+    font-size: 16px;
+  }
 }
 
 .subs-title {
@@ -260,9 +277,19 @@ label.error {
   text-shadow: 2px 2px 3px #000;
   letter-spacing: 0.05em !important;
 }
+@media (max-width: 992px) {
+  .home-dasibana .banner-dasibana .dasibana-icon-name .ct-banner-text h1 {
+    font-size: 50px;
+  }
+}
 .home-dasibana .banner-dasibana .dasibana-icon-name .ct-banner-text p {
   font-size: 18px;
   text-shadow: 1px 1px 1px #000000;
+}
+@media (max-width: 992px) {
+  .home-dasibana .banner-dasibana .dasibana-icon-name .ct-banner-text p {
+    font-size: 16px;
+  }
 }
 .home-dasibana .desc-singkat-dasibana {
   background-color: #0b303c;
@@ -272,6 +299,12 @@ label.error {
   margin: auto;
   width: 65%;
   padding: 50px 0;
+}
+@media (max-width: 576px) {
+  .home-dasibana .desc-singkat-dasibana .container {
+    width: 95%;
+    padding: 20px 0;
+  }
 }
 .home-dasibana .desc-singkat-dasibana .container .box-desc {
   padding: 20px 30px;
@@ -284,11 +317,47 @@ label.error {
 .home-dasibana .produk-unggulan {
   padding: 0 15%;
 }
+@media (max-width: 1200px) {
+  .home-dasibana .produk-unggulan {
+    padding: 0 10%;
+  }
+}
+@media (max-width: 768px) {
+  .home-dasibana .produk-unggulan {
+    padding: 0;
+  }
+}
 .home-dasibana .produk-unggulan .gr-prodc {
-  grid-template-columns: repeat(4, minmax(10px, 1fr));
   grid-gap: 20px;
   align-items: center;
   padding: 50px 0;
+}
+@media screen and (min-width: 1201px) {
+  .home-dasibana .produk-unggulan .gr-prodc {
+    grid-template-columns: repeat(5, minmax(10px, 1fr));
+  }
+}
+@media (max-width: 1200px) {
+  .home-dasibana .produk-unggulan .gr-prodc {
+    grid-template-columns: repeat(4, minmax(10px, 1fr));
+  }
+}
+@media (max-width: 992px) {
+  .home-dasibana .produk-unggulan .gr-prodc {
+    grid-template-columns: repeat(3, minmax(10px, 1fr));
+  }
+}
+@media (max-width: 768px) {
+  .home-dasibana .produk-unggulan .gr-prodc {
+    grid-template-columns: repeat(2, minmax(10px, 1fr));
+  }
+}
+@media (max-width: 425px) {
+  .home-dasibana .produk-unggulan .gr-prodc {
+    grid-template-columns: minmax(10px, 1fr);
+    width: 200px;
+    margin: auto;
+  }
 }
 .home-dasibana .produk-unggulan .gr-prodc .produk-item {
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
@@ -302,6 +371,12 @@ label.error {
   display: block;
   margin: auto;
   position: relative;
+}
+@media (max-width: 425px) {
+  .home-dasibana .produk-unggulan .gr-prodc .produk-item .pic-produk {
+    height: 200px;
+    width: 200px;
+  }
 }
 .home-dasibana .produk-unggulan .gr-prodc .produk-item .pic-produk:hover .bottom-hidden-btn, .home-dasibana .produk-unggulan .gr-prodc .produk-item .pic-produk:active .bottom-hidden-btn, .home-dasibana .produk-unggulan .gr-prodc .produk-item .pic-produk:focus .bottom-hidden-btn {
   visibility: visible;
@@ -375,6 +450,11 @@ label.error {
 }
 .home-dasibana .kategori-produk-dasibana .ct-parallax .sec-kategori-home {
   padding: 60px;
+}
+@media (max-width: 768px) {
+  .home-dasibana .kategori-produk-dasibana .ct-parallax .sec-kategori-home {
+    padding: 20px;
+  }
 }
 .home-dasibana .kategori-produk-dasibana .ct-parallax .sec-kategori-home .kategori-dsb-slick .slick-list .slick-track .slick-slide {
   height: auto;

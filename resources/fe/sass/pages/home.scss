@@ -60,11 +60,17 @@
                     line-height: 60px;
                     text-shadow: 2px 2px 3px #000;
                     letter-spacing: .05em !important;
+                    @include respond-max(mid-md-dekstop) {
+                        font-size: 50px;
+                    }
                 }
 
                 p{
                     font-size: 18px;
                     text-shadow: 1px 1px 1px $black;
+                    @include respond-max(mid-md-dekstop) {
+                        font-size: 16px;
+                    }
                 }
             }
         }
@@ -78,6 +84,10 @@
             margin: auto;
             width: 65%;
             padding: 50px 0;
+            @include respond-max(mid-sm-tablet) {
+                width: 95%;
+                padding: 20px 0;
+            }
 
             .box-desc{
                 padding: 20px 30px;
@@ -94,11 +104,35 @@
     .produk-unggulan{
         padding: 0 15%;
 
+        @include respond-max(mid-lg-dekstop) {
+            padding: 0 10%;
+        }
+
+        @include respond-max(mid-lg-tablet) {
+            padding: 0;
+        }
+
         .gr-prodc{
-            grid-template-columns: repeat(4, minmax(10px, 1fr));
             grid-gap: 20px;
             align-items: center;
             padding: 50px 0;
+            @media screen and (min-width: 1201px){
+                grid-template-columns: repeat(5, minmax(10px, 1fr));
+            }
+            @include respond-max(mid-lg-dekstop) {
+                grid-template-columns: repeat(4, minmax(10px, 1fr));
+            }
+            @include respond-max(mid-md-dekstop) {
+                grid-template-columns: repeat(3, minmax(10px, 1fr));
+            }
+            @include respond-max(mid-lg-tablet) {
+                grid-template-columns: repeat(2, minmax(10px, 1fr));
+            }
+            @include respond-max(mid-lg-mobile) {
+                grid-template-columns: minmax(10px, 1fr);
+                width: 200px;
+                margin: auto;
+            }
             .produk-item{
                 box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
                 .pic-produk{
@@ -110,6 +144,10 @@
                     display: block;
                     margin: auto;
                     position: relative;
+                    @include respond-max(mid-lg-mobile) {
+                        height: 200px;
+                        width: 200px;
+                    }
 
                     @include on-event{
                         .bottom-hidden-btn{
@@ -197,6 +235,9 @@
 
             .sec-kategori-home{
                 padding: 60px;
+                @include respond-max(mid-lg-tablet) {
+                    padding: 20px;
+                }
                 .kategori-dsb-slick{
                     .slick-list{
                         .slick-track{
