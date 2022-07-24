@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 /////////////// MANAGE - ADMIN ACCESS ///////////////////
+Route::get('dashboard', function () {
+    return view('manage.dashboard');
+});
+
 Auth::routes();
 Route::prefix('manage')->namespace('Manage')->group(function () {
     ///Admin

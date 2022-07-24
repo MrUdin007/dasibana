@@ -22,7 +22,7 @@
         <!-- ### $Sidebar Menu ### -->
         <ul class="sidebar-menu scrollable pos-r">
             <li class="nav-item">
-                <a class="sidebar-link text-capitalize" href="">
+                <a class="sidebar-link text-capitalize" href="{{url('dashboard')}}">
                     <span class="icon-holder">
                         <i class="c-blue-500 ti-home"></i>
                     </span>

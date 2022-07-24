@@ -8,28 +8,19 @@
             </li>
         </ul>
         <ul class="nav-right">
-            <li class="dropdown">
-                <a href="javascript:void(0);" type="button" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" id="dropdownVeganesia">
-                    <div class="peer">
-                        <span class="fsz-sm f-asap_med" style="color: #ffffff;">{{ auth()->user()->username }}</span>
-                    </div>
-                </a>
-                <ul style="display: none;" id="menudropdownheader" class="dropdown-menu fsz-sm">
-                    <li>
-                        <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
-                            <i class="ti-user mR-10"></i>
-                            <span>Profile</span>
-                        </a>
-                    </li>
-                    <li role="separator" class="divider"></li>
-                    <li>
-                        <a href="javascript:void(0)" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700 logout-veg">
-                            <i class="ti-power-off mR-10"></i>
-                            <span>Logout</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
+            <div class="dropdown-toggle no-after peers fxw-nw ai-c lh-1 mt-3 mr-3">
+                <div class="peer mR-10">
+                    <span class="fsz-sm f-asap_med" style="color: #ffffff; text-transform: capitalize">{{ auth()->user()->username }}</span>
+                </div>
+                <div class="peer">
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <span class="fsz-sm f-asap_med" style="color: #acacac;">(Logout)</span>
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </div>
+            </div>
         </ul>
     </div>
 </div>
