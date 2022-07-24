@@ -151,17 +151,21 @@ class ProductController extends Controller
 
     public function save(Request $req, $id=null)
     {
+        $regex = '/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/';
         if($id){
             $validator = Validator::make($req->all(), [
                 'name'              => 'required|string|max:255',
                 'foto'              => 'required|image|max:1024|mimes:jpg,jpeg,png',
                 'id_kategori'       => 'required|integer|max:11',
-                'link_shopee'       => 'required|string|max:255',
-                'link_tokopedia'    => 'required|string|max:255',
+                // 'link_shopee'       => 'required|string|max:255',
+                // 'link_tokopedia'    => 'required|string|max:255',
+
+                'link_shopee'       => 'required|regex:'.$regex.'|max:255',
+                'link_tokopedia'    => 'required|regex:'.$regex.'|max:255',
             ]);
 
             if ($validator->fails()) {
-                $req->session()->flash('status', 'Data gagal diubah! Maksimal File Yang Diunggah : 1.024KB');
+                $req->session()->flash('status', 'Data gagal diubah!');
                 return redirect()->route('produk.edit', $id);
             }
 
@@ -172,12 +176,15 @@ class ProductController extends Controller
                 'name'              => 'required|string|max:255',
                 'foto'              => 'required|image|max:1024|mimes:jpg,jpeg,png',
                 'id_kategori'       => 'required|integer|max:11',
-                'link_shopee'       => 'required|string|max:255',
-                'link_tokopedia'    => 'required|string|max:255',
+                // 'link_shopee'       => 'required|string|max:255',
+                // 'link_tokopedia'    => 'required|string|max:255',
+
+                'link_shopee'       => 'required|regex:'.$regex.'|max:255',
+                'link_tokopedia'    => 'required|regex:'.$regex.'|max:255',
             ]);
 
             if ($validator->fails()) {
-                $req->session()->flash('status', 'Data baru gagal dimasukkan! Maksimal File Yang Diunggah : 1.024KB');
+                $req->session()->flash('status', 'Data baru gagal dimasukkan!');
                 return redirect()->route('produk.add', $id);
             }
             $produk         = new Produk;
@@ -214,10 +221,7 @@ class ProductController extends Controller
         $produk->link_shopee    = $req->link_shopee;
         $produk->link_tokopedia = $req->link_tokopedia;
         $produk->id_kategori    = $req->id_kategori;
-        $produk->status         = $req->input('status');
-        // $produk->status         = $req->status == 0 ? 0 : $req->status;
-
-        dd($produk);
+        $produk->status         = $req->status == 0 ? 0 : $req->status;
 
         if(!$id) {
             $produk->created_at = Carbon::now()->format('Y-m-d');
