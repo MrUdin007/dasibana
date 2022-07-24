@@ -20,7 +20,12 @@
                     <div class="about-img" style="background-image: url('{{asset('images/pic4.jpg')}}')"></div>
                     <div class="ct-about">
                         <h4 class="text-capitalize text-center main-title">deskripsi perusahaan</h4>
-                        <p class="text-center mt-5">{{$profil->deskripsi}}</p>
+                        <hr style="color: #0b303c !important; border-width: 1.4px;">
+                        <p class="text-left mt-4 mb-2">Nama Bisnis : <span>{{$profil->nama_bisnis}}</span></p>
+                        <p class="text-left mb-2">Tahun dibangun : <span>{{$profil->tahun}}</span></p>
+                        <p class="text-left mb-2">Pemilik : <span>{{$profil->pemilik}}</span></p>
+                        <p class="text-left mb-2">Alamat : <span>{{$profil->alamat}}</span></p>
+                        <p class="text-left mb-2">{{$profil->deskripsi}}</p>
                     </div>
                 </div>
             </div>

@@ -146,14 +146,16 @@ class SosmedController extends Controller
     public function save(Request $req, $id=null)
     {
         if($id){
-            $validator = Validator::make($req->all(), [
-                'name'      => 'required|string|max:255',
-                'ikon'      => 'required|image|max:1024|mimes:jpg,jpeg,png',
-            ]);
+            if($req->name != null && $req->ikon != null){
+                $validator = Validator::make($req->all(), [
+                    'name'      => 'required|string|max:255',
+                    'ikon'      => 'required|image|max:1024|mimes:jpg,jpeg,png',
+                ]);
 
-            if ($validator->fails()) {
-                $req->session()->flash('status', 'Data gagal diubah!');
-                return redirect()->route('sosmed.edit', $id);
+                if ($validator->fails()) {
+                    $req->session()->flash('status', 'Data gagal diubah!');
+                    return redirect()->route('sosmed.edit', $id);
+                }
             }
 
             $sosmed = Sosmed::find($id);
