@@ -171,7 +171,7 @@ class ProductCategoryController extends Controller
 
         // Save data
         $produkkategori->name       = $req->name;
-        $produkkategori->status     = $req->status == 0 ? 0 : $req->status;
+        $produkkategori->status     = $req->status == 'on' ? 1 : 0;
 
         if(!$id) {
             $produkkategori->created_at = Carbon::now()->format('Y-m-d');

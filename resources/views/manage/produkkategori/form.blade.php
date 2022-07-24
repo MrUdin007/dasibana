@@ -48,9 +48,13 @@
                             </div>
                         </div>
                         <div class="form-group">
-                        <label class="control-label">Status</label>
+                            <label class="control-label">Status</label>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="status" id="status" value="{{ (old('status') ? old('status') : ((isset($produkkategori)) ? $produkkategori->status : '')) }}">
+                                <input class="form-check-input" type="checkbox" name="status" id="status"
+                                @if(isset($produkkategori) && $produkkategori->status == 1)
+                                    checked
+                                @endif
+                                >
                                 <label class="form-check-label" for="status">
                                     Aktif
                                 </label>

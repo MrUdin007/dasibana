@@ -197,7 +197,7 @@ class SosmedController extends Controller
         }
 
         $sosmed->name       = $req->name;
-        $sosmed->status     = $req->status == 0 ? 0 : $req->status;
+        $sosmed->status     = $req->status == 'on' ? 1 : 0;
 
         if(!$id) {
             $sosmed->created_at = Carbon::now()->format('Y-m-d');

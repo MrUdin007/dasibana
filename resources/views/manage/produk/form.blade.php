@@ -79,7 +79,11 @@
                         <div class="form-group">
                             <label class="control-label">Status</label>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="status_test" id="status_test" value="{{ (old('status') ? old('status') : ((isset($produk)) ? $produk->status : '0')) }}">
+                                <input class="form-check-input" type="checkbox" name="status" id="status"
+                                @if(isset($product) && $product->status == 1)
+                                    checked
+                                @endif
+                                >
                                 <label class="form-check-label" for="status">
                                     Aktif
                                 </label>

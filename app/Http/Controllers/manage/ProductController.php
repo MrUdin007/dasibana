@@ -157,9 +157,6 @@ class ProductController extends Controller
                 'name'              => 'required|string|max:255',
                 'foto'              => 'required|image|max:1024|mimes:jpg,jpeg,png',
                 'id_kategori'       => 'required|integer|max:11',
-                // 'link_shopee'       => 'required|string|max:255',
-                // 'link_tokopedia'    => 'required|string|max:255',
-
                 'link_shopee'       => 'required|regex:'.$regex.'|max:255',
                 'link_tokopedia'    => 'required|regex:'.$regex.'|max:255',
             ]);
@@ -170,15 +167,11 @@ class ProductController extends Controller
             }
 
             $produk = Produk::find($id);
-            // $produk->status         = $req->status;
         }else{
             $validator = Validator::make($req->all(), [
                 'name'              => 'required|string|max:255',
                 'foto'              => 'required|image|max:1024|mimes:jpg,jpeg,png',
                 'id_kategori'       => 'required|integer|max:11',
-                // 'link_shopee'       => 'required|string|max:255',
-                // 'link_tokopedia'    => 'required|string|max:255',
-
                 'link_shopee'       => 'required|regex:'.$regex.'|max:255',
                 'link_tokopedia'    => 'required|regex:'.$regex.'|max:255',
             ]);
@@ -221,7 +214,7 @@ class ProductController extends Controller
         $produk->link_shopee    = $req->link_shopee;
         $produk->link_tokopedia = $req->link_tokopedia;
         $produk->id_kategori    = $req->id_kategori;
-        $produk->status         = $req->status == 0 ? 0 : $req->status;
+        $produk->status         = $req->status == 'on' ? 1 : 0;
 
         if(!$id) {
             $produk->created_at = Carbon::now()->format('Y-m-d');
