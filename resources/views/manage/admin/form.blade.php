@@ -39,7 +39,7 @@
                         {{ session('status') }}
                     </div>
                     @endif
-                    <form id="formAdmin" class="form m-t-20" action="{{ route('admin.edit',$admin->id)) }}" method="POST" enctype="multipart/form-data">
+                    <form id="formAdmin" class="form m-t-20" action="{{ route('admin.edit',$admin->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label class="control-label">Nama<span class="text-danger">*</span></label>
