@@ -25,9 +25,10 @@
                     ?>
                     @if(count($kategori_produk) > 0)
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle {{ (Route::is('product_categhory')) ? 'active' : '' }}" href="{{ route('product_categhory') }}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link {{ (Route::is('product_categhory')) ? 'active' : '' }}" href="{{ route('product_categhory') }}" style="float: left;">
                             kategori produk
                         </a>
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="float: right; margin-left: 5px;"></a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             @foreach($kategori_produk as $produkKategori)
                             <li>

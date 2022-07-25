@@ -29,6 +29,7 @@
                                 <div class="overlay-btns-prd"></div>
                             </div>
                         </div>
+                        <h6 class="txt-prdct truncate-texts" title="{{$product->produkName}}">{{$product->produkName}}</h6>
                     </div>
                     @endforeach
                     @endif

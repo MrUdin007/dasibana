@@ -197,6 +197,31 @@ label.error {
   font-family: "asap_reg", sans-serif !important;
 }
 
+.truncate-texts {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.truncate-texts.\--two {
+  -webkit-line-clamp: 2;
+}
+.truncate-texts.\--three {
+  -webkit-line-clamp: 3;
+}
+.truncate-texts.\--four {
+  -webkit-line-clamp: 4;
+}
+.truncate-texts.\--five {
+  -webkit-line-clamp: 5;
+}
+.truncate-texts.\--eight {
+  -webkit-line-clamp: 8;
+}
+.truncate-texts.\--upld:after {
+  line-height: 40px !important;
+}
+
 @font-face {
   font-family: roboto_light;
   src: url("../../../../public/dist/fonts/Roboto/Roboto-Light.ttf") format("truetype");
@@ -361,6 +386,14 @@ label.error {
 }
 .home-dasibana .produk-unggulan .gr-prodc .produk-item {
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+.home-dasibana .produk-unggulan .gr-prodc .produk-item .txt-prdct {
+  margin-bottom: 0;
+  padding: 5px 10px;
+  color: #000000 !important;
+  text-transform: capitalize;
+  font-family: "asap_reg", sans-serif !important;
 }
 .home-dasibana .produk-unggulan .gr-prodc .produk-item .pic-produk {
   background-position: center;

@@ -17,7 +17,7 @@ class HomeController extends Controller
 {
     public function index(Request $req)
     {
-        $produk_terbaru     =   Produk::selectRaw('produk.id, produk.foto as fotoProduk, produk.link_shopee, produk.link_tokopedia')
+        $produk_terbaru     =   Produk::selectRaw('produk.id, produk.name, produk.foto as fotoProduk, produk.link_shopee, produk.link_tokopedia')
                                 ->leftJoin('kategori_produk','kategori_produk.id','=','produk.id_kategori')
                                 ->where('kategori_produk.status', 1)
                                 ->where('kategori_produk.deleted_at', '=', null)
